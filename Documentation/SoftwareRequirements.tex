@@ -1,115 +1,155 @@
 \documentclass{article}
-\usepackage[a4paper,margin=2cm]{geometry}
+
+\usepackage[margin=2.5cm,left=2cm,includefoot]{geometry}
 \usepackage{graphicx}
+
+% Header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\rhead{COS301 - \LaTeX}
+\lhead{Team Charlie}
+\fancyfoot{}
+\fancyfoot[R]{Page \thepage}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+%
+
 \begin{document}
+
 	\begin{titlepage}
 		\begin{center}
-		\huge
-		{Software Requirements Specification \\
-		and\\
-		Technology Neutral Process Design\\
-		(Name of System)\\
-		[2cm]
-		Version: (1.0)\\
-		(University of Pretoria - Group Charlie)
-		\\
-		February 16, 2016
-		}
 		
+			\line(1,0){300}\\
+			[6mm]
+			\huge{
+				\bfseries Software Requirements Specification\\
+				and\\
+				Technology Neutral Process Design
+			}\\
+			[2mm]
+			\line(1,0){200}\\
+			[15mm]
+			\textsc{\large (Name of System)}\\
+			[7.5mm]
+			\textsc{\large University of Pretoria - Team Charlie}\\
+			[20mm]
+			\textsc{\large Created By:}\\
+			[2mm]
+			\large{
+				Claudio Da Silva\\
+				Arno Grobler\\
+				Dillon Heins\\
+				Charl Jansen Van Vuuren\\
+				Priscilla Madigoe\\
+				Bernhard Schuld\\
+				Keorapetse Shiko
+			}\\
+			[6cm]
 		\end{center}
+		
+		\begin{flushright}
+			\textsc{\large 17 February 2016}
+		\end{flushright}
 	\end{titlepage}
-	\newpage
+	
+	\cleardoublepage
 	\tableofcontents
-	\newpage
-	\section{Introduction}
-	Info about the system.....
-	\section{Vision}
-	The vision of this project .....
-	\section{Background}
-		This project will include 
+	
+	\cleardoublepage	
+	\section{Introduction}\label{sec:intro}
+		Info about the system \ldots
+		
+	\cleardoublepage
+	\section{Vision}\label{sec:vision}
+		The vision of this project \ldots
+	
+	\cleardoublepage
+	\section{Background}\label{sec:background}
+		This project will include
 		\begin{itemize}
 		  \item The first item
 		  \item The second item
 		  \item The third etc \ldots
 		\end{itemize}
 		
-	\section {Architecture requirements}
+	\cleardoublepage
+	\section{Architecture Requirements}\label{sec:architecture}
 		\begin{itemize}
 		  \item The first item
 		  \item The second item
 		  \item The third etc \ldots
 		\end{itemize}
 		
-	\subsection {Access channel requirements}
-		\begin{itemize}
-		  \item The first item
-		  \item The second item
-		  \item The third etc \ldots
-		\end{itemize}
+		\subsection{Access Channel Requirements}\label{subsec:access}
+			\begin{itemize}
+			  \item The first item
+			  \item The second item
+			  \item The third etc \ldots
+			\end{itemize}
 		
-	\subsection {Quality requirements}
-		\begin{itemize}
-		  \item The first item
-		  \item The second item
-		  \item The third etc \ldots
-		\end{itemize}
+		\subsection{Quality Requirements}\label{subsec:quality}
+			\begin{itemize}
+			  \item The first item
+			  \item The second item
+			  \item The third etc \ldots
+			\end{itemize}
 		
-	\subsection {Integration requirements}
-		\begin{itemize}
-		  \item The first item
-		  \item The second item
-		  \item The third etc \ldots
-		\end{itemize}
+		\subsection{Integration Requirements}\label{subsec:integration}
+			\begin{itemize}
+			  \item The first item
+			  \item The second item
+			  \item The third etc \ldots
+			\end{itemize}
 		
-	\subsection {Architecture constraints}
-		\begin{itemize}
-		  \item The first item
-		  \item The second item
-		  \item The third etc \ldots
-		\end{itemize}
+		\subsection{Architecture Constraints}\label{subsec:constraints}
+			\begin{itemize}
+			  \item The first item
+			  \item The second item
+			  \item The third etc \ldots
+			\end{itemize}
 		
-	\section{Functional requirements and application design}
-		\subsection{Use case prioritization}
+	\cleardoublepage
+	\section{Functional Requirements and Application Design}\label{sec:functional}
+		\subsection{Use Case Prioritization}
 			\begin{description}
 			  \item[Critical:] The first item
 			  \item[Important:] The second item
 			  \item[Nice-to-Have:] The third etc \ldots
 			\end{description}
 			
-		\subsection{Use case/ Service contracts}
+		\subsection{Use Case/ Service Contracts}
 			\begin{description}
 			  \item[Pre-conditions:] The first item
 			  \item[Post-conditions:] The second item
 			  \item[Request and Results Data structures:] The third etc \ldots
 			\end{description}
 			
-		\subsection{Required functionality}
-%			\begin{figure}[h]
-%			\includegraphics[width=4in]{imagename}
-%			\caption{Figure information}
-%			\end
+		\subsection{Required Functionality}
+			%\begin{figure}[h]
+			%\includegraphics[width=4in]{imagename}
+			%\caption{Figure information}
+			%\end
 	
-		\subsection{Process specifications}
-%			\begin{figure}[h]
-%			\includegraphics[width=4in]{imagename}
-%			\caption{Figure information}
-%			\end
+		\subsection{Process Specifications}
+			%\begin{figure}[h]
+			%\includegraphics[width=4in]{imagename}
+			%\caption{Figure information}
+			%\end
 		
 		\subsection{Domain Model}
-%			\begin{figure}[h]
-%			\includegraphics[width=4in]{imagename}
-%			\caption{Figure information}
-%			\end
+			%\begin{figure}[h]
+			%\includegraphics[width=4in]{imagename}
+			%\caption{Figure information}
+			%\end
 		
+	\cleardoublepage
 	\section{Open Issues}
 		\begin{itemize}
 		  \item The first item
 		  \item The second item
 		  \item The third etc \ldots
-		\end{itemize}		
+		\end{itemize}
 		
-	
-
-
-
 \end{document}
