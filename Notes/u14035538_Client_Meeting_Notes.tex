@@ -64,10 +64,19 @@
 			\item under 100
 		\end{itemize}
 		\item The system must be able to support all users working at the same time on the system.
+		\item Users can see a profile page of another user but this profile page contains very little information:
+		\begin{itemize}
+			\item name and surname
+			\item email
+			\item staff number (if any)
+			\item other contact details
+		\end{itemize}
 		\item Only staff members of the University of Pretoria are \textit{users} of the system.
 		\begin{itemize}
 			\item Staff members act as representatives of student authors when adding them to a paper.
 		\end{itemize}
+		\item Users must be able to edit their user information.
+		\item A user must be able to assign roles to authors of their paper.
 		\item User hierarchy:
 		\begin{itemize}
 			\item There exists a hierarchy in terms of the privileges which each type of user is granted.
@@ -91,23 +100,7 @@
 					\item users cannot see other user's publications, only their own
 				\end{itemize}
 			\end{itemize}
-			
 		\end{itemize}
-	\end{itemize}
-
-\cleardoublepage
-\section{Non-users}\label{sec:non-users}
-	\begin{itemize}
-		\item A non-user is an author of a paper who is not a member of staff of the Computer Science department.
-		\item Non-user types:
-		\begin{itemize}
-			\item student of the University of Pretoria
-			\item an external collaborator
-		\end{itemize}
-		\item A non-user's details must still be saved within the system however there will be no login account associated with a non-user.
-		\item Previously entered non-user authors should be displayed as options when selecting authors for a paper.
-		\item Non-user details must be able to be edited by a user of the system.
-		\item There must be functionality to allow an admin to assign a non-user as a user of the system.
 	\end{itemize}
 
 \section{Document Entries}\label{sec:docs}
@@ -124,7 +117,13 @@
 				\item author list must be ordered by priority
 				\item number of authors per paper is unlimited
 			\end{itemize}
-			\item publication type
+			\item publication type/intended venue
+			\begin{itemize}
+				\item conference
+				\item journal paper
+				\item technical report
+				\item accredited
+			\end{itemize}
 			\item publication target
 			\item dates (deadlines)
 			\item progress
@@ -137,6 +136,64 @@
 			\begin{itemize}
 				\item The system can ask the user to enter a deadline if the publication type is a conference.
 			\end{itemize}
+		\item If paper's intended venue is a special editions journal article the system should add in the deadline for the user.
+		\item It should be possible to enter historical entries.
+		\item Rejected papers must remain in a user's personal history.
+		\begin{itemize}
+			\item The number of tries per paper (different venues) must be kept track of.
+		\end{itemize}
+		\item Paper's cannot be removed from the system, they can only be edited or if they are no longer active they can be terminated.
 	\end{itemize}
 	
+\cleardoublepage
+\section{Non-users}\label{sec:non-users}
+	\begin{itemize}
+		\item A non-user is an author of a paper who is not a member of staff of the Computer Science department.
+		\item Non-user types:
+		\begin{itemize}
+			\item student of the University of Pretoria
+			\item an external collaborator
+		\end{itemize}
+		\item A user must be able to specify whether a non-user is a student of the University of Pretoria or whether they are an external collaborator.
+		\item A non-user's details must still be saved within the system however there will be no login account associated with a non-user.
+		\item Previously entered non-user authors should be displayed as options when selecting authors for a paper.
+		\item Non-user details must be able to be edited by a user of the system.
+		\item There must be functionality to allow an admin to assign a non-user as a user of the system.
+	\end{itemize}
+	
+\section{Units}\label{sec:units}
+	\begin{itemize}
+		\item Intended venues have different unit ratings.
+		\item If an intended venue is accredited then it has a different weighting in terms of units.
+		\item The units earned by each user must be kept track of.
+		\item The default units earned by each intended venue is able to be set and edited by the admin.
+	\end{itemize}
+	
+\section{Architecture Requirements}\label{sec:architecture}
+	\begin{itemize}
+		\item Access channel requirements:
+		\begin{itemize}
+			\item A central application program interface will be run on a server and clients will interface with it to access services from it via:
+			\begin{itemize}
+				\item an android application
+				\item a web application interface
+			\end{itemize}
+			\item The interface must be lightweight.
+		\end{itemize}
+		\item Integration requirements:
+		\begin{itemize}
+			\item The system might have to be able to eventually integrate with external systems.
+		\end{itemize}
+		\item Quality requirements:
+		\begin{itemize}
+			\item Performance: No concurrent editing of documents necessary, the last submitted edit is what will be saved to the database.
+			\item Auditability: All actions performed by all user must be logged and stored in detail.
+			\item Integrity: No need for backups through system.
+		\end{itemize}
+	\end{itemize}
+
+\section{System}\label{sec:system}
+	\begin{itemize}
+		\item The system should be able to email users within the system with regards to reminders for deadlines.
+	\end{itemize}
 \end{document}
