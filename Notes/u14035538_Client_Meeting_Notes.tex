@@ -60,10 +60,10 @@
 	\begin{itemize}
 		\item Number of users:
 		\begin{itemize}
-			\item Members of the department.
-			\item Under 100.
+			\item members of the department
+			\item under 100
 		\end{itemize}
-		\item System must be able to support all users working at the same time on the system
+		\item The system must be able to support all users working at the same time on the system.
 		\item Only staff members of the University of Pretoria are \textit{users} of the system.
 		\begin{itemize}
 			\item Staff members act as representatives of student authors when adding them to a paper.
@@ -75,25 +75,41 @@
 			\begin{itemize}
 				\item Administrative user:
 				\begin{itemize}
-					\item This user is the HOD and one other possible admin.
-					\item Can view all users.
-					\item Can add users to system.
-					\item Administrative rights.
+					\item this user is the HOD and one other possible admin
+					\item can view all users
+					\item can add users to system
+					\item administrative rights
 				\end{itemize}
 				\item Head of research group:
 				\begin{itemize}
-					\item See all research group members' papers.
+					\item see all research group members' papers
+					\item can possibly add papers on behalf of others
 				\end{itemize}
 				\item General user:
 				\begin{itemize}
-					\item Can only see papers which they have authored themselves or co-authored
-					\item Users cannot see other user's publications, only their own
+					\item can only see papers which they have authored themselves or co-authored
+					\item users cannot see other user's publications, only their own
 				\end{itemize}
 			\end{itemize}
 			
 		\end{itemize}
 	\end{itemize}
-	
+
+\cleardoublepage
+\section{Non-users}\label{sec:non-users}
+	\begin{itemize}
+		\item A non-user is an author of a paper who is not a member of staff of the Computer Science department.
+		\item Non-user types:
+		\begin{itemize}
+			\item student of the University of Pretoria
+			\item an external collaborator
+		\end{itemize}
+		\item A non-user's details must still be saved within the system however there will be no login account associated with a non-user.
+		\item Previously entered non-user authors should be displayed as options when selecting authors for a paper.
+		\item Non-user details must be able to be edited by a user of the system.
+		\item There must be functionality to allow an admin to assign a non-user as a user of the system.
+	\end{itemize}
+
 \section{Document Entries}\label{sec:docs}
 	\begin{itemize}
 		\item No documents will be stored within the system itself.
@@ -102,8 +118,25 @@
 		\end{itemize}
 		\item A document entry consists of:
 		\begin{itemize}
-			\item Paper title.
+			\item paper title
+			\item authors
+			\begin{itemize}
+				\item author list must be ordered by priority
+				\item number of authors per paper is unlimited
+			\end{itemize}
+			\item publication type
+			\item publication target
+			\item dates (deadlines)
+			\item progress
+			\item indication of whether it has been submitted or not
+			\item indication of whether it is waiting for review
 		\end{itemize}
+		\item A document entry must have at least one author.
+		\item Papers can be published across multiple research groups.
+		\item Deadlines for papers are optional when a user creates a paper.
+			\begin{itemize}
+				\item The system can ask the user to enter a deadline if the publication type is a conference.
+			\end{itemize}
 	\end{itemize}
 	
 \end{document}
