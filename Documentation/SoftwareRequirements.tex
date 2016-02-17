@@ -108,18 +108,21 @@
 		
 	\cleardoublepage
 	\section{Architecture Requirements}\label{sec:architecture}
-		\begin{itemize}
-		  \item The first item
-		  \item The second item
-		  \item The third etc \ldots
-		\end{itemize}
-		
 		\subsection{Access Channel Requirements}\label{subsec:access}
+			The different access channels through which the system's services will be made available to users as well as other systems are as follows:
 			\begin{itemize}
-			  \item The first item
-			  \item The second item
-			  \item The third etc \ldots
+			  \item An Application Program Interface residing on a server which will be interfaced with by clients in order to supply services to them. Clients referring to:
+			  \begin{itemize}
+			  	\item Human users via an interface
+			  	\item External systems using the services provided by the API
+			  \end{itemize}
+			  \item Human users can interface with the system via the use of:
+			  \begin{itemize}
+			  	\item a web-based application service
+			  	\item an android based mobile application
+			  \end{itemize}
 			\end{itemize}
+			The interface is required to be lightweight.
 		
 		\subsection{Quality Requirements}\label{subsec:quality}
 			\begin{itemize}
