@@ -33,7 +33,7 @@ General uses of this system should include keeping track of:
     \item Units 
 
 \end{itemize}
-{\textit{On a side note, it was mentioned to use a software called MagicDraw to draw our diagrams for planning}}
+{\textit{On a side note, it was mentioned to use a software called MagicDraw to draw our diagrams for planning.}}
 \section{Users}
 \begin{itemize}  
 
@@ -44,9 +44,30 @@ General uses of this system should include keeping track of:
     \item Cannot add paper without any authors.
     \item Authors do not necessarily have to be users(such as students, other university lecturers), but a user has to be a author if they have put a publication into the system unless done so by a higher power in the hierarchy(such as HOD, research leader)
     \item Authors are added in sequence, e.g. 1st Author, 2nd Author, 3rd Author ...
-    \item Units 
+
 
 \end{itemize}
+\subsection{Hierarchy}
+\begin{itemize}  
 
- 
+    \item \textbf{HOD} - At the top of the hierarchy and has admin rights. HOD can see everything and possibly can make changes or add publications on behalf of lower users. Can also add users to the system. Although the HOD has admin rights, it should be noted that there should still be a superuser account which has maximum privileges.
+
+    \item \textbf{Research Leader} - In charge of the research groups and thus can view only publications relevant to their specific research group. Can also view and edit users. Does not have admin rights
+    
+    \item \textbf{User} - Can only edit own profile information related to the user themselves. Can not see other users publications or add publications on behalf of other users. Can add authors to own publications. Users can only be faculty members of the Computer Science department.
+
+
+\end{itemize}
+ \subsection{Authors}
+ \begin{itemize}  
+
+    \item Have no rights whatsoever in the system and can not access it if they are not a user.
+
+    \item Authors can include students, lecturers from other faculties, lecturers from other universities, outside expertise
+    
+    \item Authors should have some metadata attached to them. This includes their full name, where they are from, qualifications, etc
+    \item A user should be able to add authors and specify if someone is a author
+    \item Authors previously entered should not have to be entered again, instead be shown as an option.
+
+\end{itemize}
 \end{document}
