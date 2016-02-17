@@ -55,24 +55,38 @@
 	\end{titlepage}
 	
 	\cleardoublepage
+	\thispagestyle{empty}
 	\tableofcontents
 	
-	\cleardoublepage	
-	\section{Introduction}\label{sec:intro}
-		Info about the system \ldots
-		
 	\cleardoublepage
+	\setcounter{page}{1}
+	\section{Introduction}\label{sec:intro}
+		\subsection{Purpose}\label{subsec:purpose}
+			The purpose of this document is to give a detailed explanation and description of the [Name] system. This document will illustrate the purpose as well as the features of said system, the interfaces of the system, the functionality of the system, the constraints under which it must operate and how the system will integrate with external systems. This document has been created for use by the developers of the system, the proposed client as well as any other additional third party collaborators who require to understand the software specifications of the [Name] system.
+		
+	\cleardoublepage	
 	\section{Vision}\label{sec:vision}
-		The vision of this project \ldots
-	
+		The client has requested a system which allows researchers at the \textit{University of Pretoria}, specifically within the Computer Science Department, to keep track of the publications which they are currently actively involved with or working on.
+		
+		The system is required to keep track of historical publications so as to allow researches to maintain an archive of their work.
+		
+		The system should support the management of the multiple research groups within the department as well as allow the acting heads of the individual research groups to manage their group's members and publications.
+		
+		Ultimately this system is to be used by the acting Head of Department so as to be able to view all the research groups and their research output. It is a way for the department to ensure that the researchers are meeting their goals as well as the department's goals so as to ensure future funding for the department.\\
+		[5mm]
+		The typical usage scenarios for the desired output from this system would be:
+		\begin{itemize}
+			\item A UP staff member submitting a research paper to a conference, technical report or conference.
+			\item The submission and acceptance of such a paper is what allows researchers to earn units.
+			\item These units correspond with academic prestige as well as funding for the University of Pretoria and its researchers.
+			\item Departments have predetermined goals which they set out to achieve each academic year.
+			\item The ultimate desired output from this system is the ability to monitor the CS Department's researchers and their contribution towards earning these units.
+			\item This allows the acting Head of Department to award researchers who achieve as well as take note of those who do not.
+			% Desired output is also terminated papers - indicates who is not working
+		\end{itemize}
 	\cleardoublepage
 	\section{Background}\label{sec:background}
-		This project will include
-		\begin{itemize}
-		  \item The first item
-		  \item The second item
-		  \item The third etc \ldots
-		\end{itemize}
+		The reason
 		
 	\cleardoublepage
 	\section{Architecture Requirements}\label{sec:architecture}
