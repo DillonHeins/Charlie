@@ -126,16 +126,61 @@
 		
 		\subsection{Quality Requirements}\label{subsec:quality}
 			\begin{itemize}
-			  \item The first item
-			  \item The second item
-			  \item The third etc \ldots
+				\item Performance
+				\begin{itemize}
+					\item Workload is a maximum of 100 users concurrently.
+					\item No implementation of concurrent editing of document entries - last saved edit is written to the database.
+					\item The system should be able to support 100 users updating information at the same time as updating is more intensive than reading.
+					\item The response time of the system should be fast enough that a user is able to complete their work without frustration. Due to the system being off-line it is reasonable to expect the system's response time to be only limited by the speed of the network.
+				\end{itemize}
+				\item Reliability
+				\begin{itemize}
+					\item The system should not fail whilst providing critical or important use cases.
+					\item The system should not fail at all within a time period of at least 6 months.
+				\end{itemize}
+				\item Scalability
+				\begin{itemize}
+					\item Ability for multiple external systems to connect to the system's API.
+					\item The system should be able to support a large amount of historical document entries being added to the database.
+				\end{itemize}
+				\item Security
+				\begin{itemize}
+					\item A hierarchical system will be used to determine the security privileges of users of the system.
+					\item Passwords are to be hashed using at least sha256 and should be stored as such within the database along with a salt.
+					\item An inactive user session should be terminated after a period of 10 minutes with no activity.
+					\item A user who has forgotten their passwords can use a password reset option which will send a one time password to their registered email address so that they may login once using it and reset their password.
+				\end{itemize}
+				\item Flexibility
+				\begin{itemize}
+					\item The client has stated that the system is not needed to be able to extend to accommodate a greater number of departments.
+				\end{itemize}
+				\item Maintainability
+				\begin{itemize}
+					\item
+				\end{itemize}
+				\item Auditability/monitorability
+				\begin{itemize}
+					\item
+				\end{itemize}
+				\item Integrability
+				\begin{itemize}
+					\item
+				\end{itemize}
+				\item Cost
+				\begin{itemize}
+					\item
+				\end{itemize}
+				\item Usability
+				\begin{itemize}
+					\item
+				\end{itemize}
 			\end{itemize}
 		
 		\subsection{Integration Requirements}\label{subsec:integration}
 			\begin{itemize}
-			  \item The first item
-			  \item The second item
-			  \item The third etc \ldots
+			  	\item The first item
+			  	\item The second item
+			  	\item The third etc \ldots
 			\end{itemize}
 		
 		\subsection{Architecture Constraints}\label{subsec:constraints}
