@@ -198,24 +198,72 @@
 	\cleardoublepage
 	\section{Functional Requirements and Application Design}\label{sec:functional}
 		\subsection{Use Case Prioritization}\label{subsec:usecasepriorotization}
-			\begin{description}
-			  \item[Critical:] Use cases that are absolutely essential 
-			  	\begin{itemize}
-			  		\item 
-			  		\item
-			  	\end{itemize}
-			  \item[Important:] Use cases that contribute significantly,
-			   but the system can function without
-			  	\begin{itemize}
-			  		\item 
-			  		\item
-			  	\end{itemize}
-			  \item[Nice-to-Have:] Use cases that contribute insignificantly to the system
-			  	\begin{itemize}
-			  		\item 
-			  		\item
-			  	\end{itemize}
-			\end{description}
+			\subsubsection{Paper System}\label{subsubsec:paper}
+				Handles the adding, editing and terminating of papers.
+				\begin{itemize}
+					\item \textbf{Add Paper Entry} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item A user of the system should be able to add a paper entry associated with their user account into the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item A user should have a registered account and be logged in.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item A paper entry and all its details should be entered into the database of the system and be associated with a particular registered user.
+							\item The act of creating a new paper entry should be logged.
+						\end{itemize}
+					\end{itemize}
+					
+					\item \textbf{Edit Own Paper Entry:} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item A user must be able to edit the metadata associated with their own paper entries.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item A user must be logged in.
+							\item The logged in user must be an author or co-author of the paper.
+							\item The paper must not have been terminated.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The metadata in the database associated with the paper should be updated.
+							\item The action of editing and all relevant changes to the entry must be logged.
+						\end{itemize}
+					\end{itemize}
+					
+					\item \textbf{Edit Own Paper Progress:} \hfill \textit{Priority: Important}
+					\begin{itemize}
+						\item A user should have the ability to indicate in terms of a percentage how far they are currently in terms of progress on their paper.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item A user should be logged in.
+							\item The logged in user must be an author or co-author of the paper.
+							\item The paper must not have been terminated.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The field indicating progress within the database must have been updated.
+							\item The change in progress should be depicted visually to the user.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}
+					
+					\item \textbf{Terminate Own Paper:} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item A user must be able to terminate (make inactive) a paper which they feel they are not going to be completing in the future.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item A user must be logged in.
+							\item The logged in user must be an author or co-author of the paper.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The paper has been marked as terminated within the database.
+							\item The action of terminating the paper must have been logged.
+							\item The paper must no longer be able to be edited by the user.
+						\end{itemize}
+					\end{itemize}
+				\end{itemize}								
 			
 		\subsection{Use Case/ Service Contracts}\label{subsec:servicecontracts}
 		Each use case is discussed in detail in this section
