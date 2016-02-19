@@ -231,6 +231,21 @@
 						\end{itemize}
 					\end{itemize}
 					
+					\item \textbf{Add/Remove Authors from a Paper:} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item A user should be able to add and remove authors from a paper which they have created or are a co-author of.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must be the author or a co-author of the paper.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item There should be an ordered list of unlimited size associated with the paper consisting of the details of the author and co-authors.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}
+					
 					\item \textbf{Edit Own Paper Progress:} \hfill \textit{Priority: Important}
 					\begin{itemize}
 						\item A user should have the ability to indicate in terms of a percentage how far they are currently in terms of progress on their paper.
@@ -261,6 +276,66 @@
 							\item The paper has been marked as terminated within the database.
 							\item The action of terminating the paper must have been logged.
 							\item The paper must no longer be able to be edited by the user.
+						\end{itemize}
+					\end{itemize}
+					
+					\item \textbf{Add/Remove Conference/Journal to Paper:} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item Whilst creating or editing a paper a user should be able to associate a particular conference or journal with their paper as well as be able to remove an already associated conference or journal whilst editing a paper.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must be an author or co-author of the paper in question.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The paper should be associated with a particular conference or journal or the paper should have had its association removed.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}					
+					
+					\item \textbf{Add New Conference/Journal:} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item A user must be able to fill in the details of a particular conference or journal if it does not already exist within the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The conference or journal must not already exist.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The conference or journal and all its details have been added to the system's database.
+							\item The action has been logged.
+						\end{itemize}
+					\end{itemize}					
+					
+					\item \textbf{Search Conferences/Journals in Database:} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item The user should be able to search or select an already existing conference/journal from a list populated through the searching of the database.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The conference/journal is within the system.
+							\item The conference/journal is not within the system.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item If the conference/journal is within the system a result matching the search term or the selected item should be returned.
+							\item If the conference/journal is not within the system no result should be returned and it should be indicated as such. An option to add this conference/journal into the system should also be offered.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}					
+					
+					\item \textbf{xxx:} \hfill \textit{Priority: xxx}
+					\begin{itemize}
+						\item
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item 
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item 
 						\end{itemize}
 					\end{itemize}
 				\end{itemize}								
