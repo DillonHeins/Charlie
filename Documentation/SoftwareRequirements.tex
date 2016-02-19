@@ -199,7 +199,9 @@
 	\section{Functional Requirements and Application Design}\label{sec:functional}
 		\subsection{Use Case Prioritization}\label{subsec:usecasepriorotization}
 			\subsubsection{Paper System}\label{subsubsec:paper}
-				Handles the adding, editing and terminating of papers.
+				Handles the adding, editing and terminating of papers.\\
+				[3mm]
+				\textbf{\large{User:}}
 				\begin{itemize}
 					\item \textbf{Add Paper Entry} \hfill \textit{Priority: Critical}
 					\begin{itemize}
@@ -241,7 +243,39 @@
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
-							\item There should be an ordered list of unlimited size associated with the paper consisting of the details of the author and co-authors.
+							\item There should be an ordered list of unlimited size associated with the paper consisting of the details of the author and co-authors stored in the database.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}
+					
+					\item \textbf{Add New Author:} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item A user should have the option to add the details of a new author into the system if the author does not already exist within the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The author must not already exist. 
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The author and his/her associated details have been added to the system's database.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}					
+					
+					\item \textbf{Search Authors from Database:} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item The user should be able to search or select from a list of authors within the database to associate the authors' entries with their paper.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user is logged in.
+							\item The author is within the system.
+							\item The author is not within the system.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item If the author is within the system a result matching the search term or the selected item should be returned.
+							\item If the author is not within the system no result should be returned and it should be indicated as such. An option to add this author to the system's database should be offered to the user.
 							\item The action should be logged.
 						\end{itemize}
 					\end{itemize}
@@ -325,20 +359,24 @@
 							\item The action should be logged.
 						\end{itemize}
 					\end{itemize}					
-					
-					\item \textbf{xxx:} \hfill \textit{Priority: xxx}
+				\end{itemize}
+				\textbf{\large{Head of Research:}}
+				
+				\begin{itemize}
+					\item \textbf{xxx} \hfill \textit{Priority: xxx}
 					\begin{itemize}
-						\item
+						\item xxx
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
-							\item 
+							\item xxx
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
-							\item 
+							\item xxx
+							\item xxx
 						\end{itemize}
 					\end{itemize}
-				\end{itemize}								
+				\end{itemize}
 			
 		\subsection{Use Case/ Service Contracts}\label{subsec:servicecontracts}
 		Each use case is discussed in detail in this section
