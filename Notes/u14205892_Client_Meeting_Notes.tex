@@ -1,0 +1,133 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\title{COS301 Client Meeting Notes}
+\author{Claudio Da Silva - u14205892}
+
+\begin{document}
+
+\begin{titlepage}
+	\begin{center}
+		\huge{\bfseries Client Meeting Notes}\\
+		[2mm]
+		\textsc{\large COS301 Software Architecture}\\
+		[7.5mm]
+	\end{center}
+	
+	\begin{center}
+		\textsc{\large Claudio Da Silva 14205892\\}
+	\end{center}
+\end{titlepage}
+
+
+\section{Overview}
+
+The client Vreda Pieterse, requires a system to manage all research papers and publications for the department of Computer Sciences. This system is required to keep track of the metadata of all papers written before and those that will be written in future. The goal of this system is to make it easy to manage hundreds of publcations across the various research groups with ease. 
+
+\section{The user sub-system}
+	\begin{itemize}
+		\item The system should be divided into three main user bases:
+		\begin{itemize}
+			\item Users (Lecturers who can access and use the system)
+			\item Heads of research (Whom are the heads of their respective research groups)
+            \item Admin (The head of department who should have access to everything on the system)
+		\end{itemize}
+		\item The system is requried to keep track of entities called authors. A user may be an author, but an author may not be a user.
+        \begin{itemize}
+			\item Authors have no access to the system at all
+			\item Authors only recieve notifications of deadlines
+            \item Authors must be stored in a author list for future access
+            \item Users act as representatives for authors in dealing with papers if author is not a user
+		\end{itemize}
+		\item Profile pages exist for users containing the following information an constraints:
+		\begin{itemize}
+			\item Name and Surname
+			\item A unique email address for notifications
+			\item A student or staff number if user is a local lecturer
+			\item The amount of units earned from publications
+            \item Contact details
+		\end{itemize}
+        \item Standard users:
+		\begin{itemize}
+			\item May add and edit papers
+			\item May add and edit authors
+			\item May add or edit conferences or journals
+			\item View their own papers
+            \item View their own profile
+            \item Terminate a paper
+            \item Set and edit paper deadlines
+		\end{itemize}
+         \item Heads of research:
+		\begin{itemize}
+			\item May search all papers inside the research group
+			\item May search all users inside a user group
+			\item May add users to a research group
+			\item View the profiles of all users in a user group
+            \item Generate a report for their research group
+            \item Edit the information of the research group
+		\end{itemize}
+         \item Admin:
+		\begin{itemize}
+			\item May search all papers on a system
+			\item Purge papers from the systems history
+			\item Add a new user
+			\item Purge a user from history
+            \item Set a user as active/inactive on the system
+            \item View all user profiles
+            \item Generate a departmental report
+            \item Create a database dump
+            \item Add/remove research groups
+            \item Assign users as head of a research group
+		\end{itemize}
+	\end{itemize}
+    
+\section{The paper sub-system}
+	\begin{itemize}
+		\item Papers should contain the following meta-data:
+		\begin{itemize}
+			\item Name of the paper
+			\item Who the authors are
+            \item What is the paper being written for
+            \item How many units is the paper worth
+            \item What is the deadline for the paper
+            \item What is the papers current progress
+            \item Who the target audience of the paper is
+		\end{itemize}
+        \item All documents require at least one author.
+        \item The system is purely to keep track of metadata for the papers and is not a version control.
+        \item Unless under special circumstance, a paper should never be deleted but only marked as termianted (rejected, stopped).
+	\end{itemize}
+    
+\section{The notifications sub-system}
+	\begin{itemize}
+		\item All authors should be notified on papers with deadlines in the following 2 ways:
+		\begin{itemize}
+			\item When the deadline is approaching
+			\item When the deadline has been changed for any reason
+		\end{itemize}
+	\end{itemize}
+    
+\section{The reporting sub-system}
+	\begin{itemize}
+		\item The system is required to be able to generate reports of how many papers were successful, units earned over the year, 			number of rejected papers etc.
+	\end{itemize}
+    
+\section{The research group sub-system}
+	\begin{itemize}
+		\item Further research groups must be allowed to be added by the admin user.
+        \item Information about the group should be able to be changed at any given time.
+        \item Users must be able to be allocated to various research groups.
+        \item Admin must be able to assign a new head to any research group.
+	\end{itemize}
+    
+\section{Constraints}
+	\begin{itemize}
+		\item The program should be developed for web with an API android interface for mobile use
+	\end{itemize}
+ 
+\end{document}
