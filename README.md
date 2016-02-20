@@ -1,19 +1,19 @@
-# Charlie
+# Team Charlie
 COS301 - Assignment 1
 
 Students: 
 
-Claudio Da Silva
+  Claudio Da Silva          - 14205892
 
-Arno Grobler
+  Arno Grobler              - 14011396 
 
-Dillon Heins
+  Dillon Heins              - 14035538
 
-Charl Jansen Van Vuuren
+  Charl Jansen Van Vuuren   - 13054903
 
-Priscilla Madigoe
+  Priscilla Madigoe         - 13049128
 
-Bernhard Schuld
+  Bernhard Schuld           - 10297902
 
-Keorapetse Shiko
+  Keorapetse Shiko          - 12231992
 
