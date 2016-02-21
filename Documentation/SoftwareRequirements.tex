@@ -504,18 +504,83 @@
 							\item The action should be logged.
 						\end{itemize}
 					\end{itemize}					
-					
-					\item \textbf{xxx} \hfill \textit{Priority: xxx}
+				\end{itemize}
+				\textbf{\large{Admin:}}
+				
+				\begin{itemize}
+					\item \textbf{Add New User} \hfill \textit{Priority: Critical}
 					\begin{itemize}
-						\item
+						\item Admin users should have the ability to add new users into the system.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
-							\item xxx
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin account.
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
-							\item xxx
-							\item xxx
+							\item A new user with all their metadata as well as privileges should be added into the system.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}
+					
+					\item \textbf{Search All Users} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item Admin users should be able to search through all of the users within the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin account.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The admin user should have been able to search and locate particular registered users on the system.
+							\item This action should be logged.
+						\end{itemize}
+					\end{itemize}
+					
+					\item \textbf{Purge User from System} \hfill \textit{Priority: Nice-to-Have}
+					\begin{itemize}
+						\item An admin user must be able to permanently remove a user and all of their associated information from the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin account.
+							\item The user must confirm they want to continue with the action before the system executes the command.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The user and all of their associated information should be removed from the system.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}
+					
+					\item \textbf{Set User as Active/Inactive} \hfill \textit{Priority: Nice-to-Have}
+					\begin{itemize}
+						\item An admin user should be able to set the status of a user to active or inactive, allowing the user to login or preventing them from continuing to interact with the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin account.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The selected user should have been marked as active/inactive, active allowing the user to login and use the system, inactive preventing them from login in to the system and making changes.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}					
+					
+					\item \textbf{View All User Profiles} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item An admin user should be able to view all the information associated with each of the registered users within a system, especially their paper entries and all of the metadata associated with them.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin account.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item All information, paper entries and their metadata should be available for viewing to the admin user. Upon selecting a particular user all information associated with that user is displayed.
+							\item The action should be logged.
 						\end{itemize}
 					\end{itemize}
 				\end{itemize}
