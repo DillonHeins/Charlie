@@ -198,7 +198,7 @@
 	\cleardoublepage
 	\section{Functional Requirements and Application Design}\label{sec:functional}
 		\subsection{Use Case Prioritization}\label{subsec:usecasepriorotization}
-			\subsubsection{Paper System}\label{subsubsec:paper}
+			\subsubsection{Paper Sub-System}\label{subsubsec:paper}
 				Handles the adding, editing and terminating of papers.\\
 				[3mm]
 				\textbf{\large{User:}}
@@ -412,6 +412,82 @@
 						\end{itemize}
 					\end{itemize}
 				\end{itemize}
+			\subsubsection{User Sub-System}\label{subsubsec:user}
+				Handles all actions associated with user accounts such as login, viewing and editing profiles, as well as privileged actions such as adding/removing users to the system and adding/removing users from a research group.\\
+				[3mm]
+				\textbf{\large{User:}}
+				\begin{itemize}
+					\item \textbf{Login} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item A registered user of the system must be able to login to the system using their private credentials.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must not be logged in.
+							\item The identifying field used (email address) must match one of an active, registered user of the system.
+							\item The password entered must match the password associated with the identifying field within the system.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item If the credentials were incorrect a notification must be displayed, as well as an option to reset passwords.
+							\item If the credentials were correct:
+							\begin{itemize}
+								\item The system must begin a session for the user.
+								\item The user must gain access to the system according to the set of privileges associated with their account.
+							\end{itemize}														
+							\item In both cases the action should be logged.
+						\end{itemize}
+					\end{itemize}
+					
+					\item \textbf{View Own User Profile} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item A logged in user should be able to see their own profile and all details associated with it. The user should also be able to view all papers associated with their account.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user's profile being viewed must be the same as the logged in user.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The information associated with the user's account should be displayed to them.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}					
+				\end{itemize}
+				\textbf{\large{Head of Research:}}
+				
+				\begin{itemize}
+					\item \textbf{Add/Remove Users from Research Group} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item The head of a research group should be able to manage the users associated with that group.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with a Head of Research.
+							\item The user must be the Head of Research of the particular group which they are wanting to manage.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The user must have been able to add other registered users into their research group.
+							\item The user must have been able to remove other registered users from their research group.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}
+					
+					\item \textbf{xxx} \hfill \textit{Priority: xxx}
+					\begin{itemize}
+						\item
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item xxx
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item xxx
+							\item xxx
+						\end{itemize}
+					\end{itemize}
+				\end{itemize}
+				
 			
 		\subsection{Use Case/ Service Contracts}\label{subsec:servicecontracts}
 		Each use case is discussed in detail in this section
