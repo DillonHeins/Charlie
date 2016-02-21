@@ -363,17 +363,52 @@
 				\textbf{\large{Head of Research:}}
 				
 				\begin{itemize}
-					\item \textbf{xxx} \hfill \textit{Priority: xxx}
+					\item \textbf{Search All Papers within Research Group} \hfill \textit{Priority: Critical}
 					\begin{itemize}
-						\item xxx
+						\item The head of a research group should have access to all the papers associated with their particular research group.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
-							\item xxx
+							\item The user must be logged in.
+							\item The user must have the privilege rights assigned to a head of research.
+							\item The user must be the head of the particular research group they would like to observe.
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
-							\item xxx
-							\item xxx
+							\item The user should be able to view all metadata associated with the papers of their research group.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}
+				\end{itemize}
+				\textbf{\large{Admin:}}
+				
+				\begin{itemize}
+					\item \textbf{Search All Papers on System} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item An admin user should be able to view all papers and their metadata on the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privilege rights assigned to an admin.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The user should be able to view all metadata associated with all the papers stored on the system.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}
+					
+					\item \textbf{Purge Paper From the System} \hfill \textit{Priority: Important}
+					\begin{itemize}
+						\item An admin user should be able to completely remove a paper from the system if they find the need to do so.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privilege rights assigned to an admin.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The paper and all of its metadata should be permanently removed from the system.
+							\item The action should be logged.
 						\end{itemize}
 					\end{itemize}
 				\end{itemize}
