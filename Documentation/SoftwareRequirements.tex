@@ -700,11 +700,65 @@
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
 							\item The user must be logged in.
-							\item The user must have the privileges associated with an admin.
+							\item The user must have the privileges associated with an admin user.
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
 							\item All information contained in the database should be dumped into a CSV file and be made available to download by the admin user.
+							\item This action should be logged.
+						\end{itemize}
+					\end{itemize}
+				\end{itemize}
+			\subsubsection{Group-Control Sub-System}\label{subsubsec:group}
+				Handles the creating and removing of research groups, as well as the allocating of heads of research groups and the editing of individual research groups associated metadata.\\
+				[3mm]
+				\textbf{\large{Head of Research:}}
+				\begin{itemize}
+					\item \textbf{Edit Research Group Information} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item A head of a research group should be able to edit the information associated with their research group.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with a research leader.
+							\item The user must be the head of the research group which they are attempting to edit the information of.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The information associated with the particular research group should have been updated within the system.
+							\item This action should be logged.
+						\end{itemize}
+					\end{itemize}
+				\end{itemize}
+				\textbf{\large{Admin:}}
+				\begin{itemize}
+					\item \textbf{Add/Remove Research Groups} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item An admin user should be able to add or remove research groups from the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin user.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item In the case of adding a new research group which is able to have users added to or removed from should exist within the system.
+							\item In the case of removing a research group the group should be removed from the system as well as all relationships related to users contained within the group.
+							\item In both instances the action should be logged.
+						\end{itemize}
+					\end{itemize}
+
+					\item \textbf{Allocate Head of Research Group} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item An admin user should be able to allocate a registered user to be the head of a particular research group, in turn allowing for this user to have more privileges within the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin user.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The allocated user should now have the necessary rights and privileges to manage and view their allocated research group.
 							\item This action should be logged.
 						\end{itemize}
 					\end{itemize}
