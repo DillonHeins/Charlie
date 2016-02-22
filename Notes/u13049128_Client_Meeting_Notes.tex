@@ -1,6 +1,101 @@
 \documentclass[a4paper,12pt]{article}
 \begin{document}
-Motivation:
-Context/Purpose:
-Client Requirements:
+
+\title{Client Requirements - Notes}
+\author{Priscilla Madigoe}
+\date{February 2016}
+\maketitle
+
+\section{Introduction}
+
+\subsection{Motivation}
+The CS department has several researchers that publish papers to meet thei rpost-graduate degree requirements. At the moment, management of the publications is an issue as there is no methodical manner to keep track of the researchers' papers. An Excel spreadsheet is currently used and it is cumbersome to manage and use for entries. As a result, a dynamic and easy-to-use system needs to be put in place to make management of publications and progress of researchers and their reports to alleviate the current issue.
+
+\subsection{Purpose}
+The context, or purpose of this software project is not only to replace the spreadsheet system currently used, but to also, amongst other things, enable various reseachers to manage and publish their publications, to enable the Head of Department to keep track of the progress made by the graduate students, to enable all users to view profiles of all users of the system, and to  allow authors from other universities to collaborate with the Department of Computer Science. 
+\section{Client Requirements}
+
+\subsection{Architectural Requirements}
+The system needs to run on the Web and a mobile platform such as Android. The execution of this phase is completely left up to the developer.
+
+\subsection{Hierarchy of Users}
+
+\subsubsection{\underline{Admin}}
+\begin{itemize}
+\item The Head of Department, or HOD is the appointed administrator for this system.
+\item Has super-user access to the system.
+\item Keeps track of events happening in various research groups. 
+\item Can add or delete users.
+\item Manages temporary users.
+\item Can request reports to be generated for various research groups.
+\item A dedicated admin besides the HOD might be allocated.
+\item Can permanently delete a publication, i.e remove a publication from the system.
+\item Pre-defines units that can be allocated to a certain type of paper.
+\end{itemize}
+
+\subsubsection{\underline{Head of Research Groups}}
+\begin{itemize}
+\item Oversees the running of the research group.
+\item Add user(s) to the group.
+\item Can view publications of everyone in the group.
+\item Can request the system to generate statistical reports for the group.
+\item Adds paper on behalf of non-user authors.
+\end{itemize}
+
+\subsubsection{\underline{Users}}
+\begin{itemize}
+\item Are permanent staff members of the department.
+\item Can view anyone's profile.
+\item Can add, modify or add metadata about their publications.
+\item Can terminate their papers.
+\item There can be a maximum of 100 users.
+\item Add a deadline for publication for each entry.
+\end{itemize}
+
+\subsubsection{\underline{Authors}}
+\begin{itemize}
+\item All permanent users of the system are authors.
+\item Names are kept on the system and 'remembered' when typed.
+\item Authors who aren't permanent, or temporary staff of the university do not have profiles. 
+\end{itemize}
+
+\subsection{Functional Requirements}
+\subsubsection{\underline{Publications}}
+\begin{itemize}
+\item Needs a title.
+\item Can have at least one author.
+\item Number of authors is unlimited.
+\item Venue must be specified.
+\item Type of paper must be specified.
+\item Should be classified (accredited or non-accredited).
+\item Only one person makes an entry for a paper written by multiple authors.
+\item One publication can belong to several research groups.
+\end{itemize}
+
+\subsubsection{\underline{Profile}}
+\begin{itemize}
+\item No photos.
+\item Can be modified.
+\item Has to contain the following:
+\begin{enumerate}
+\item Role of the person.
+\item Contact details.
+\item Office number
+\end{enumerate}
+\end{itemize}
+
+
+\subsubsection{\underline{System}}
+\begin{itemize}
+\item Needs to email reminders for users that have set deadlines.
+\item Does not need APIs or external third-party applications to work.
+\item Keeps track of units accumulated by each user.
+\item Generates reports requested by various users within the hierarchy.
+\item Logs everything that happens on the system.
+\item Matches similar entries, i.e. If two or more users make an entry for the same conference, one after another, it should fill the rest of the details automatically.
+\item Maintains a history of publcations and entries for each user.
+\item Needs to generate units by type of paper entered.
+\item Stores only metadata about the publications.
+\end{itemize}
+
 \end{document}
