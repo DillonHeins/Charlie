@@ -627,6 +627,7 @@
 						\item The system must be able to notify an author as well as co-authors of a paper of the deadline for the paper.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
+							\item The user must be logged in.
 							\item A deadline must have been set for a paper.
 							\item The deadline must not have passed already.
 							\item The authors being notified must be associated with the paper the deadline has been set on.
@@ -643,6 +644,7 @@
 						\item The system must be able to notify an author as well as co-authors of a paper when the deadline for a paper is updated.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
+							\item The user must be logged in.
 							\item A new deadline must have been set for a paper.
 							\item The deadline must not have passed already.
 							\item The authors being notified must be associated with the paper the deadline has been updated on.
@@ -651,6 +653,59 @@
 						\begin{itemize}
 							\item Authors of a particular paper are notified via the use of email as to what the updated deadline for the paper is.
 							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}
+				\end{itemize}
+			\subsubsection{Reporting Sub-System}\label{subsubsec:report}
+				Handles the generation of reports with regards to all relevant information contained by the system.\\
+				[3mm]
+				\textbf{\large{Head of Research:}}
+				\begin{itemize}
+					\item \textbf{Generate Report for Research Group} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item The head of a research group should be able to generate a summarised report of all important information related to their research group in terms of the users in the group as well as their papers and all metadata associated with their papers.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with a Head of Research.
+							\item The user must be the head of the research group which they would like to generate a report on.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The head of the research group should have all relevant information returned to him/her in a summarised and easily readable manner.
+							\item This action should be logged.
+						\end{itemize}
+					\end{itemize}
+				\end{itemize}
+				\textbf{\large{Admin:}}
+				\begin{itemize}
+					\item \textbf{Generate Report for Department} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item An admin user should be able to generate a summarised report of all important information related to their department as a whole. This includes summaries of each research group and associated papers, as well as of each individual user of the system and their associated papers.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The admin should have all relevant information returned to him/her in a summarised and easily readable manner.
+							\item The action should be logged.
+						\end{itemize}
+					\end{itemize}
+
+					\item \textbf{Dump Database to File} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item An admin user should be able to at any point dump all of the information within the database into a file for safekeeping, such as a CSV file.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item All information contained in the database should be dumped into a CSV file and be made available to download by the admin user.
+							\item This action should be logged.
 						\end{itemize}
 					\end{itemize}
 				\end{itemize}
