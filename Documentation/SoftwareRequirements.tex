@@ -340,7 +340,7 @@
 			\subsubsection{Paper Sub-System}\label{subsubsec:service-paper}
 				Handles the adding, editing and terminating of papers.\\
 				[3mm]
-				\textbf{\large{User:}}
+				\textbf{User:}
 				\begin{itemize}
 					\item \textbf{Add Paper Entry} \hfill \textit{Priority: Critical}
 					\begin{itemize}
@@ -354,6 +354,7 @@
 							\item A paper entry and all its details should be entered into the database of the system and be associated with a particular registered user.
 							\item The act of creating a new paper entry should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Edit Own Paper Entry:} \hfill \textit{Priority: Critical}
@@ -370,6 +371,7 @@
 							\item The metadata in the database associated with the paper should be updated.
 							\item The action of editing and all relevant changes to the entry must be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Add/Remove Authors from a Paper:} \hfill \textit{Priority: Critical}
@@ -385,6 +387,7 @@
 							\item There should be an ordered list of unlimited size associated with the paper consisting of the details of the author and co-authors stored in the database.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Add New Author:} \hfill \textit{Priority: Critical}
@@ -400,6 +403,7 @@
 							\item The author and his/her associated details have been added to the system's database.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}					
 					
 					\item \textbf{Search Authors from Database:} \hfill \textit{Priority: Critical}
@@ -417,6 +421,7 @@
 							\item If the author is not within the system no result should be returned and it should be indicated as such. An option to add this author to the system's database should be offered to the user.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Edit Own Paper Progress:} \hfill \textit{Priority: Important}
@@ -434,6 +439,7 @@
 							\item The change in progress should be depicted visually to the user.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Terminate Own Paper:} \hfill \textit{Priority: Critical}
@@ -450,6 +456,7 @@
 							\item The action of terminating the paper must have been logged.
 							\item The paper must no longer be able to be edited by the user.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Add/Remove Conference/Journal to Paper:} \hfill \textit{Priority: Critical}
@@ -465,6 +472,7 @@
 							\item The paper should be associated with a particular conference or journal or the paper should have had its association removed.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}					
 					
 					\item \textbf{Add New Conference/Journal:} \hfill \textit{Priority: Critical}
@@ -480,6 +488,7 @@
 							\item The conference or journal and all its details have been added to the system's database.
 							\item The action has been logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}					
 					
 					\item \textbf{Search Conferences/Journals in Database:} \hfill \textit{Priority: Critical}
@@ -497,9 +506,10 @@
 							\item If the conference/journal is not within the system no result should be returned and it should be indicated as such. An option to add this conference/journal into the system should also be offered.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}					
 				\end{itemize}
-				\textbf{\large{Head of Research:}}
+				\textbf{Head of Research:}
 				
 				\begin{itemize}
 					\item \textbf{Search All Papers within Research Group} \hfill \textit{Priority: Critical}
@@ -516,9 +526,10 @@
 							\item The user should be able to view all metadata associated with the papers of their research group.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 				\end{itemize}
-				\textbf{\large{Admin:}}
+				\textbf{Admin:}
 				
 				\begin{itemize}
 					\item \textbf{Search All Papers on System} \hfill \textit{Priority: Critical}
@@ -534,6 +545,7 @@
 							\item The user should be able to view all metadata associated with all the papers stored on the system.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Purge Paper From the System} \hfill \textit{Priority: Important}
@@ -549,12 +561,13 @@
 							\item The paper and all of its metadata should be permanently removed from the system.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 				\end{itemize}
 			\subsubsection{User Sub-System}\label{subsubsec:user}
 				Handles all actions associated with user accounts such as login, viewing and editing profiles, as well as privileged actions such as adding/removing users to the system and adding/removing users from a research group.\\
 				[3mm]
-				\textbf{\large{User:}}
+				\textbf{User:}
 				\begin{itemize}
 					\item \textbf{Login} \hfill \textit{Priority: Critical}
 					\begin{itemize}
@@ -575,6 +588,7 @@
 							\end{itemize}														
 							\item In both cases the action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{View Own User Profile} \hfill \textit{Priority: Critical}
@@ -590,9 +604,10 @@
 							\item The information associated with the user's account should be displayed to them.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}					
 				\end{itemize}
-				\textbf{\large{Head of Research:}}
+				\textbf{Head of Research:}
 				
 				\begin{itemize}
 					\item \textbf{Add/Remove Users from Research Group} \hfill \textit{Priority: Critical}
@@ -610,6 +625,7 @@
 							\item The user must have been able to remove other registered users from their research group.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Search All Users in Research Group} \hfill \textit{Priority: Critical}
@@ -626,6 +642,7 @@
 							\item The user must have been able to view all of the users associated with their research group.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{View All User Profiles in Research Group} \hfill \textit{Priority: Critical}
@@ -642,9 +659,10 @@
 							\item The head of the research group can access and view all profile information (including paper entries) for each of the users associated with their research group.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}					
 				\end{itemize}
-				\textbf{\large{Admin:}}
+				\textbf{Admin:}
 				
 				\begin{itemize}
 					\item \textbf{Add New User} \hfill \textit{Priority: Critical}
@@ -660,6 +678,7 @@
 							\item A new user with all their metadata as well as privileges should be added into the system.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Search All Users} \hfill \textit{Priority: Critical}
@@ -675,6 +694,7 @@
 							\item The admin user should have been able to search and locate particular registered users on the system.
 							\item This action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Purge User from System} \hfill \textit{Priority: Nice-to-Have}
@@ -691,6 +711,7 @@
 							\item The user and all of their associated information should be removed from the system.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Set User as Active/Inactive} \hfill \textit{Priority: Important}
@@ -706,6 +727,7 @@
 							\item The selected user should have been marked as active/inactive, active allowing the user to login and use the system, inactive preventing them from login in to the system and making changes.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}					
 					
 					\item \textbf{View All User Profiles} \hfill \textit{Priority: Critical}
@@ -721,12 +743,13 @@
 							\item All information, paper entries and their metadata should be available for viewing to the admin user. Upon selecting a particular user all information associated with that user is displayed.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 				\end{itemize}
 			\subsubsection{Notification Sub-System}\label{subsubsec:notification}
 				Handles the adding and editing of notifications within the system, as well the process of creating and sending notifications to relevant users of the system.\\
 				[3mm]
-				\textbf{\large{User:}}
+				\textbf{User:}
 				\begin{itemize}
 					\item \textbf{Set Paper Deadline} \hfill \textit{Priority: Important}
 					\begin{itemize}
@@ -741,6 +764,7 @@
 							\item A deadline will have been set and stored in the system. It will be associated with the particular paper on which it was set.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Edit Paper Deadline} \hfill \textit{Priority: Important}
@@ -757,6 +781,7 @@
 							\item The change in the deadline should reflect within the system and be associated with the paper on which it was set.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}									
 				\end{itemize}
 				\textbf{\large{System:}}
@@ -776,6 +801,7 @@
 							\item Authors of a particular paper are notified via the use of email as to what the deadline for the paper is.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Send Deadline Update Notification} \hfill \textit{Priority: Important}
@@ -793,12 +819,13 @@
 							\item Authors of a particular paper are notified via the use of email as to what the updated deadline for the paper is.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 				\end{itemize}
 			\subsubsection{Reporting Sub-System}\label{subsubsec:report}
 				Handles the generation of reports with regards to all relevant information contained by the system.\\
 				[3mm]
-				\textbf{\large{Head of Research:}}
+				\textbf{Head of Research:}
 				\begin{itemize}
 					\item \textbf{Generate Report for Research Group} \hfill \textit{Priority: Critical}
 					\begin{itemize}
@@ -814,9 +841,10 @@
 							\item The head of the research group should have all relevant information returned to him/her in a summarised and easily readable manner.
 							\item This action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 				\end{itemize}
-				\textbf{\large{Admin:}}
+				\textbf{Admin:}
 				\begin{itemize}
 					\item \textbf{Generate Report for Department} \hfill \textit{Priority: Critical}
 					\begin{itemize}
@@ -831,6 +859,7 @@
 							\item The admin should have all relevant information returned to him/her in a summarised and easily readable manner.
 							\item The action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 
 					\item \textbf{Dump Database to File} \hfill \textit{Priority: Critical}
@@ -846,12 +875,13 @@
 							\item All information contained in the database should be dumped into a CSV file and be made available to download by the admin user.
 							\item This action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 				\end{itemize}
 			\subsubsection{Group-Control Sub-System}\label{subsubsec:group}
 				Handles the creating and removing of research groups, as well as the allocating of heads of research groups and the editing of individual research groups associated metadata.\\
 				[3mm]
-				\textbf{\large{Head of Research:}}
+				\textbf{Head of Research:}
 				\begin{itemize}
 					\item \textbf{Edit Research Group Information} \hfill \textit{Priority: Critical}
 					\begin{itemize}
@@ -867,9 +897,10 @@
 							\item The information associated with the particular research group should have been updated within the system.
 							\item This action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 				\end{itemize}
-				\textbf{\large{Admin:}}
+				\textbf{Admin:}
 				\begin{itemize}
 					\item \textbf{Add/Remove Research Groups} \hfill \textit{Priority: Critical}
 					\begin{itemize}
@@ -885,6 +916,7 @@
 							\item In the case of removing a research group the group should be removed from the system as well as all relationships related to users contained within the group.
 							\item In both instances the action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 
 					\item \textbf{Allocate Head of Research Group} \hfill \textit{Priority: Critical}
@@ -900,6 +932,7 @@
 							\item The allocated user should now have the necessary rights and privileges to manage and view their allocated research group.
 							\item This action should be logged.
 						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 				\end{itemize}
 			
