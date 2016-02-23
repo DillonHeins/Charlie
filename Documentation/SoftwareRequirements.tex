@@ -197,8 +197,147 @@
 		
 	\cleardoublepage
 	\section{Functional Requirements and Application Design}\label{sec:functional}
-		\subsection{Use Case Prioritization}\label{subsec:usecasepriorotization}
-			\subsubsection{Paper Sub-System}\label{subsubsec:paper}
+		\subsection{Use Case Prioritization}
+			\subsubsection{Paper Sub-System}\label{subsubsec:priority-paper}
+				Handles the adding, editing and terminating of papers.\\
+				[3mm]
+				\textbf{User:}
+				\begin{itemize}
+					\item \textit{Critical:}
+					\begin{itemize}
+						\item add paper entry
+						\item edit own paper entry
+						\item add/remove authors from a paper
+						\item add new author
+						\item search authors from database
+						\item terminate own paper
+						\item add/remove conference/journal to paper
+						\item add new conference/journal
+						\item search conferences/journals in database
+					\end{itemize}
+					
+					\item \textit{Important:}
+					\begin{itemize}
+						\item edit own paper progress
+					\end{itemize}
+				\end{itemize}
+				\textbf{Head of Research:}
+				\begin{itemize}
+					\item \textit{Critical:}
+					\begin{itemize}
+						\item search all papers within research group
+					\end{itemize}
+				\end{itemize}
+				\textbf{Admin:}
+				\begin{itemize}
+					\item \textit{Critical:}
+					\begin{itemize}
+						\item search all papers on system
+					\end{itemize}
+					
+					\item \textit{Important:}
+					\begin{itemize}
+						\item purge paper from the system
+					\end{itemize}
+				\end{itemize}
+			\subsubsection{User Sub-System}\label{subsubsec:priority-user}
+				Handles all actions associated with user accounts such as login, viewing and editing profiles, as well as privileged actions such as adding/removing users to the system and adding/removing users from a research group.\\
+				[3mm]
+				\textbf{User:}
+				\begin{itemize}
+					\item \textit{Critical:}
+					\begin{itemize}
+						\item login
+						\item view own user profile
+					\end{itemize}
+				\end{itemize}
+				\textbf{Head of Research:}
+				\begin{itemize}
+					\item \textit{Critical:}
+					\begin{itemize}
+						\item add/remove users from research group
+						\item search all users in research group
+						\item view all user profiles in research group
+					\end{itemize}
+				\end{itemize}
+				\textbf{Admin:}
+				\begin{itemize}
+					\item \textit{Critical:}
+					\begin{itemize}
+						\item add new user
+						\item search all users
+						\item view all user profiles
+					\end{itemize}
+					
+					\item \textit{Important:}
+					\begin{itemize}
+						\item set user as active/inactive
+					\end{itemize}
+					
+					\item \textit{Nice-to-Have:}
+					\begin{itemize}
+						\item purge user from system
+					\end{itemize}
+				\end{itemize}
+			\subsubsection{Notification Sub-System}\label{subsubsec:priority-notification}
+				Handles the adding and editing of notifications within the system, as well the process of creating and sending notifications to relevant users of the system.\\
+				[3mm]
+				\textbf{User:}
+				\begin{itemize}					
+					\item \textit{Important:}
+					\begin{itemize}
+						\item set paper deadline
+						\item edit paper deadline
+					\end{itemize}
+				\end{itemize}
+				\textbf{System:}
+				\begin{itemize}
+					\item \textit{Important:}
+					\begin{itemize}
+						\item send deadline notification
+						\item send deadline update notification
+					\end{itemize}
+				\end{itemize}
+			\subsubsection{Reporting Sub-System}\label{subsubsec:priority-report}
+				Handles the generation of reports with regards to all relevant information contained by the system.\\
+				[3mm]
+				\textbf{Head of Research:}
+				\begin{itemize}					
+					\item \textit{Critical:}
+					\begin{itemize}
+						\item generate report for research group
+					\end{itemize}
+				\end{itemize}
+				\textbf{Admin:}
+				\begin{itemize}
+					\item \textit{Critical:}
+					\begin{itemize}
+						\item generate report for department
+						\item dump database to file
+					\end{itemize}
+				\end{itemize}
+			\subsubsection{Group-Control Sub-System}\label{subsubsec:priority-group}
+				Handles the creating and removing of research groups, as well as the allocating of heads of research groups and the editing of individual research groups associated metadata.\\
+				[3mm]
+				\textbf{Head of Research:}
+				\begin{itemize}					
+					\item \textit{Critical:}
+					\begin{itemize}
+						\item edit research group information
+					\end{itemize}
+				\end{itemize}
+				\textbf{Admin:}
+				\begin{itemize}
+					\item \textit{Critical:}
+					\begin{itemize}
+						\item add/remove research groups
+						\item allocate head of research group
+					\end{itemize}
+				\end{itemize}
+			
+		\cleardoublepage
+		\subsection{Use Case/Service Contracts}\label{subsec:usecasepriorotization}
+			\subsubsection{Paper Sub-System}\label{subsubsec:service-paper}
 				Handles the adding, editing and terminating of papers.\\
 				[3mm]
 				\textbf{\large{User:}}
@@ -554,7 +693,7 @@
 						\end{itemize}
 					\end{itemize}
 					
-					\item \textbf{Set User as Active/Inactive} \hfill \textit{Priority: Nice-to-Have}
+					\item \textbf{Set User as Active/Inactive} \hfill \textit{Priority: Important}
 					\begin{itemize}
 						\item An admin user should be able to set the status of a user to active or inactive, allowing the user to login or preventing them from continuing to interact with the system.
 						\item \textbf{Pre-conditions:}
@@ -763,29 +902,6 @@
 						\end{itemize}
 					\end{itemize}
 				\end{itemize}
-			
-		\subsection{Use Case/ Service Contracts}\label{subsec:servicecontracts}
-		Each use case is discussed in detail in this section
-		%We can use this formatting per use case
-			\subsubsection{"use case name"}
-			\begin{description}
-			\item[Description:] "description of the use case"
-				\item[Pre-conditions:]
-			  	\begin{itemize}
-			  		\item 
-			  		\item
-			  	\end{itemize}
-			  \item[Post-conditions:] 
-			  	\begin{itemize}
-			  		\item 
-			  		\item
-			  	\end{itemize}
-			  \item[Request and Results Data structures:]
-			   \begin{itemize}
-			  		\item 
-			  		\item
-			  	\end{itemize}
-			\end{description}
 			
 		\subsection{Required Functionality}\label{subsec:requiredfunctionionality}
 			%\begin{figure}[h]
