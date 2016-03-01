@@ -347,45 +347,44 @@
 			
 		\cleardoublepage
 		\subsection{Use Case/Service Contracts}\label{subsec:usecasepriorotization}
-			\subsubsection{Paper Sub-System}\label{subsubsec:service-paper}
+			\subsubsection{Publication Sub-System}\label{subsubsec:publication}
 				Handles the adding, editing and terminating of papers.\\
 				[3mm]
 				\textbf{User:}
 				\begin{itemize}
-					\item \textbf{Add Paper Entry} \hfill \textit{Priority: Critical}
+					\item \textbf{Add/Edit Own Paper Entry} \hfill \textit{Priority: Critical}
 					\begin{itemize}
-						\item A user of the system should be able to add a paper entry associated with their user account into the system.
+						\item A user of the system should be able to add or edit a paper entry associated with their user account.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
-							\item A user should have a registered account and be logged in.
+							\item If adding:
+							\begin{itemize}
+								\item A user should have a registered account and be logged in.
+							\end{itemize}
+							\item If editing:
+							\begin{itemize}
+								\item A user must be logged in.
+								\item The logged in user must be an author or co-author of the paper.
+								\item The paper must not have been terminated.
+							\end{itemize}
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
-							\item A paper entry and all its details should be entered into the database of the system and be associated with a particular registered user.
-							\item The act of creating a new paper entry should be logged.
+							\item If adding:
+							\begin{itemize}
+								\item A paper entry and all its details should be entered into the database of the system and be associated with a particular registered user.
+							\end{itemize}
+							\item If editing:
+							\begin{itemize}
+								\item The metadata in the database associated with the paper should be updated.
+							\end{itemize}													
+							\item The act of creating/editing a new paper entry should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
 							\includegraphics[width=\linewidth]{../Diagrams/AddPublication.jpg}
 							\caption{Service Contract - Add Publication}
 						\end{figure}
-					\end{itemize}
-					
-					\item \textbf{Edit Own Paper Entry:} \hfill \textit{Priority: Critical}
-					\begin{itemize}
-						\item A user must be able to edit the metadata associated with their own paper entries.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item A user must be logged in.
-							\item The logged in user must be an author or co-author of the paper.
-							\item The paper must not have been terminated.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item The metadata in the database associated with the paper should be updated.
-							\item The action of editing and all relevant changes to the entry must be logged.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Add/Remove Authors from a Paper:} \hfill \textit{Priority: Critical}
@@ -404,7 +403,7 @@
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
-					\item \textbf{Add New Author:} \hfill \textit{Priority: Critical}
+					\item \textbf{Create New Author:} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item A user should have the option to add the details of a new author into the system if the author does not already exist within the system.
 						\item \textbf{Pre-conditions:}
@@ -418,29 +417,11 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}					
-					
-					\item \textbf{Search Authors from Database:} \hfill \textit{Priority: Critical}
-					\begin{itemize}
-						\item The user should be able to search or select from a list of authors within the database to associate the authors' entries with their paper.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item The user is logged in.
-							\item The author is within the system.
-							\item The author is not within the system.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item If the author is within the system a result matching the search term or the selected item should be returned.
-							\item If the author is not within the system no result should be returned and it should be indicated as such. An option to add this author to the system's database should be offered to the user.
-							\item The action should be logged.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
 					\item \textbf{Edit Own Paper Progress:} \hfill \textit{Priority: Important}
 					\begin{itemize}
-						\item A user should have the ability to indicate in terms of a percentage how far they are currently in terms of progress on their paper.
+						\item A user should have the ability to indicate using a percentage how far they are currently in terms of progress on their paper.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
 							\item A user should be logged in.
