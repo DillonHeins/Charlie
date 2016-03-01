@@ -664,6 +664,34 @@
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
+					\item \textbf{Log Authentication Result} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item The result of a login attempt should be logged for security reasons.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item A login attempt needs to be made.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item An entry in the log needs to be made with all relevant details associated with the login attempt.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}
+					
+					\item \textbf{Logout} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item A user must be able to end their session and log out of the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item A user must be logged in.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The user's session must be ended and the user must no longer be logged in.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}
+					
 					\item \textbf{View Own User Profile} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item A logged in user should be able to see their own profile and all details associated with it. The user should also be able to view all papers associated with their account.
@@ -683,7 +711,7 @@
 				\textbf{Head of Research:}
 				
 				\begin{itemize}
-					\item \textbf{Add/Remove Users from Research Group} \hfill \textit{Priority: Critical}
+					\item \textbf{Add/Remove Users from Own Research Group} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item The head of a research group should be able to manage the users associated with that group.
 						\item \textbf{Pre-conditions:}
@@ -701,44 +729,27 @@
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
-					\item \textbf{Search All Users in Research Group} \hfill \textit{Priority: Critical}
+					\item \textbf{Search/View All Users in Own Research Group} \hfill \textit{Priority: Critical}
 					\begin{itemize}
-						\item The head of a research group should be able to search all of the users within their research group.
+						\item The head of a research group should be able to search all of the users within their research group. They should also be able to access the profiles and information associated with the users within their research group. In particular the head of a research group should be able to view all paper entries associated with each user.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
 							\item The user must be logged in.
-							\item The user must have the privileges associated with a Head of Research.
 							\item The user must be the Head of Research of the particular group which they are wanting to search.
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
 							\item The user must have been able to view all of the users associated with their research group.
-							\item The action should be logged.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}
-					
-					\item \textbf{View All User Profiles in Research Group} \hfill \textit{Priority: Critical}
-					\begin{itemize}
-						\item A research group leader should be able to access the profiles and information associated with the users within their research group. In particular the Head of Research should be able to view all paper entries associated with each user.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item The user must be logged in.
-							\item The user must have the privileges associated with a Head of Research.
-							\item The user must be the Head of Research of the particular group which they are wanting to view profiles of.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
 							\item The head of the research group can access and view all profile information (including paper entries) for each of the users associated with their research group.
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}					
+					\end{itemize}
 				\end{itemize}
 				\textbf{Admin:}
 				
 				\begin{itemize}
-					\item \textbf{Add New User} \hfill \textit{Priority: Critical}
+					\item \textbf{Add New User to System} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item Admin users should have the ability to add new users into the system.
 						\item \textbf{Pre-conditions:}
@@ -754,9 +765,9 @@
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
-					\item \textbf{Search All Users} \hfill \textit{Priority: Critical}
+					\item \textbf{Search/View All Users in Any Research Group} \hfill \textit{Priority: Critical}
 					\begin{itemize}
-						\item Admin users should be able to search through all of the users within the system.
+						\item Admin users should be able to search through all of the users within the system as well as view their profiles and all associated data and papers.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
 							\item The user must be logged in.
@@ -765,6 +776,7 @@
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
 							\item The admin user should have been able to search and locate particular registered users on the system.
+							\item All information, paper entries and their metadata should be available for viewing to the admin user. Upon selecting a particular user all information associated with that user is displayed.
 							\item This action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
@@ -798,22 +810,6 @@
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
 							\item The selected user should have been marked as active/inactive, active allowing the user to login and use the system, inactive preventing them from login in to the system and making changes.
-							\item The action should be logged.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}					
-					
-					\item \textbf{View All User Profiles} \hfill \textit{Priority: Critical}
-					\begin{itemize}
-						\item An admin user should be able to view all the information associated with each of the registered users within a system, especially their paper entries and all of the metadata associated with them.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item The user must be logged in.
-							\item The user must have the privileges associated with an admin account.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item All information, paper entries and their metadata should be available for viewing to the admin user. Upon selecting a particular user all information associated with that user is displayed.
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
