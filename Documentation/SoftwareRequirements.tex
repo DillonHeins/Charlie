@@ -2,6 +2,7 @@
 
 \usepackage[margin=2.5cm,left=2cm,includefoot]{geometry}
 \usepackage{graphicx}
+\usepackage{float}
 
 % Header and footer
 \usepackage{fancyhdr}
@@ -35,7 +36,7 @@
 			[7.5mm]
 			\textsc{\large University of Pretoria - Team Charlie}\\
 			[20mm]
-			\textsc{\large Created By:}\\
+			\large{\textbf{Created By:}}\\
 			[2mm]
 			\large{
 				Claudio Da Silva - 14205892\\
@@ -359,6 +360,10 @@
 							\item The act of creating a new paper entry should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/AddPublication.jpg}
+							\caption{Service Contract - Add Publication}
+						\end{figure}
 					\end{itemize}
 					
 					\item \textbf{Edit Own Paper Entry:} \hfill \textit{Priority: Critical}
@@ -795,7 +800,6 @@
 						\item The system must be able to notify an author as well as co-authors of a paper of the deadline for the paper.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
-							\item The user must be logged in.
 							\item A deadline must have been set for a paper.
 							\item The deadline must not have passed already.
 							\item The authors being notified must be associated with the paper the deadline has been set on.
@@ -806,6 +810,10 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/SendReminder.jpg}
+							\caption{Service Contract - Send Reminder}
+						\end{figure}
 					\end{itemize}
 					
 					\item \textbf{Send Deadline Update Notification} \hfill \textit{Priority: Important}
@@ -955,7 +963,7 @@
 		
 		\subsection{Domain Model}\label{subsec:domainmodel}
 		The domain model is described in terms of class diagram.\\ Class diagrams contain information on the current class such as attributes and relationships to other classes.
-			\begin{figure}[h]
+			\begin{figure}[H]
 				%INSERT FIGURE NAME HERE
 				\includegraphics[width=\linewidth]{../Diagrams/domainModel.jpg}
 				\caption{ Domain model - Classes related to each domain }
