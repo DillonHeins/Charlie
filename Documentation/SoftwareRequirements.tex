@@ -3,6 +3,8 @@
 \usepackage[margin=2.5cm,left=2cm,includefoot]{geometry}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage[space]{grffile}
+\usepackage{hyperref}
 
 % Header and footer
 \usepackage{fancyhdr}
@@ -47,9 +49,12 @@
 				Bernhard Schuld - 10297902\\
 				Keorapetse Shiko - 12231992
 			}\\
-			[6cm]
-		\end{center}
-		
+			[4cm]
+
+		\textsc{\Large GitHub Repository - Team Charlie}\\[2mm]
+		  For more information, please click \href{https://github.com/DillonHeins/Charlie}{here}
+			
+		\end{center}	
 		\begin{flushright}
 			\textsc{\large 17 February 2016}
 		\end{flushright}
@@ -963,9 +968,8 @@
 		
 		\subsection{Domain Model}\label{subsec:domainmodel}
 		The domain model is described in terms of class diagram.\\ Class diagrams contain information on the current class such as attributes and relationships to other classes.
-			\begin{figure}[H]
-				%INSERT FIGURE NAME HERE
-				\includegraphics[width=\linewidth]{../Diagrams/domainModel.jpg}
+			\begin{figure}[h]				
+				\includegraphics[width=\linewidth]{../Diagrams/Domain Model/domainModel.jpg}
 				\caption{ Domain model - Classes related to each domain }
 			\end{figure}
 			
@@ -1025,10 +1029,10 @@
 		
 	\cleardoublepage
 	\section{Open Issues}\label{sec:issues}
+	Issues that weren't discussed in the client requirements meeting:
 		\begin{itemize}
-		  \item The first item
-		  \item The second item
-		  \item The third etc \ldots
+		  \item 
+		  \item 
 		\end{itemize}
 		
 \end{document}
