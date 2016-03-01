@@ -437,9 +437,23 @@
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
-					\item \textbf{Terminate Own Paper:} \hfill \textit{Priority: Critical}
+					\item \textbf{Log Report Progress Change:} \hfill \textit{Priority: Important}
 					\begin{itemize}
-						\item A user must be able to terminate (make inactive) a paper which they feel they are not going to be completing in the future.
+						\item The change of progress of a paper should be logged.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The progress of a paper must have been updated.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item An entry must have been created in the log with all relevant details associated with the change in progress.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}					
+					
+					\item \textbf{Terminate/Resume Own Paper:} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item A user must be able to terminate (make inactive) a paper which they feel they are not going to be completing in the near future. They must also be able to resume this paper at a later stage when they want to continue work on it.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
 							\item A user must be logged in.
@@ -447,9 +461,32 @@
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
-							\item The paper has been marked as terminated within the database.
-							\item The action of terminating the paper must have been logged.
-							\item The paper must no longer be able to be edited by the user.
+							\item If terminating:
+							\begin{itemize}
+								\item The paper has been marked as terminated within the database.
+								\item The action of terminating the paper must have been logged.
+								\item The paper must no longer be able to be edited by the user.
+							\end{itemize}
+							\item If resuming:
+							\begin{itemize}
+								\item The paper has been unmarked as terminated within the database.
+								\item The action of resuming the paper must have been logged.
+								\item The paper must be available to edit.
+							\end{itemize}
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}
+					
+					\item \textbf{Log Termination/Resuming of Paper:} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item The termination or resuming of a paper should be logged.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item A paper must have been terminated or resumed.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item An entry must have been created in the log with all relevant details associated with the termination or resuming of a paper.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
@@ -470,7 +507,21 @@
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}					
 					
-					\item \textbf{Add New Conference/Journal:} \hfill \textit{Priority: Critical}
+					\item \textbf{Log Additions and Removals:} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item The adding and removing of authors as well as conferences/journals associated with a paper should be logged.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item An addition or removal of an author or conference/journal must have occurred.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item An entry must have been created in the log with all relevant details associated with the addition or removal.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}					
+					
+					\item \textbf{Create New Conference/Journal:} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item A user must be able to fill in the details of a particular conference or journal if it does not already exist within the system.
 						\item \textbf{Pre-conditions:}
@@ -484,25 +535,7 @@
 							\item The action has been logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}					
-					
-					\item \textbf{Search Conferences/Journals in Database:} \hfill \textit{Priority: Critical}
-					\begin{itemize}
-						\item The user should be able to search or select an already existing conference/journal from a list populated through the searching of the database.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item The user must be logged in.
-							\item The conference/journal is within the system.
-							\item The conference/journal is not within the system.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item If the conference/journal is within the system a result matching the search term or the selected item should be returned.
-							\item If the conference/journal is not within the system no result should be returned and it should be indicated as such. An option to add this conference/journal into the system should also be offered.
-							\item The action should be logged.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}					
+					\end{itemize}										
 				\end{itemize}
 				\textbf{Head of Research:}
 				
