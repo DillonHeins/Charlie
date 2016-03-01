@@ -535,18 +535,32 @@
 							\item The action has been logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}
+					
+					\item \textbf{Commit Changes to Database:} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item All changes to any parts of the system made by a user should be committed to the database of the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item They must have the relevant authorisation to create the changes they are making.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The changes made by the user must be reflected within the database of the system and must have overwritten any old data that was present prior to the change.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}										
 				\end{itemize}
 				\textbf{Head of Research:}
 				
 				\begin{itemize}
-					\item \textbf{Search All Papers within Research Group} \hfill \textit{Priority: Critical}
+					\item \textbf{Search All Papers Within Own Research Group} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item The head of a research group should have access to all the papers associated with their particular research group.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
 							\item The user must be logged in.
-							\item The user must have the privilege rights assigned to a head of research.
 							\item The user must be the head of the particular research group they would like to observe.
 						\end{itemize}
 						\item \textbf{Post-conditions:}
@@ -591,6 +605,20 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
+					
+					\item \textbf{Log Paper Purge} \hfill \textit{Priority: Important}
+					\begin{itemize}
+						\item The act of purging a paper from the system should be logged.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item A paper must have been purged from the system.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item An entry must have been created in the log with all relevant details associated with the addition or removal.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}
 				\end{itemize}
 			\subsubsection{User Sub-System}\label{subsubsec:user}
 				Handles all actions associated with user accounts such as login, viewing and editing profiles, as well as privileged actions such as adding/removing users to the system and adding/removing users from a research group.\\
@@ -608,12 +636,29 @@
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
+							\item The system must begin a session for the user.
+							\item The user must gain access to the system according to the set of privileges associated with their account.		
+							\item The action should be logged.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}
+					
+					\item \textbf{Authenticate User} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item The details entered by a person attempting to login must be authenticated before they are allowed into the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item A person should have entered the requested details associated with their particular account.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
 							\item If the credentials were incorrect a notification must be displayed, as well as an option to reset passwords.
 							\item If the credentials were correct:
 							\begin{itemize}
 								\item The system must begin a session for the user.
 								\item The user must gain access to the system according to the set of privileges associated with their account.
-							\end{itemize}														
+								\item The user must be logged in.
+							\end{itemize}													
 							\item In both cases the action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
