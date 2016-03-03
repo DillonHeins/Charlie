@@ -777,12 +777,12 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/AddUserToGroup.jpg}
-							\caption{Service Contract - Add User to Group}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/AddUserToOwnGroup.jpg}
+							\caption{Service Contract - Add User to Own Group}
 						\end{figure}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/RemoveUserFromGroup.jpg}
-							\caption{Service Contract - Remove User from Group}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/RemoveUserFromOwnGroup.jpg}
+							\caption{Service Contract - Remove User from Own Group}
 						\end{figure}
 					\end{itemize}
 					
@@ -900,8 +900,17 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/SetUserAsActive.jpg}
+							\caption{Service Contract - Set User as Active}
+						\end{figure}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/SetUserAsInactive.jpg}
+							\caption{Service Contract - Set User as Inactive}
+						\end{figure}
 					\end{itemize}
 					
+					\cleardoublepage
 					\item \textbf{Add/Remove Users From Any Research Group} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item An admin user should be able to add or remove a user from any of the research groups within the system.
@@ -912,12 +921,22 @@
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
-							\item The selected user should be associated with the specified research group in the case of adding and should be removed and no longer associated with a research group in h
+							\item The selected user should be associated with the specified research group in the case of adding and should be removed and no longer associated with a research group in the case of removing.
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/AddUserToAnyGroup.jpg}
+							\caption{Service Contract - Add User to Any Group}
+						\end{figure}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/RemoveUserFromAnyGroup.jpg}
+							\caption{Service Contract - Remove User from Any Group}
+						\end{figure}
 					\end{itemize}
 				\end{itemize}
+				
+				\cleardoublepage
 			\subsubsection{Notification Sub-System}\label{subsubsec:notification}
 				Handles the adding and editing of notifications within the system, as well the process of creating and sending notifications to relevant users of the system.\\
 				[3mm]
@@ -940,6 +959,14 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/AddPaperDeadline.jpg}
+							\caption{Service Contract - Add Paper Deadline}
+						\end{figure}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/UpdatePaperDeadline.jpg}
+							\caption{Service Contract - Update Paper Deadline}
+						\end{figure}
 					\end{itemize}	
 					
 					\item \textbf{Send Deadline Update Notification} \hfill \textit{Priority: Important}
