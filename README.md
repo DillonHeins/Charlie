@@ -2,6 +2,7 @@
 COS301 - Phase 1 and 2
 
 Phase 1 - Requirements specifications
+
 Phase 2 - Architectural design
 
 Students: 
