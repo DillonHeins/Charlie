@@ -52,8 +52,8 @@
 			}\\
 			[4cm]
 
-		\textsc{\Large GitHub Repository - Team Charlie}\\[2mm]
-		  For more information, please click \href{https://github.com/DillonHeins/Charlie}{here}
+		\href{https://github.com/DillonHeins/Charlie}{\textsc{\Large GitHub Repository - Team Charlie}\\[2mm]
+		  For more information, please click here}
 			
 		\end{center}	
 		\begin{flushright}
@@ -69,8 +69,22 @@
 	\cleardoublepage
 	\setcounter{page}{1}
 	\section{Introduction}\label{sec:intro}
+	P.A.P.E.R.S (Publication and Papers Electronic Repository System), a project proposed by the University of Pretoria’s department of Computer Science, is a interdepartmental system dedicated to the management of the research and publication records of each user of the system. The objective of the system is to create an environment where users of the system can maintain a list of publications belonging to them and where supervisors, such as a research leader or head of department, could oversea progress of said users. Users can belong to research groups and maintain a record of who contributed to a publication and thus will consequently affect the unit score each user has. Only members of the department of Computer Science can be users of the system. 
+	\subsection{General Uses}\label{subsec:purpose}
+		General uses of this system should include keeping track of:
+            \begin{itemize}  
+            
+                \item Research Papers and publications created by users of the system.
+                \item Reporting.
+                \item Research Groups.
+                \item Running Costs.
+                \item All historical publications that have been created.
+                \item List of authors that helped contribute to the publications.
+                \item List of users of the system.
+                \item Units and respective conferences that the publications belong to.
+            \end{itemize}
 		\subsection{Purpose}\label{subsec:purpose}
-			The purpose of this document is to give a detailed explanation and description of the P.A.P.E.R.S system. This document will illustrate the purpose as well as the features of said system, the interfaces of the system, the functionality of the system, the constraints under which it must operate and how the system will integrate with external systems. This document has been created for use by the developers of the system, the proposed client as well as any other additional third party collaborators who require to understand the software specifications of the P.A.P.E.R.S system.
+			This document serves to explore the minutiae and requirements of the P.A.P.E.R.S system. This is including but not limited to the overall features of the system, interfaces, functionality, constraints and integration. The intended audience of the system is for the developers to be used as a reference tool and for the clients as an informative resource. Any third party collaborators who have a need to use a reference to the P.A.P.E.R.S system may also use this documentation.
 		
 	\cleardoublepage	
 	\section{Vision}\label{sec:vision}
@@ -1281,6 +1295,7 @@
 		\cleardoublepage
 		\subsection{Domain Model}\label{subsec:domainmodel}
 		The domain model is described in terms of class diagram.\\ Class diagrams contain information on the current class such as attributes and relationships to other classes.
+		
 			\begin{figure}[H]				
 				\includegraphics[width=\linewidth]{../Diagrams/Domain Model/domainModel.jpg}
 				\caption{ Domain model - Classes related to each domain }
@@ -1300,10 +1315,6 @@
 						\item Super User
 						\end{itemize}
 					\end{itemize}
-					\begin{figure}[H]				
-						\includegraphics[width=\linewidth]{../Diagrams/Domain Model/userDomain.jpg}
-						\caption{ User Domain }
-					\end{figure}
 					
 				\item \textbf{Authentication:}
 					\begin{itemize}
@@ -1343,6 +1354,21 @@
 					\end{itemize}				
 				
 			\end{itemize}
+			
+			\begin{figure}[H]				
+				\includegraphics[width=\linewidth]{../Diagrams/Domain Model/userDomain.jpg}
+				\caption{ User Domain - without relationships. To see relationships, refer to Figure 35 }
+			\end{figure}
+			
+			\begin{figure}[H]				
+				\includegraphics[width=\linewidth]{../Diagrams/Domain Model/authenticationDomain.jpg}
+				\caption{ Authentication Domain - without relationships. To see relationships, refer to Figure 35}
+			\end{figure}
+			
+			\begin{figure}[H]				
+				\includegraphics[width=\linewidth]{../Diagrams/Domain Model/reportsDomain.jpg}
+				\caption{ Reports Domain - without relationships. To see relationships, refer to Figure 35}
+			\end{figure}
 		
 	\cleardoublepage
 	\section{Open Issues}\label{sec:issues}
