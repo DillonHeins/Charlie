@@ -70,7 +70,7 @@
 	\setcounter{page}{1}
 	\section{Introduction}\label{sec:intro}
 	P.A.P.E.R.S (Publication and Papers Electronic Repository System), a project proposed by the University of Pretoria’s department of Computer Science, is a interdepartmental system dedicated to the management of the research and publication records of each user of the system. The objective of the system is to create an environment where users of the system can maintain a list of publications belonging to them and where supervisors, such as a research leader or head of department, could oversea progress of said users. Users can belong to research groups and maintain a record of who contributed to a publication and thus will consequently affect the unit score each user has. Only members of the department of Computer Science can be users of the system. 
-	\subsection{General Uses}\label{subsec:purpose}
+	\subsection{General Uses}\label{subsec:uses}
 		General uses of this system should include keeping track of:
             \begin{itemize}  
             
@@ -362,7 +362,7 @@
 				\end{itemize}
 			
 		\cleardoublepage
-		\subsection{Use Case/Service Contracts}\label{subsec:usecasepriorotization}
+		\subsection{Service Contracts}\label{subsec:servicecontracts}
 			\subsubsection{Publication Sub-System}\label{subsubsec:publication}
 				Handles the adding, editing and terminating of papers.\\
 				[3mm]
@@ -999,8 +999,14 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/SendDeadlineUpdateNotification.jpg}
+							\caption{Service Contract - Send Deadline Update Notification}
+						\end{figure}
 					\end{itemize}						
 				\end{itemize}
+				
+				\cleardoublepage
 				\textbf{\large{Date and Time:}}
 				\begin{itemize}
 					\item \textbf{Send Deadline Notification} \hfill \textit{Priority: Important}
@@ -1019,11 +1025,13 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/SendReminder.jpg}
-							\caption{Service Contract - Send Reminder}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/SendDeadlineNotification.jpg}
+							\caption{Service Contract - Send Deadline Notification}
 						\end{figure}
 					\end{itemize}
 				\end{itemize}
+				
+			\cleardoublepage
 			\subsubsection{Reporting Sub-System}\label{subsubsec:report}
 				Handles the generation of reports with regards to all relevant information contained by the system.\\
 				[3mm]
