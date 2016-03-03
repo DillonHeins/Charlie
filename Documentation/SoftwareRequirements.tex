@@ -814,46 +814,66 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
+					
+					\item \textbf{Add/Remove Users From Any Research Group} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item An admin user should be able to add or remove a user from any of the research groups within the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin account.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The selected user should be associated with the specified research group in the case of adding and should be removed and no longer associated with a research group in h
+							\item The action should be logged.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}
 				\end{itemize}
 			\subsubsection{Notification Sub-System}\label{subsubsec:notification}
 				Handles the adding and editing of notifications within the system, as well the process of creating and sending notifications to relevant users of the system.\\
 				[3mm]
 				\textbf{User:}
 				\begin{itemize}
-					\item \textbf{Set Paper Deadline} \hfill \textit{Priority: Important}
+					\item \textbf{Add/Update Paper Deadline} \hfill \textit{Priority: Important}
 					\begin{itemize}
-						\item Upon creating a paper entry a user must be able to set the deadline for when the paper needs to be published by.
+						\item Upon creating a paper entry a user must be able to set the deadline for when the paper needs to be published by. As well as being able to edit the deadline associated with their papers.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
 							\item The user must be logged in.
 							\item The user must be the author or a co-author of the paper which they would like to set the deadline for.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item A deadline will have been set and stored in the system. It will be associated with the particular paper on which it was set.
-							\item The action should be logged.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}
-					
-					\item \textbf{Edit Paper Deadline} \hfill \textit{Priority: Important}
-					\begin{itemize}
-						\item A user must be able to edit the deadline associated with their papers.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item The user must be logged in.
-							\item The user must be the author or a co-author of the paper on which they are editing the deadline.
 							\item The paper must not have been terminated.
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
-							\item The change in the deadline should reflect within the system and be associated with the paper on which it was set.
+							\item A deadline will have been set and stored in the system. It will be associated with the particular paper on which it was set in the case of adding.
+							\item In the case of updating the change in the deadline should reflect within the system and overwrite the previous deadline.
+							\item An update notification should be sent to authors of the paper indicating that the deadline was changed.
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}									
+					\end{itemize}	
+					
+					\item \textbf{Send Deadline Update Notification} \hfill \textit{Priority: Important}
+					\begin{itemize}
+						\item The system must be able to notify an author as well as co-authors of a paper when the deadline for a paper is updated.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item A new deadline must have been set for a paper.
+							\item The deadline must not have passed already.
+							\item The authors being notified must be associated with the paper the deadline has been updated on.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item Authors of a particular paper are notified via the use of email as to what the updated deadline for the paper is.
+							\item The action should be logged.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}						
 				\end{itemize}
-				\textbf{\large{System:}}
+				\textbf{\large{Date and Time:}}
 				\begin{itemize}
 					\item \textbf{Send Deadline Notification} \hfill \textit{Priority: Important}
 					\begin{itemize}
@@ -874,24 +894,6 @@
 							\includegraphics[width=\linewidth]{../Diagrams/SendReminder.jpg}
 							\caption{Service Contract - Send Reminder}
 						\end{figure}
-					\end{itemize}
-					
-					\item \textbf{Send Deadline Update Notification} \hfill \textit{Priority: Important}
-					\begin{itemize}
-						\item The system must be able to notify an author as well as co-authors of a paper when the deadline for a paper is updated.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item The user must be logged in.
-							\item A new deadline must have been set for a paper.
-							\item The deadline must not have passed already.
-							\item The authors being notified must be associated with the paper the deadline has been updated on.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item Authors of a particular paper are notified via the use of email as to what the updated deadline for the paper is.
-							\item The action should be logged.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 				\end{itemize}
 			\subsubsection{Reporting Sub-System}\label{subsubsec:report}
@@ -991,9 +993,9 @@
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 
-					\item \textbf{Allocate Head of Research Group} \hfill \textit{Priority: Critical}
+					\item \textbf{Edit Any Research Groups Information} \hfill \textit{Priority: Critical}
 					\begin{itemize}
-						\item An admin user should be able to allocate a registered user to be the head of a particular research group, in turn allowing for this user to have more privileges within the system.
+						\item An admin user should be able to edit the information associated with any of the research groups within the system.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
 							\item The user must be logged in.
@@ -1001,8 +1003,76 @@
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
-							\item The allocated user should now have the necessary rights and privileges to manage and view their allocated research group.
+							\item The information associated with the particular research group should have been updated within the system.
 							\item This action should be logged.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}
+
+					\item \textbf{Allocate/Change Head of Research Group} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item An admin user should be able to allocate a registered user to be the head of a particular research group, in turn allowing for this user to have more privileges within the system. An admin user should also be able to change the head of a research group.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin user.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item In the case of allocating the allocated user should now have the necessary rights and privileges to manage and view their allocated research group.
+							\item In the case of changing the old head of a research group should have their privileges removed and the new head should be granted those privileges.
+							\item This action should be logged.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}
+				\end{itemize}
+				\subsubsection{Logging Sub-System}\label{subsubsec:logging}
+				Handles the logging of all important interactions which take place on the system.\\
+				[3mm]
+				\textbf{Admin:}
+				\begin{itemize}
+					\item \textbf{Download and View Log Text Files} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item An admin user should be able to download a text file containing the logs of the system.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item A file should be made available to download containing all the relevant logs which the admin requested.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}
+				\end{itemize}
+				\textbf{Date and Time:}
+				\begin{itemize}
+					\item \textbf{Move Current Log File to Backup} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item The system should periodically backup the current log file.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item A certain period of time must have passed.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The old log file should have been backed up.
+							\item A new log file should be created.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+					\end{itemize}
+					
+					\item \textbf{Create New Log File} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item After backing up the previous log file a new one should be created in order to replace the previous one.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The old log file must have been backed up.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item A new log file should replace the older log file so that it can record any future logs.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
