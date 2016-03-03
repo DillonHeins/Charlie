@@ -5,6 +5,7 @@
 \usepackage{float}
 \usepackage[space]{grffile}
 \usepackage{hyperref}
+\usepackage[export]{adjustbox}
 
 % Header and footer
 \usepackage{fancyhdr}
@@ -1018,67 +1019,82 @@
 		Certain use cases require further information with regards to their function.\\ These use cases are specified further by means of process specification.
 		\subsubsection{User Sub-System}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/Login.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/Login.jpg}
 				\caption{User - Login}
 			\end{figure}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/act__Logout__Logout.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/act__Logout__Logout.jpg}
 				\caption{User - Logout}
 			\end{figure}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/View Own Profile.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/View Own Profile.jpg}
 				\caption{User - View Own Profile}
 			\end{figure}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/Edit Own Profile.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/Edit Own Profile.jpg}
 				\caption{User - Edit Own Profile}
 			\end{figure}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/View_Search All User Profiles in a Research Group.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/View_Search All User Profiles in a Research Group.jpg}
 				\caption{Head of Research - Search/View All Users in a Research Group}
 			\end{figure}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/Add_Remove Users from Research Group.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/Add_Remove Users from Research Group.jpg}
 				\caption{Head of Research - Add/Remove All Users in a Research Group}
 			\end{figure}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/Add New User.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/Add New User.jpg}
 				\caption{Admin - Add New User to System}
 			\end{figure}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/Purge User From System.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/Purge User From System.jpg}
 				\caption{Admin - Purge User from System}
 			\end{figure}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/Set User as Active_Inactive.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/Set User as Active_Inactive.jpg}
 				\caption{Admin - Set User as Active or Inactive}
 			\end{figure}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/View All User Profiles.jpg}
-				\caption{Admin - Search/View All Users in any Research Group}
-			\end{figure}
-			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/Add_Remove User from any Research Group.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/Add_Remove User from any Research Group.jpg}
 				\caption{Admin - Add/Remove Users from any Research Group}
 			\end{figure}
-
+			\begin{figure}[H]
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/View All User Profiles.jpg}
+				\caption{Admin - Search/View All Users in any Research Group}
+			\end{figure}
+			
 			\subsubsection{Notification Sub-System}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/Set Paper Deadline.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/Set Paper Deadline.jpg}
 				\caption{User - Set Paper Deadline}
 			\end{figure}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/Edit Paper Deadline.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/Edit Paper Deadline.jpg}
 				\caption{User - Edit Paper Deadline}
 			\end{figure}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/Send Deadline Notification.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/Send Deadline Notification.jpg}
 				\caption{System - Send Deadline Notification}
 			\end{figure}
 			\begin{figure}[H]
-				\includegraphics[width=4in]{../Diagrams/Process Specifications/Send Deadline Update Notification.jpg}
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/Send Deadline Update Notification.jpg}
 				\caption{System - Send Deadline Update Notification}
 			\end{figure}
+
+			\subsubsection{Reporting Sub-System}
+			\begin{figure}[H]
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/act__Generate_Report_for_Research_Group__Generate_Report_for_Research_Group.jpg}
+				\caption{Head of Research - Generate Report for Research Group}
+			\end{figure}
+			\begin{figure}[H]
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/act__Generate_Report_for_Department__Generate_Report_for_Department.jpg}
+				\caption{Admin - Generate Report for Department}
+			\end{figure}
+			\begin{figure}[H]
+				\includegraphics[width=4in, center]{../Diagrams/Process Specifications/act__Dump_Database_to_File__Dump_Database_to_File.jpg}
+				\caption{Admin - Dump Database to File}
+			\end{figure}
+			
 		
 		\subsection{Domain Model}\label{subsec:domainmodel}
 		The domain model is described in terms of class diagram.\\ Class diagrams contain information on the current class such as attributes and relationships to other classes.
