@@ -62,9 +62,10 @@
 	\end{titlepage}
 	
 	\cleardoublepage
-	\thispagestyle{empty}
+	\thispagestyle{empty}p
 	\tableofcontents
-	
+	\cleardoublepage
+	\listoffigures
 	\cleardoublepage
 	\setcounter{page}{1}
 	\section{Introduction}\label{sec:intro}
@@ -1250,10 +1251,10 @@
 				\caption{Admin - Dump Database to File}
 			\end{figure}
 			
-		
+		\cleardoublepage
 		\subsection{Domain Model}\label{subsec:domainmodel}
 		The domain model is described in terms of class diagram.\\ Class diagrams contain information on the current class such as attributes and relationships to other classes.
-			\begin{figure}[h]				
+			\begin{figure}[H]				
 				\includegraphics[width=\linewidth]{../Diagrams/Domain Model/domainModel.jpg}
 				\caption{ Domain model - Classes related to each domain }
 			\end{figure}
@@ -1272,6 +1273,10 @@
 						\item Super User
 						\end{itemize}
 					\end{itemize}
+					\begin{figure}[H]				
+						\includegraphics[width=\linewidth]{../Diagrams/Domain Model/userDomain.jpg}
+						\caption{ User Domain }
+					\end{figure}
 					
 				\item \textbf{Authentication:}
 					\begin{itemize}
