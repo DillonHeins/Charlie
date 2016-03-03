@@ -620,6 +620,7 @@
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 				\end{itemize}
+			\cleardoublepage
 			\subsubsection{User Sub-System}\label{subsubsec:user}
 				Handles all actions associated with user accounts such as login, viewing and editing profiles, as well as privileged actions such as adding/removing users to the system and adding/removing users from a research group.\\
 				[3mm]
@@ -641,8 +642,13 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Login.jpg}
+							\caption{Service Contract - Login}
+						\end{figure}
 					\end{itemize}
 					
+					\cleardoublepage
 					\item \textbf{Authenticate User} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item The details entered by a person attempting to login must be authenticated before they are allowed into the system.
@@ -662,8 +668,13 @@
 							\item In both cases the action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/AuthenticateUser.jpg}
+							\caption{Service Contract - Authenticate User}
+						\end{figure}
 					\end{itemize}
 					
+					\cleardoublepage
 					\item \textbf{Log Authentication Result} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item The result of a login attempt should be logged for security reasons.
@@ -678,6 +689,7 @@
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
+					\cleardoublepage
 					\item \textbf{Logout} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item A user must be able to end their session and log out of the system.
@@ -690,8 +702,13 @@
 							\item The user's session must be ended and the user must no longer be logged in.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Logout.jpg}
+							\caption{Service Contract - Logout}
+						\end{figure}
 					\end{itemize}
 					
+					\cleardoublepage
 					\item \textbf{View Own User Profile} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item A logged in user should be able to see their own profile and all details associated with it. The user should also be able to view all papers associated with their account.
@@ -706,8 +723,34 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}					
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/ViewOwnUserProfile.jpg}
+							\caption{Service Contract - View Own User Profile}
+						\end{figure}
+					\end{itemize}
+					
+					\cleardoublepage
+					\item \textbf{Edit Own User Profile} \hfill \textit{Priority: Critical}
+					\begin{itemize}
+						\item A logged in user should be able to edit all details associated with their user account.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user profile being edited must belong to the user editing it.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item The updated information associated with the user's account should be stored in the system.
+							\item The action should be logged.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/EditOwnUserProfile.jpg}
+							\caption{Service Contract - View Own User Profile}
+						\end{figure}
+					\end{itemize}							
 				\end{itemize}
+				\cleardoublepage
 				\textbf{Head of Research:}
 				
 				\begin{itemize}
@@ -727,8 +770,17 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/AddUserToGroup.jpg}
+							\caption{Service Contract - Add User to Group}
+						\end{figure}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/RemoveUserFromGroup.jpg}
+							\caption{Service Contract - Remove User from Group}
+						\end{figure}
 					\end{itemize}
 					
+					\cleardoublepage
 					\item \textbf{Search/View All Users in Own Research Group} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item The head of a research group should be able to search all of the users within their research group. They should also be able to access the profiles and information associated with the users within their research group. In particular the head of a research group should be able to view all paper entries associated with each user.
