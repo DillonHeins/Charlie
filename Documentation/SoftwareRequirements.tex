@@ -361,9 +361,13 @@
 				\begin{itemize}
 					\item \textit{Critical:}
 					\begin{itemize}
-						\item add/remove research groups
+						\item add research group
 						\item edit any research group's information
 						\item allocate/change head of research group
+					\end{itemize}
+					\item \textit{Important:}
+					\begin{itemize}
+						\item set research group as active/inactive
 					\end{itemize}
 				\end{itemize}
 				
@@ -382,7 +386,6 @@
 					\item \textit{Important:}
 					\begin{itemize}
 						\item move current log file to backup
-						\item create new log file
 					\end{itemize}
 				\end{itemize}
 			
@@ -1089,13 +1092,19 @@
 							\item This action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Group control subsystem/EditOwnResearchGroup.jpg}
+							\caption{Service Contract - Edit Own Research Group}
+						\end{figure}
 					\end{itemize}
 				\end{itemize}
+				
+				\cleardoublepage
 				\textbf{Admin:}
 				\begin{itemize}
-					\item \textbf{Add/Remove Research Groups} \hfill \textit{Priority: Critical}
+					\item \textbf{Add Research Group} \hfill \textit{Priority: Critical}
 					\begin{itemize}
-						\item An admin user should be able to add or remove research groups from the system.
+						\item An admin user should be able to add research groups to the system.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
 							\item The user must be logged in.
@@ -1103,13 +1112,43 @@
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
-							\item In the case of adding a new research group which is able to have users added to or removed from should exist within the system.
-							\item In the case of removing a research group the group should be removed from the system as well as all relationships related to users contained within the group.
-							\item In both instances the action should be logged.
+							\item A new research group which is able to have users added to or removed from should exist within the system.
+							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Group control subsystem/AddResearchGroup.jpg}
+							\caption{Service Contract - Add Research Group}
+						\end{figure}
+					\end{itemize}
+					
+					\cleardoublepage
+					\item \textbf{Set Research Group as Active/Inactive} \hfill \textit{Priority: Important}
+					\begin{itemize}
+						\item An admin user should be able to set a research group as being active or inactive.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item The user must have the privileges associated with an admin user.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item In the case of setting active the research group should be able to have its information edited and have users added to and removed from the group.
+							\item In the case of setting inactive the research group should no longer be able to have any operations performed on it.
+							\item In both cases the action should be logged.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Group control subsystem/SetResearchGroupAsActive.jpg}
+							\caption{Service Contract - Set Research Group as Active}
+						\end{figure}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Group control subsystem/SetResearchGroupAsInactive.jpg}
+							\caption{Service Contract - Set Research Group as Inactive}
+						\end{figure}
 					\end{itemize}
 
+					\cleardoublepage
 					\item \textbf{Edit Any Research Group's Information} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item An admin user should be able to edit the information associated with any of the research groups within the system.
@@ -1124,8 +1163,13 @@
 							\item This action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Group control subsystem/EditAnyResearchGroup.jpg}
+							\caption{Service Contract - Edit Any Research Group}
+						\end{figure}
 					\end{itemize}
 
+					\cleardoublepage
 					\item \textbf{Allocate/Change Head of Research Group} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item An admin user should be able to allocate a registered user to be the head of a particular research group, in turn allowing for this user to have more privileges within the system. An admin user should also be able to change the head of a research group.
@@ -1141,8 +1185,14 @@
 							\item This action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Group control subsystem/AllocateHeadOfResearchGroup.jpg}
+							\caption{Service Contract - Allocate Head of Research Group}
+						\end{figure}
 					\end{itemize}
 				\end{itemize}
+				
+				\cleardoublepage
 				\subsubsection{Logging Sub-System}\label{subsubsec:logging}
 				Handles the logging of all important interactions which take place on the system.\\
 				[3mm]
@@ -1161,6 +1211,10 @@
 							\item A file should be made available to download containing all the relevant logs which the admin requested.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Logging subsystem/DownloadLogFile.jpg}
+							\caption{Service Contract - Download Log File}
+						\end{figure}
 					\end{itemize}
 				\end{itemize}
 				\textbf{Date and Time:}
@@ -1178,6 +1232,10 @@
 							\item A new log file should be created.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Logging subsystem/ArchiveLog.jpg}
+							\caption{Service Contract - Archive Log}
+						\end{figure}
 					\end{itemize}
 					
 					\item \textbf{Create New Log File} \hfill \textit{Priority: Important}
