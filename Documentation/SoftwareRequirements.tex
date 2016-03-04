@@ -135,6 +135,7 @@
 		
 	\cleardoublepage
 	\section{Architecture Requirements}\label{sec:architecture}
+		Architecture requirements have been omitted for the first phase and moved to a new file called ArchitecturalRequirements.tex. This section will be further expanded during the current Architectural design phase 2.
 		
 	\cleardoublepage
 	\section{Functional Requirements and Application Design}\label{sec:functional}
@@ -1407,8 +1408,12 @@
 	\section{Open Issues}\label{sec:issues}
 	Issues that weren't discussed in the client requirements meeting:
 		\begin{itemize}
-		  \item 
-		  \item 
+		  \item Current representation and layout of system allows for only one department to use the system. Possible problem if system ever needs to expand.
+		  \item What technologies and frameworks will we be using moving on in the next phases
+		  \item Should each publication have its own super-user, with additional authority over the other users in the paper if said super-user created the paper.
+		  \item Should people the administrator requests to aid in their work (e.g. secretaries and assistants) be allowed to receive administrator permissions in order to do certain tasks.
+		  \item Should validation of meta data (Non-authentication checks) be handled client side (Ease of use and less hassle for simple validations) or server side (Less chance for SQL injections, JavaScript injections and the like.).
+		  \item Will functionality for file storage, version control and such ever possibly be added to this system in the future.
 		\end{itemize}
 		
 \end{document}
