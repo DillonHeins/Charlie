@@ -422,6 +422,14 @@
 							\item The act of creating/editing a new paper entry should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/AddPublication.jpg}
+							\caption{Service Contract - Add Own Paper Entry}
+						\end{figure}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/EditPublication.jpg}
+							\caption{Service Contract - Edit Own Paper Entry}
+						\end{figure}
 					\end{itemize}
 					
 					\item \textbf{Add/Remove Authors from a Paper:} \hfill \textit{Priority: Critical}
@@ -438,9 +446,13 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/AddRemoveAuthorFromPaper.jpg}
+							\caption{Service Contract - Add/Remove Author from Paper}
+						\end{figure}
 					\end{itemize}
 					
-					\item \textbf{Create New Author:} \hfill \textit{Priority: Critical}
+					\item \textbf{Add/Edit New Author:} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item A user should have the option to add the details of a new author into the system if the author does not already exist within the system.
 						\item \textbf{Pre-conditions:}
@@ -454,8 +466,17 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/AddAuthor.jpg}
+							\caption{Service Contract - Add Author to System}
+						\end{figure}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/EditAuthor.jpg}
+							\caption{Service Contract - Edit Author}
+						\end{figure}
 					\end{itemize}
 					
+					\cleardoublepage
 					\item \textbf{Edit Own Paper Progress:} \hfill \textit{Priority: Important}
 					\begin{itemize}
 						\item A user should have the ability to indicate using a percentage how far they are currently in terms of progress on their paper.
@@ -472,8 +493,13 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/EditPaperProgress.jpg}
+							\caption{Service Contract - Edit Paper Progress}
+						\end{figure}
 					\end{itemize}			
 					
+					\cleardoublepage
 					\item \textbf{Terminate/Resume Own Paper:} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item A user must be able to terminate (make inactive) a paper which they feel they are not going to be completing in the near future. They must also be able to resume this paper at a later stage when they want to continue work on it.
@@ -498,8 +524,17 @@
 							\end{itemize}
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/TerminatePaper.jpg}
+							\caption{Service Contract - Terminate Paper}
+						\end{figure}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/ResumePaper.jpg}
+							\caption{Service Contract - Resume Paper}
+						\end{figure}
 					\end{itemize}
 					
+					\cleardoublepage
 					\item \textbf{Add/Remove Conference/Journal to Paper:} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item Whilst creating or editing a paper a user should be able to associate a particular conference or journal with their paper as well as be able to remove an already associated conference or journal whilst editing a paper.
@@ -514,9 +549,14 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/AddRemovePublicationTypeFromPaper.jpg}
+							\caption{Service Contract - Add/Remove Publication Type from Paper}
+						\end{figure}
 					\end{itemize}									
 					
-					\item \textbf{Create New Conference/Journal:} \hfill \textit{Priority: Critical}
+					\cleardoublepage
+					\item \textbf{Add/Edit Conference/Journal:} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item A user must be able to fill in the details of a particular conference or journal if it does not already exist within the system.
 						\item \textbf{Pre-conditions:}
@@ -530,8 +570,17 @@
 							\item The action has been logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/AddPublicationType.jpg}
+							\caption{Service Contract - Add Publication Type}
+						\end{figure}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/EditPublicationType.jpg}
+							\caption{Service Contract - Edit Publication Type}
+						\end{figure}
 					\end{itemize}								
 				\end{itemize}
+				\cleardoublepage
 				\textbf{Head of Research:}
 				
 				\begin{itemize}
@@ -549,8 +598,14 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/SearchAllPapersInGroup.jpg}
+							\caption{Service Contract - Search All Papers in Group}
+						\end{figure}
 					\end{itemize}
 				\end{itemize}
+				
+				\cleardoublepage
 				\textbf{Admin:}
 				
 				\begin{itemize}
@@ -568,8 +623,13 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/SearchAllPapers.jpg}
+							\caption{Service Contract - Search All Papers}
+						\end{figure}
 					\end{itemize}
 					
+					\cleardoublepage
 					\item \textbf{Purge Paper From the System} \hfill \textit{Priority: Important}
 					\begin{itemize}
 						\item An admin user should be able to completely remove a paper from the system if they find the need to do so.
@@ -584,6 +644,10 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Publication subsystem/PurgePaper.jpg}
+							\caption{Service Contract - Purge Paper}
+						\end{figure}
 					\end{itemize}
 				\end{itemize}
 			\cleardoublepage
