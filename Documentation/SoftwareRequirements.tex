@@ -70,13 +70,13 @@
 	\cleardoublepage
 	\setcounter{page}{1}
 	\section{Introduction}\label{sec:intro}
-	P.A.P.E.R.S (Publication and Papers Electronic Repository System), a project proposed by the University of Pretoria’s department of Computer Science, is a interdepartmental system dedicated to the management of the research and publication records of each user of the system. The objective of the system is to create an environment where users of the system can maintain a list of publications belonging to them and where supervisors, such as a research leader or head of department, could oversea progress of said users. Users can belong to research groups and maintain a record of who contributed to a publication and thus will consequently affect the unit score each user has. Only members of the department of Computer Science can be users of the system. 
+	P.A.P.E.R.S (Publication and Papers Electronic Repository System), a project proposed by the University of Pretoria's department of Computer Science, is a system dedicated to the management of research and publication records. The objective of the system is to create an environment where users of the system can maintain a list of publications belonging to them and where supervisors, such as a research leader or head of department, can oversee progress of said users. Users can belong to research groups and maintain a record of who contributed to a publication and thus the system is able to maintain and track the units earned by a user of the system for their publications. Only members of the department of Computer Science can be users of the system. 
 	
 	\subsection{General Uses}\label{subsec:generaluses}
 		General uses of this system should include keeping track of:
             \begin{itemize}  
             
-                \item Research Papers and publications created by users of the system.
+                \item Research papers and publications created by users of the system.
                 \item Reporting.
                 \item Research Groups.
                 \item Running Costs.
@@ -86,7 +86,7 @@
                 \item Units and respective conferences that the publications belong to.
             \end{itemize}
 		\subsection{Purpose}\label{subsec:purpose}
-			This document serves to explore the minutiae and requirements of the P.A.P.E.R.S system. This is including but not limited to the overall features of the system, interfaces, functionality, constraints and integration. The intended audience of the system is for the developers to be used as a reference tool and for the clients as an informative resource. Any third party collaborators who have a need to use a reference to the P.A.P.E.R.S system may also use this documentation.
+			This document serves to explore the minutiae and requirements of the P.A.P.E.R system. This is including but not limited to the overall features of the system, interfaces, functionality, constraints and integration. The intended purpose of the system is for the developers to be used as a reference tool and for the clients as an informative resource. Any third party collaborators who have a need to use a reference to the P.A.P.E.R system may also use this documentation.
 		\subsection{Structure}\label{subsec:structure}
 			The structure of the document is to allow an overview of the system through domain models, use-case diagrams, pre and post conditions and a general analysis of the system as a whole.
 		
@@ -123,7 +123,7 @@
 			\begin{itemize}
 				\item The method in use by the department currently is to have all researchers edit the same Microsoft Excel document as their manner of managing and tracking publications and units earned.
 				\item This method is inefficient as well as error prone and has hence lead to the need to create this system as a means to replace it.
-				\item This system aims to allow for all researchers to be able to manage their own publications in their own user space. It also allows for the Head of Department to no longer have to use an Excel document to create reports from, instead he/she would be able to use the system to the work for him/her in a far more accurate and efficient manner.
+				\item This system aims to allow for all researchers to be able to manage their own publications in their own user space. It also allows for the Head of Department to no longer have to use an Excel document to create reports from, instead he/she would be able to use the system to do the work for him/her in a far more accurate and efficient manner.
 			\end{itemize}
 			\item Problems the client is currently facing:
 			\begin{itemize}
@@ -163,7 +163,7 @@
 				\item Reliability
 				\begin{itemize}
 					\item The system should not fail whilst providing critical or important use cases.
-					\item The system should not fail at all within a time period of at least 6 months.
+					\item The system should handle all requests and respond with appropriate result objects for each.
 				\end{itemize}
 				\item Scalability
 				\begin{itemize}
@@ -221,7 +221,7 @@
 				
 		\subsection{Architecture Constraints}\label{subsec:constraints}
 			\begin{itemize}
-				\item The system will be a web based program accessible via browser with an API for Android access.
+				\item The system will be a server based API accessible via a web browser as well as an Android application.
 			  	\item The system may not be browser or operating system specific, and should be able to run on any system chosen.
 			  	\item The system should be handled locally and should not rely on outside internet sources in order to function.
 		  		\item The database used must be a relational database as the information being stored requires both a standard structure as well as relations on fields.
@@ -233,22 +233,19 @@
 	\cleardoublepage
 	\section{Functional Requirements and Application Design}\label{sec:functional}
 		\subsection{Use Case Prioritization}
-			\subsubsection{Paper Sub-System}\label{subsubsec:priority-paper}
+			\subsubsection{Publication Sub-System}\label{subsubsec:priority-paper}
 				Handles the adding, editing and terminating of papers.\\
 				[3mm]
 				\textbf{User:}
 				\begin{itemize}
 					\item \textit{Critical:}
 					\begin{itemize}
-						\item add paper entry
-						\item edit own paper entry
+						\item add/edit own paper entry
 						\item add/remove authors from a paper
-						\item add new author
-						\item search authors from database
-						\item terminate own paper
+						\item create new author
+						\item terminate/resume own paper
 						\item add/remove conference/journal to paper
-						\item add new conference/journal
-						\item search conferences/journals in database
+						\item create new conference/journal
 					\end{itemize}
 					
 					\item \textit{Important:}
@@ -260,7 +257,7 @@
 				\begin{itemize}
 					\item \textit{Critical:}
 					\begin{itemize}
-						\item search all papers within research group
+						\item search all papers within own research group
 					\end{itemize}
 				\end{itemize}
 				\textbf{Admin:}
@@ -283,35 +280,32 @@
 					\item \textit{Critical:}
 					\begin{itemize}
 						\item login
+						\item logout
 						\item view own user profile
+						\item edit own user profile
 					\end{itemize}
 				\end{itemize}
 				\textbf{Head of Research:}
 				\begin{itemize}
 					\item \textit{Critical:}
 					\begin{itemize}
-						\item add/remove users from research group
-						\item search all users in research group
-						\item view all user profiles in research group
+						\item add/remove users from own research group
+						\item search/view all users in own research group
 					\end{itemize}
 				\end{itemize}
 				\textbf{Admin:}
 				\begin{itemize}
 					\item \textit{Critical:}
 					\begin{itemize}
-						\item add new user
-						\item search all users
-						\item view all user profiles
+						\item add new user to system
+						\item search/view all users in any research group
+						\item add/remove users from any research group
 					\end{itemize}
 					
 					\item \textit{Important:}
 					\begin{itemize}
-						\item set user as active/inactive
-					\end{itemize}
-					
-					\item \textit{Nice-to-Have:}
-					\begin{itemize}
 						\item purge user from system
+						\item set user as active/inactive
 					\end{itemize}
 				\end{itemize}
 			\subsubsection{Notification Sub-System}\label{subsubsec:priority-notification}
@@ -321,16 +315,15 @@
 				\begin{itemize}					
 					\item \textit{Important:}
 					\begin{itemize}
-						\item set paper deadline
-						\item edit paper deadline
+						\item update paper deadline
 					\end{itemize}
 				\end{itemize}
 				\textbf{System:}
 				\begin{itemize}
 					\item \textit{Important:}
 					\begin{itemize}
-						\item send deadline notification
 						\item send deadline update notification
+						\item send deadline notification
 					\end{itemize}
 				\end{itemize}
 			\subsubsection{Reporting Sub-System}\label{subsubsec:priority-report}
@@ -338,16 +331,19 @@
 				[3mm]
 				\textbf{Head of Research:}
 				\begin{itemize}					
-					\item \textit{Critical:}
+					\item \textit{Important:}
 					\begin{itemize}
 						\item generate report for research group
 					\end{itemize}
 				\end{itemize}
 				\textbf{Admin:}
 				\begin{itemize}
-					\item \textit{Critical:}
+					\item \textit{Important:}
 					\begin{itemize}
 						\item generate report for department
+					\end{itemize}
+					\item \textit{Nice-to-Have:}
+					\begin{itemize}
 						\item dump database to file
 					\end{itemize}
 				\end{itemize}
@@ -366,7 +362,27 @@
 					\item \textit{Critical:}
 					\begin{itemize}
 						\item add/remove research groups
-						\item allocate head of research group
+						\item edit any research group's information
+						\item allocate/change head of research group
+					\end{itemize}
+				\end{itemize}
+				
+			\subsubsection{Logging Sub-System}\label{subsubsec:priority-logging}
+				Handles the logging of all important interactions which take place on the system.\\
+				[3mm]
+				\textbf{Admin:}
+				\begin{itemize}
+					\item \textit{Critical:}
+					\begin{itemize}
+						\item download and view log text files
+					\end{itemize}
+				\end{itemize}
+				\textbf{Date and Time:}
+				\begin{itemize}
+					\item \textit{Important:}
+					\begin{itemize}
+						\item move current log file to backup
+						\item create new log file
 					\end{itemize}
 				\end{itemize}
 			
@@ -456,21 +472,7 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}
-					
-					\item \textbf{Log Report Progress Change:} \hfill \textit{Priority: Important}
-					\begin{itemize}
-						\item The change of progress of a paper should be logged.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item The progress of a paper must have been updated.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item An entry must have been created in the log with all relevant details associated with the change in progress.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}					
+					\end{itemize}			
 					
 					\item \textbf{Terminate/Resume Own Paper:} \hfill \textit{Priority: Critical}
 					\begin{itemize}
@@ -498,20 +500,6 @@
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
-					\item \textbf{Log Termination/Resuming of Paper:} \hfill \textit{Priority: Critical}
-					\begin{itemize}
-						\item The termination or resuming of a paper should be logged.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item A paper must have been terminated or resumed.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item An entry must have been created in the log with all relevant details associated with the termination or resuming of a paper.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}
-					
 					\item \textbf{Add/Remove Conference/Journal to Paper:} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item Whilst creating or editing a paper a user should be able to associate a particular conference or journal with their paper as well as be able to remove an already associated conference or journal whilst editing a paper.
@@ -526,21 +514,7 @@
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}					
-					
-					\item \textbf{Log Additions and Removals:} \hfill \textit{Priority: Critical}
-					\begin{itemize}
-						\item The adding and removing of authors as well as conferences/journals associated with a paper should be logged.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item An addition or removal of an author or conference/journal must have occurred.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item An entry must have been created in the log with all relevant details associated with the addition or removal.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}					
+					\end{itemize}									
 					
 					\item \textbf{Create New Conference/Journal:} \hfill \textit{Priority: Critical}
 					\begin{itemize}
@@ -556,22 +530,7 @@
 							\item The action has been logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}
-					
-					\item \textbf{Commit Changes to Database:} \hfill \textit{Priority: Critical}
-					\begin{itemize}
-						\item All changes to any parts of the system made by a user should be committed to the database of the system.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item The user must be logged in.
-							\item They must have the relevant authorisation to create the changes they are making.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item The changes made by the user must be reflected within the database of the system and must have overwritten any old data that was present prior to the change.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}										
+					\end{itemize}								
 				\end{itemize}
 				\textbf{Head of Research:}
 				
@@ -623,20 +582,6 @@
 						\begin{itemize}
 							\item The paper and all of its metadata should be permanently removed from the system.
 							\item The action should be logged.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
-					\end{itemize}
-					
-					\item \textbf{Log Paper Purge} \hfill \textit{Priority: Important}
-					\begin{itemize}
-						\item The act of purging a paper from the system should be logged.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item A paper must have been purged from the system.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item An entry must have been created in the log with all relevant details associated with the addition or removal.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
@@ -838,7 +783,7 @@
 					\end{itemize}
 					
 					\cleardoublepage
-					\item \textbf{Purge User from System} \hfill \textit{Priority: Nice-to-Have}
+					\item \textbf{Purge User from System} \hfill \textit{Priority: Important}
 					\begin{itemize}
 						\item An admin user must be able to permanently remove a user and all of their associated information from the system.
 						\item \textbf{Pre-conditions:}
@@ -936,28 +881,6 @@
 							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Notification subsystem/UpdatePaperDeadline.jpg}
 							\caption{Service Contract - Update Paper Deadline}
 						\end{figure}
-					\end{itemize}	
-					
-					\item \textbf{Send Deadline Update Notification} \hfill \textit{Priority: Important}
-					\begin{itemize}
-						\item The system must be able to notify an author as well as co-authors of a paper when the deadline for a paper is updated.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item The user must be logged in.
-							\item A new deadline must have been set for a paper.
-							\item The deadline must not have passed already.
-							\item The authors being notified must be associated with the paper the deadline has been updated on.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item Authors of a particular paper are notified via the use of email as to what the updated deadline for the paper is.
-							\item The action should be logged.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
-						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Notification subsystem/SendDeadlineUpdateNotification.jpg}
-							\caption{Service Contract - Send Deadline Update Notification}
-						\end{figure}
 					\end{itemize}						
 				\end{itemize}
 				
@@ -984,6 +907,28 @@
 							\caption{Service Contract - Send Deadline Notification}
 						\end{figure}
 					\end{itemize}
+					
+					\item \textbf{Send Deadline Update Notification} \hfill \textit{Priority: Important}
+					\begin{itemize}
+						\item The system must be able to notify an author as well as co-authors of a paper when the deadline for a paper is updated.
+						\item \textbf{Pre-conditions:}
+						\begin{itemize}
+							\item The user must be logged in.
+							\item A new deadline must have been set for a paper.
+							\item The deadline must not have passed already.
+							\item The authors being notified must be associated with the paper the deadline has been updated on.
+						\end{itemize}
+						\item \textbf{Post-conditions:}
+						\begin{itemize}
+							\item Authors of a particular paper are notified via the use of email as to what the updated deadline for the paper is.
+							\item The action should be logged.
+						\end{itemize}
+						\item \textbf{Request and Results Data Structures:}
+						\begin{figure}[H]
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Notification subsystem/SendDeadlineUpdateNotification.jpg}
+							\caption{Service Contract - Send Deadline Update Notification}
+						\end{figure}
+					\end{itemize}
 				\end{itemize}
 				
 			\cleardoublepage
@@ -992,7 +937,7 @@
 				[3mm]
 				\textbf{Head of Research:}
 				\begin{itemize}
-					\item \textbf{Generate Report for Research Group} \hfill \textit{Priority: Critical}
+					\item \textbf{Generate Report for Research Group} \hfill \textit{Priority: Important}
 					\begin{itemize}
 						\item The head of a research group should be able to generate a summarised report of all important information related to their research group in terms of the users in the group as well as their papers and all metadata associated with their papers.
 						\item \textbf{Pre-conditions:}
@@ -1017,7 +962,7 @@
 				\cleardoublepage
 				\textbf{Admin:}
 				\begin{itemize}
-					\item \textbf{Generate Report for Department} \hfill \textit{Priority: Critical}
+					\item \textbf{Generate Report for Department} \hfill \textit{Priority: Important}
 					\begin{itemize}
 						\item An admin user should be able to generate a summarised report of all important information related to their department as a whole. This includes summaries of each research group and associated papers, as well as of each individual user of the system and their associated papers.
 						\item \textbf{Pre-conditions:}
@@ -1038,7 +983,7 @@
 					\end{itemize}
 
 					\cleardoublepage
-					\item \textbf{Dump Database to File} \hfill \textit{Priority: Critical}
+					\item \textbf{Dump Database to File} \hfill \textit{Priority: Nice-to-Have}
 					\begin{itemize}
 						\item An admin user should be able to at any point dump all of the information within the database into a file for safekeeping, such as a CSV file.
 						\item \textbf{Pre-conditions:}
@@ -1101,7 +1046,7 @@
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 
-					\item \textbf{Edit Any Research Groups Information} \hfill \textit{Priority: Critical}
+					\item \textbf{Edit Any Research Group's Information} \hfill \textit{Priority: Critical}
 					\begin{itemize}
 						\item An admin user should be able to edit the information associated with any of the research groups within the system.
 						\item \textbf{Pre-conditions:}
@@ -1156,7 +1101,7 @@
 				\end{itemize}
 				\textbf{Date and Time:}
 				\begin{itemize}
-					\item \textbf{Move Current Log File to Backup} \hfill \textit{Priority: Critical}
+					\item \textbf{Move Current Log File to Backup} \hfill \textit{Priority: Important}
 					\begin{itemize}
 						\item The system should periodically backup the current log file.
 						\item \textbf{Pre-conditions:}
@@ -1171,7 +1116,7 @@
 						\item \textbf{Request and Results Data Structures:}
 					\end{itemize}
 					
-					\item \textbf{Create New Log File} \hfill \textit{Priority: Critical}
+					\item \textbf{Create New Log File} \hfill \textit{Priority: Important}
 					\begin{itemize}
 						\item After backing up the previous log file a new one should be created in order to replace the previous one.
 						\item \textbf{Pre-conditions:}
