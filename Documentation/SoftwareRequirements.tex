@@ -405,10 +405,6 @@
 							\item The act of creating/editing a new paper entry should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
-						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/AddPublication.jpg}
-							\caption{Service Contract - Add Publication}
-						\end{figure}
 					\end{itemize}
 					
 					\item \textbf{Add/Remove Authors from a Paper:} \hfill \textit{Priority: Critical}
@@ -667,53 +663,8 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Login.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/Login.jpg}
 							\caption{Service Contract - Login}
-						\end{figure}
-					\end{itemize}
-					
-					\cleardoublepage
-					\item \textbf{Authenticate User} \hfill \textit{Priority: Critical}
-					\begin{itemize}
-						\item The details entered by a person attempting to login must be authenticated before they are allowed into the system.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item A person should have entered the requested details associated with their particular account.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item If the credentials were incorrect a notification must be displayed, as well as an option to reset passwords.
-							\item If the credentials were correct:
-							\begin{itemize}
-								\item The system must begin a session for the user.
-								\item The user must gain access to the system according to the set of privileges associated with their account.
-								\item The user must be logged in.
-							\end{itemize}													
-							\item In both cases the action should be logged.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
-						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/AuthenticateUser.jpg}
-							\caption{Service Contract - Authenticate User}
-						\end{figure}
-					\end{itemize}
-					
-					\cleardoublepage
-					\item \textbf{Log Authentication Response} \hfill \textit{Priority: Critical}
-					\begin{itemize}
-						\item The result of a login attempt should be logged for security reasons.
-						\item \textbf{Pre-conditions:}
-						\begin{itemize}
-							\item A login attempt needs to be made.
-						\end{itemize}
-						\item \textbf{Post-conditions:}
-						\begin{itemize}
-							\item An entry in the log needs to be made with all relevant details associated with the login attempt.
-						\end{itemize}
-						\item \textbf{Request and Results Data Structures:}
-						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/LogAuthenticationResponse.jpg}
-							\caption{Service Contract - Log Authentication Response}
 						\end{figure}
 					\end{itemize}
 					
@@ -731,7 +682,7 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Logout.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/Logout.jpg}
 							\caption{Service Contract - Logout}
 						\end{figure}
 					\end{itemize}
@@ -752,7 +703,7 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/ViewOwnUserProfile.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/ViewOwnUserProfile.jpg}
 							\caption{Service Contract - View Own User Profile}
 						\end{figure}
 					\end{itemize}
@@ -773,7 +724,7 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/EditOwnUserProfile.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/EditOwnUserProfile.jpg}
 							\caption{Service Contract - Edit Own User Profile}
 						\end{figure}
 					\end{itemize}							
@@ -799,11 +750,11 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/AddUserToOwnGroup.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/AddUserToOwnGroup.jpg}
 							\caption{Service Contract - Add User to Own Group}
 						\end{figure}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/RemoveUserFromOwnGroup.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/RemoveUserFromOwnGroup.jpg}
 							\caption{Service Contract - Remove User from Own Group}
 						\end{figure}
 					\end{itemize}
@@ -825,11 +776,11 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/SearchUsersInOwnGroup.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/SearchUsersInOwnGroup.jpg}
 							\caption{Service Contract - Search Users in Own Group}
 						\end{figure}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/ViewUserInOwnGroup.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/ViewUsersInOwnGroup.jpg}
 							\caption{Service Contract - View User in Own Group}
 						\end{figure}
 					\end{itemize}
@@ -854,7 +805,7 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/AddNewUser.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/AddNewUser.jpg}
 							\caption{Service Contract - Add New User}
 						\end{figure}
 					\end{itemize}
@@ -876,11 +827,11 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/SearchAllUsers.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/SearchAllUsers.jpg}
 							\caption{Service Contract - Search All Users}
 						\end{figure}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/ViewAllUserProfiles.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/ViewAllUserProfiles.jpg}
 							\caption{Service Contract - View All User Profiles}
 						\end{figure}
 					\end{itemize}
@@ -902,7 +853,7 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/PurgeUserFromSystem.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/PurgeUserFromSystem.jpg}
 							\caption{Service Contract - Purge User From System}
 						\end{figure}
 					\end{itemize}
@@ -923,11 +874,11 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/SetUserAsActive.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/SetUserAsActive.jpg}
 							\caption{Service Contract - Set User as Active}
 						\end{figure}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/SetUserAsInactive.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/SetUserAsInactive.jpg}
 							\caption{Service Contract - Set User as Inactive}
 						\end{figure}
 					\end{itemize}
@@ -948,11 +899,11 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/AddUserToAnyGroup.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/AddUserToAnyGroup.jpg}
 							\caption{Service Contract - Add User to Any Group}
 						\end{figure}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/RemoveUserFromAnyGroup.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/User subsystem/RemoveUserFromAnyGroup.jpg}
 							\caption{Service Contract - Remove User from Any Group}
 						\end{figure}
 					\end{itemize}
@@ -964,9 +915,9 @@
 				[3mm]
 				\textbf{User:}
 				\begin{itemize}
-					\item \textbf{Add/Update Paper Deadline} \hfill \textit{Priority: Important}
+					\item \textbf{Update Paper Deadline} \hfill \textit{Priority: Important}
 					\begin{itemize}
-						\item Upon creating a paper entry a user must be able to set the deadline for when the paper needs to be published by. As well as being able to edit the deadline associated with their papers.
+						\item Upon creating a paper entry a user must be able to set/update the deadline for when the paper needs to be published by.
 						\item \textbf{Pre-conditions:}
 						\begin{itemize}
 							\item The user must be logged in.
@@ -975,18 +926,13 @@
 						\end{itemize}
 						\item \textbf{Post-conditions:}
 						\begin{itemize}
-							\item A deadline will have been set and stored in the system. It will be associated with the particular paper on which it was set in the case of adding.
-							\item In the case of updating the change in the deadline should reflect within the system and overwrite the previous deadline.
-							\item An update notification should be sent to authors of the paper indicating that the deadline was changed.
+							\item A deadline will have been set and stored in the system. It will be associated with the particular paper on which it was set.
+							\item An update notification should be sent to authors of the paper indicating that the deadline has been set.
 							\item The action should be logged.
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/AddPaperDeadline.jpg}
-							\caption{Service Contract - Add Paper Deadline}
-						\end{figure}
-						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/UpdatePaperDeadline.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Notification subsystem/UpdatePaperDeadline.jpg}
 							\caption{Service Contract - Update Paper Deadline}
 						\end{figure}
 					\end{itemize}	
@@ -1008,7 +954,7 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/SendDeadlineUpdateNotification.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Notification subsystem/SendDeadlineUpdateNotification.jpg}
 							\caption{Service Contract - Send Deadline Update Notification}
 						\end{figure}
 					\end{itemize}						
@@ -1033,7 +979,7 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/SendDeadlineNotification.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Notification subsystem/SendDeadlineNotification.jpg}
 							\caption{Service Contract - Send Deadline Notification}
 						\end{figure}
 					\end{itemize}
@@ -1061,7 +1007,7 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/GenerateReportForGroup.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Reporting subsystem/GenerateReportForGroup.jpg}
 							\caption{Service Contract - Generate Report for Group}
 						\end{figure}
 					\end{itemize}
@@ -1085,7 +1031,7 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/GenerateReportForDepartment.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Reporting subsystem/GenerateReportForDepartment.jpg}
 							\caption{Service Contract - Generate Report for Department}
 						\end{figure}
 					\end{itemize}
@@ -1106,7 +1052,7 @@
 						\end{itemize}
 						\item \textbf{Request and Results Data Structures:}
 						\begin{figure}[H]
-							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/DumpDatabaseToFile.jpg}
+							\includegraphics[width=\linewidth]{../Diagrams/ServiceContracts/Reporting subsystem/DumpDatabaseToFile.jpg}
 							\caption{Service Contract - Dump Database to File}
 						\end{figure}
 					\end{itemize}
