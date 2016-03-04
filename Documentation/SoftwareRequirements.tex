@@ -1337,23 +1337,31 @@
 			\clearpage
 		\textbf{Domains include :}
 			\begin{itemize} 
-				\item \textbf{User:}
+				\item \textbf{User Domain:}
 					\begin{itemize}
 					\item Classes:
 						\begin{itemize}
 						\item User
-						\item Admin
-						\item Research Leader
-						\item Head Of Department (Super User)
+						\item UserCredentials
+						\item Author
 						\end{itemize}
 					\end{itemize}
 					
-				\item \textbf{Authentication:}
+				\item \textbf{Logging Domain:}
 					\begin{itemize}
 					\item Classes:
 						\begin{itemize}
-						\item User Authentication
-						\item Publication Authentication
+						\item LogHandler
+						\item LogFile
+						\end{itemize}
+					\end{itemize}					
+					
+					
+				\item \textbf{Group Control Domain:}
+					\begin{itemize}
+					\item Classes:
+						\begin{itemize}
+						\item ResearchGroup
 						\end{itemize}
 					\end{itemize}
 					
@@ -1361,6 +1369,7 @@
 					\begin{itemize}
 					\item { Classes:}
 						\begin{itemize}
+						\item ReportGenerator
 						\item Report
 						\end{itemize}
 					\end{itemize}
@@ -1369,7 +1378,7 @@
 					\begin{itemize}
 					\item { Classes:}
 						\begin{itemize}
-						\item System
+						\item NotificationHandler
 						\item Notification
 						\end{itemize}
 					\end{itemize}
@@ -1379,9 +1388,9 @@
 					\item { Classes:}
 						\begin{itemize}
 						\item Publication
+						\item PublicationType
 						\item Conference
-						\item Units
-						\item Author
+						\item Journal
 						\end{itemize}
 					\end{itemize}				
 				
