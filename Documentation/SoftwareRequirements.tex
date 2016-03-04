@@ -6,6 +6,7 @@
 \usepackage[space]{grffile}
 \usepackage{hyperref}
 \usepackage[export]{adjustbox}
+\usepackage{multicol}
 
 % Header and footer
 \usepackage{fancyhdr}
@@ -1279,85 +1280,58 @@
 				\includegraphics[width=\linewidth]{../Diagrams/Domain Model/domainModel.jpg}
 				\caption{ Domain model - Classes related to each domain }
 			\end{figure}
-			
-			\clearpage
-		\textbf{Domains include :}
+			\begin{center}
+			\textbf{Domains include :}
+			\end{center}
+		\begin{multicols}{2}
+		
 			\begin{itemize} 
-				\item \textbf{User:}
-					\begin{itemize}
-					\item Classes:
+				\item \textbf{User Domain:}
 						\begin{itemize}
 						\item User
-						\item Admin
-						\item Research Leader
-						\item Head Of Department (Super User)
-						\end{itemize}
-					\end{itemize}
-					
-				\item \textbf{Authentication:}
-					\begin{itemize}
-					\item Classes:
-						\begin{itemize}
-						\item User Authentication
-						\item Publication Authentication
-						\end{itemize}
-					\end{itemize}
-					
-				\item \textbf{Reports:}
-					\begin{itemize}
-					\item { Classes:}
-						\begin{itemize}
-						\item Report
-						\end{itemize}
-					\end{itemize}
-					
-				\item \textbf{Notifications:}
-					\begin{itemize}
-					\item { Classes:}
-						\begin{itemize}
-						\item System
-						\item Notification
-						\end{itemize}
-					\end{itemize}
-					
-				\item \textbf{Publication:}
-					\begin{itemize}
-					\item { Classes:}
-						\begin{itemize}
-						\item Publication
-						\item Conference
-						\item Units
+						\item UserCredentials
 						\item Author
 						\end{itemize}
-					\end{itemize}				
+					
+				\item \textbf{Logging Domain:}
+						\begin{itemize}
+						\item LogHandler
+						\item LogFile
+						\end{itemize}				
+					
+					
+				\item \textbf{Group Control Domain:}
+						\begin{itemize}
+						\item ResearchGroup
+						\end{itemize}
+						
+					\columnbreak
+
+					
+				\item \textbf{Reports Domain:}
+
+						\begin{itemize}
+						\item ReportGenerator
+						\item Report
+						\end{itemize}
+					
+				\item \textbf{Notifications Domain:}
+						\begin{itemize}
+						\item NotificationHandler
+						\item Notification
+						\end{itemize}
+
+					
+				\item \textbf{Publication Domain:}
+						\begin{itemize}
+						\item Publication
+						\item PublicationType
+						\item Conference
+						\item Journal
+						\end{itemize}		
 				
 			\end{itemize}
-			
-			\begin{figure}[H]				
-				\includegraphics[width=\linewidth]{../Diagrams/Domain Model/userDomain.jpg}
-				\caption{ User Domain - without relationships. To see relationships, refer to Figure 41 }
-			\end{figure}
-			
-			\begin{figure}[H]				
-				\includegraphics[width=\linewidth]{../Diagrams/Domain Model/authenticationDomain.jpg}
-				\caption{ Authentication Domain - without relationships. To see relationships, refer to Figure 41}
-			\end{figure}
-			
-			\begin{figure}[H]				
-				\includegraphics[width=\linewidth]{../Diagrams/Domain Model/reportsDomain.jpg}
-				\caption{ Reports Domain - without relationships. To see relationships, refer to Figure 41}
-			\end{figure}
-			
-			\begin{figure}[H]				
-				\includegraphics[width=\linewidth]{../Diagrams/Domain Model/notificationsDomain.jpg}
-				\caption{ Notifications Domain - without relationships. To see relationships, refer to Figure 41}
-			\end{figure}
-			
-			\begin{figure}[H]				
-				\includegraphics[width=\linewidth]{../Diagrams/Domain Model/publicationDomain.jpg}
-				\caption{ Publication Domain - without relationships. To see relationships, refer to Figure 41}
-			\end{figure}
-		
+		\end{multicols}
 	\cleardoublepage
 	\section{Open Issues}\label{sec:issues}
 	Issues that weren't discussed in the client requirements meeting:
