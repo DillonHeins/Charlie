@@ -1,0 +1,26 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+ 
+\title{Acress and Integration Channels}
+\author{Arno Grobler - u14011396}
+\date{08 March 2016}
+ 
+\begin{document}
+
+\section{Human Access Channels}
+
+Users will access the P.A.P.E.R.S system through a website front-end on a web server maintained by the Computer Science department. The website can be access off campus through any browser, i.e. Chrome, Mozilla Firefox, Internet Explorer, Safari and Edge. When on the website, the user will have to log in and depending on what user privilege the user has (lecturer, research leader, HOD) the user will access a different user interface, modelled to what the particular user is allowed to access. The website will be under strict standards-compliance that is having the website comply with the World Wide Web Consortium (W3C) (W3C, 2016) so that the website will run on every browser exactly the same. Users can also access the P.A.P.E.R.S system through an android application that uses the same web server as a back-end. The Android system can be used as a replacement for the website and vice versa. It should be able to work on mobile phones or tablets that supports the Android operating system.
+\section{Integration channels}
+    \subsection{LDAP}
+    LDAP (Lightweight Directory Access Protocol), is an Internet protocol that email and other programs use to look up information on a server (Gracion Software, 2016). In the case of the P.A.P.E.R.S system LDAP can be used in particular to storing and retrieving user information stored in the database, such as the user’s publications and particulars. The LDAP protocol runs a layer above the TCP/IP layer and provides the mechanisms to connect to, search, and modify Internet directories, such is found in the P.A.P.E.R.S system (Microsoft, 2016). LDAP supports C and C++ programming languages. The aforementioned database will be the main backbone of the system and thus will include quality requirements:
+    \begin{itemize}  
+
+        \item Performance: Accessing data from the database needs to happen as fast as possible. This means an equally fast protocol needs to be used to be used. Since the website and Android application can be run and used offsite from the University of Pretoria, SCP will be used to quickly move around data. FTP could have been used, but it is not as secure as SCP which uses the SSH protocol for authentication (LiquidWeb, 2016). SFTP (a more secure version of FTP) could also be used but because speed as an issue, SCP will be used instead as it is faster (LiquidWeb, 2016).
+        \item Reliability: The system should not have downtime and thus should have a secure and reliable connection to the LDAP system.
+        \item Scalability: The database must be able to store and manage a large amount of entries that include relationships to all entities such as users, publications, authors, etc. 
+        \item Auditability: Any change to the system through LDAP and SCP should be logged in a log file. This includes what queries were made, who made them, what time and a trace of the actions performed.
+        \item Flexibility: This should be shown in the database as it being in a state where any change done to the database should not in any way affect the system as a whole. This requires a high level of normalisation in the database to prevent any data anomalies that could occur from using the system.
+        \item Affordability: Any request made by the LDAP system, made by the user, should not affect the performance of the system as a whole and should be affordable in a sense to not prevent any other user concurrently using the system from not being able to perform their actions optimally.
+    \end{itemize}
+\end{document}
+
