@@ -22,5 +22,12 @@ Users will access the P.A.P.E.R.S system through a website front-end on a web se
         \item Flexibility: This should be shown in the database as it being in a state where any change done to the database should not in any way affect the system as a whole. This requires a high level of normalisation in the database to prevent any data anomalies that could occur from using the system.
         \item Affordability: Any request made by the LDAP system, made by the user, should not affect the performance of the system as a whole and should be affordable in a sense to not prevent any other user concurrently using the system from not being able to perform their actions optimally.
     \end{itemize}
+    \subsection{HTTP }
+    HTTP will be used for the web services and in particular HTTPS will be used to make the system more secure. The reason being is that traffic sent over HTTP is highly confidential (user’s usernames and passwords) and thus need to be protected. As the whole web based approach will require the HTTPS protocol, it would need quality requirements:
+     \begin{itemize}
+        \item Performance: the actual difference in speed compared to a normal HTTP is in insignificant, in fact even a little bit faster (see annex A) but can take longer in regards to the SSL handshake request that has to be made. This is still something that can be overlooked as security has a higher priority than speed.
+        \item Reliability: Since HTTPS is not reliable enough in itself as a connection is never maintained. Thus TCP in conjunction with HTTPS can be used. This will allow you to wait for responses that could inform you if the server has received all the information. 
+        \item Scalability: HTTPS must be able to handle many requests sent and received and not slow down the system as a whole when doing so.
+        \item Auditability: Every HTTPS request needs to  logged in an appropriate log file to see what has been requested    
 \end{document}
 
