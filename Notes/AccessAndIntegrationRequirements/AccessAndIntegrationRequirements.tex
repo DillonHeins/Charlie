@@ -25,9 +25,16 @@ Users will access the P.A.P.E.R.S system through a website front-end on a web se
     \subsection{HTTP }
     HTTP will be used for the web services and in particular HTTPS will be used to make the system more secure. The reason being is that traffic sent over HTTP is highly confidential (user’s usernames and passwords) and thus need to be protected. As the whole web based approach will require the HTTPS protocol, it would need quality requirements:
      \begin{itemize}
-        \item Performance: the actual difference in speed compared to a normal HTTP is in insignificant, in fact even a little bit faster (see annex A) but can take longer in regards to the SSL handshake request that has to be made. This is still something that can be overlooked as security has a higher priority than speed.
+        \item Performance: the actual difference in speed compared to a normal HTTP is in insignificant, in fact even a little bit   faster (see annex A) but can take longer in regards to the SSL handshake request that has to be made. This is still something that can be overlooked as security has a higher priority than speed.
         \item Reliability: Since HTTPS is not reliable enough in itself as a connection is never maintained. Thus TCP in conjunction with HTTPS can be used. This will allow you to wait for responses that could inform you if the server has received all the information. 
         \item Scalability: HTTPS must be able to handle many requests sent and received and not slow down the system as a whole when doing so.
         \item Auditability: Every HTTPS request needs to  logged in an appropriate log file to see what has been requested    
+\subsection{SMTP}
+SMTP (Simple Mail Transfer Protocol) will be used to send email notifications to users of the system. This falls under the notification domain of the system and will be linked to the deadlines set by users in the database. SMPT uses Port 25 to send emails but Port 465 can be used instead if encryption needs to be used to send emails securely (SiteGround, 2016).  
+\subsection{Other Integration Channels}
+  \begin{itemize}
+  
+  \end{itemize}
+
 \end{document}
 
