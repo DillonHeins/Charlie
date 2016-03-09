@@ -1,59 +1,124 @@
 \documentclass[12pt, letterpaper, twoside]{article}
 \usepackage[margin=2.5cm,left=2cm,includefoot]{geometry}
-
+\usepackage{hyperref}
 \title{Use of reference architectures and frameworks}
 \author{Charl Jansen van Vuuren - 13054903}
 \date{08 March 2016}
 
 \begin{document}
-\section{Use of reference architectures and frameworks}
-In this section we will discuss reference architectures and frameworks
+\section{Reference Architecture and frameworks}\label{sec: ReferencArchitecture}
+In this section we will discuss the reference architecture and frameworks that will be used in the P.A.P.E.R system.
+	\subsection{An object-relational mapper}\label{subsec: ORM}
+	Object-relational mapper is a technique of converting data between incompatible systems by means of object orientated programming. For example the conversion of database attributes into a database object. This allow the interacting object-orientated language to manipulate this database object with ease, in essence the data can be presented in a way that any object is presented in that programming language.
+	
+	Django uses Object-relational mapping(ORM) with regards to its Model-View-Controller (MVC) model.
+	The data models and a relational database (Model) are manipulated with the ORM strategy to interact with the databases.
+		
+	
+	\subsubsection{Advantages}
+	\begin{itemize}
+	\item
+	The advantage of using object-relational mappers with databases in particular is that joins aren't used that often as object types can be followed by means of referencing pointers. 
+	\item
+	Relationships are also established by means of pointers which can increase efficiency for complex data.
+	\item
+	This approach works well for large amounts of data, as the object can be manipulated easily for each field.
+	\end{itemize}
+	
+	\subsubsection{Disadvantages}
+	
+	\begin{itemize}
+	\item
+	 Inefficient when used with small databases as objects will still be created which might be less efficient than a quick lookup of those particular fields. 
+	\end{itemize}
+	
+	
+	\clearpage
+	
+	\subsection{Application Server}\label{subsec: ApplicationServer}
+	Software framework for web applications and a server to run the environment, is the principle that Application Server approach follows. An example of Application Server architecture framework is the Java EE framework. This architecture is based on the Layer model and Client-Server model and contains a service layer which is accessed by the developer.
+	Django supports Java EE based Application Server.
+	
+	\subsubsection{Advantages}
+	\begin{itemize}
+	\item Scalability 
+		\begin{itemize}
+		\item Resources are allocated efficiently
+		\item Objects reuse is ensured
+		\end{itemize}
+	\item Integrability
+		\begin{itemize}
+			\item Integrates well with REST
+			\item Database integration is provided
+		\end{itemize}
+	\item Security
+		\begin{itemize}
+		\item Authentication and confidentiality is supported
+		\end{itemize}
+	\end{itemize}
+	
+	%\subsubsection{Disadvantages}
+	%\begin{itemize}
+	
+	%\end{itemize}
+	%	\subsection{Service-Orientated Architecture }
 
-\subsection{An object-relational mapper}
-Object-relational mapper is a technique of converting data between incompatible systems by means of object orientated programming. For example the conversion of database attributes into a database object. This allow the interacting object orientated language to manipulate this database object without tedious statements, in essence the data can manipulated and presented in a way that any object is presented in that programming language.
+	
+	%	\subsubsection{Advantages}
+	%	\subsubsection{Disadvantages}
 
-\subsubsection{Advantages}
-The advantage of using object-relational mappers with databases in particular is that joins aren't used that often as object types can be followed by means of pointers. (CITATION NEEDED)
 
-Relationships are also established by means of pointers which can increase efficiency for complex data.
+\clearpage
+\section{Reference Frameworks}\label{sec: RefFrameworks}
 
-\subsubsection{Disadvantages}
-This approach works well for large amounts of data, as the object can be manipulated easily for each field, but it can be considered inefficient with small amounts of data as objects will still be created which might be less efficient than a quick lookup of those particular fields. 
 
-\subsection{Application Server}
-Software framework for web applications and a server to run the environment. An example of Application Server architecture framework is the Java EE framework. This architecture is based on the layer model and client-server model and contains a service layer which is accessed by means of an API to the core functionality.
+	\subsection{Django}\label{subsec: Django}
+	Django is a web framework, written in Python which uses the Model-View-Controller architectural pattern, or MVC for short.
+	Django's main aim is to provide a framework on which to build websites that are primarily based on complex databases.
+	The use of Object-relational mapper in Django's MVC is described in \ref{subsec: ORM}. Django processes HTTP requests with a web templating system and regular-expression URL control (View and Controller).
+	\\ \\
+	\textbf{Django further includes:}
+	\begin{itemize}
+		\item Its own web server for developmental purposes.
+		\item Form validation and storing of form data in database
+		\item Caching framework with several cache methods
+		\item Serialization system to produce and interpret XML and JSON representation of model instances.
+		\item Python unit test framework
+	\end{itemize}
+	Django database support:
+	\begin{itemize}
+		\item PostgreSQL
+		\item MySQL
+		\item SQLite
+		\item Oracle
+		\item Microsoft SQL Server (through django-mssql)
+	\end{itemize}
+	Django can be used with:
+	\begin{itemize}
+		\item Python (Supported by default)
+		\item JavaScript (through Swig)
+		\item Ruby (through Liquid)
+		\item Perl (through Template::Swig)
+		\item PHP (Twig)
+	\end{itemize}
 
-The advantages of using Application Servers include:
-\begin{itemize}
-\item Data and Code integrity (Expand)
-\item Security (Expand)
-\item Performance (Expand)
-\end{itemize}
+	We prefer to use Django as it does have a slight learner curve, but will ease integrability with regards to our Android application.
+	
+	
+	\subsection{Honarable Mentions}
+	\subsubsection{AngularJS}\label{subsubsec: AngularJS}
+		Web-framework making use of client-side Model–View–Controller model. 
+		AngularJS makes use of the MEAN stack for its front-end, consisting of MongoDB database, Express.js web application server framework, Angular.js itself, and Node.js runtime environment.
+		We prefer to use a server side approach as this eases integrability and simplifies implementation.
+	\subsubsection{Ruby on Rails}\label{subsubsec: Rails}
+		Ruby based web-framework based on Ruby programming language. "Rails" uses a Model-View-Controller based model and emphasizes the use of JSON and XML for data transfer.
+		Since Ruby has a high learning curve compared to Python for example, we prefer to use Django instead.
 
-\subsubsection{Advantages}
-
-\subsubsection{Disadvantages}
+	
+%\section{References}
 %\begin{itemize}
-%
-%\end{itemize}
-
-\subsection{Enterprise Services bus}
-Variant of the Client-Server model ... (Expand)
-
-
-\subsubsection{Advantages}
-
-\subsubsection{Disadvantages}
-
-\section{References}
-
-\begin{itemize}
-
-\item
-
-\item
-
-\end{itemize}
+%\item
+%end{itemize}
 
 
 \end{document}
