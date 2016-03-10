@@ -8,46 +8,153 @@
 \begin{document}
 \section{Technologies}
 
-	For each of the following sections, all technologies we considered are listed. At the end of each section the final choices will be stated and explained why each technology was chosen instead of other options.
+	For each of the following sections, all technologies we considered are listed.
 	
 	\subsection{Programming Languages}
-		\begin{itemize}
-			\item Java
-			\item JavaScript including JSON
-			\item Python
-			\item PHP
-			\item C++
-			\item C
-			\item HTML5 %strictly speaking it is a markup language, but I think it fits with this section.
-		\end{itemize}
+			\subsubsection{Java}
+				Java is a general purpose, high-level programming language developed by Sun Microsystems. It is concurrent, class based and object-oriented. It was specifically designed to have as few dependencies as possible.
+				
+				\begin{itemize}			
+					\item Advantages:
+						\begin{itemize}
+							\item Easy to use
+							\item Syntax is derived from C and C++
+							\item Comprehensive documentation
+						\end{itemize}
+						
+					\item Disadvantages:
+						\begin{itemize}
+							\item Memory Inefficient
+						\end{itemize}
+				\end{itemize}
+				
+			\subsubsection{JavaScript}
+				JavaScript is a high-level programming language that is, alongside HTML and CSS, one of the three essential technologies that allow content production for the World Wide Web.
+				
+				\begin{itemize}
+					\item Advantages:
+						\begin{itemize}
+							\item  Because JavaScript is client-side, there is no delay by having to wait for a server response
+							\item Easy to learn and implement
+						\end{itemize}
+						
+					\item Disadvantages:
+						\begin{itemize}
+							\item Security, the code being executed on the client-side is susceptible to malicious exploitation
+						\end{itemize}
+				\end{itemize}
+				
+			\subsubsection{Python}
+				Python is a high-level programming language that emphasizes code readability.
+			
+				\begin{itemize}
+					\item Advantages:
+						\begin{itemize}
+							\item Efficiency, Python allows a programmer to solve the same problem in fewer lines of code than in other languages such as Java
+							\item Easy to read
+						\end{itemize}
+						
+					\item Disadvantages:
+						\begin{itemize}
+							\item Syntax differs from conventional languages such as Java or C++, such as the omission of the semicolon
+							\item Indentation dictates blocks of code, a single wrong indentation will produce undesired or unexpected results from your code
+						\end{itemize}
+				\end{itemize}
+				
+			\subsubsection{PHP}
+				PHP (PHP: Hypertext Preprocessor) is a server-side scripting language designed for web development.
+				
+				\begin{itemize}
+					\item Advantages:
+						\begin{itemize}
+							\item Works well with databases
+							\item Popular, most problems encountered have already been solved by other developers
+						\end{itemize}
+						
+					\item Disadvantages:
+						\begin{itemize}
+							\item ?
+						\end{itemize}
+				\end{itemize}
+				
+			\subsubsection{C}
+			
+				\begin{itemize}
+					\item Advantages:
+						\begin{itemize}
+							\item Fast run-time performance
+						\end{itemize}
+						
+					\item Disadvantages:
+						\begin{itemize}
+							\item Low-level language, not ideal for applications or web development
+						\end{itemize}
+				\end{itemize}
+				
+			\subsubsection{C++}
+			
+				\begin{itemize}
+					\item Advantages:
+						\begin{itemize}
+							\item Powerful language
+							\item 
+						\end{itemize}
+						
+					\item Disadvantages:
+						\begin{itemize}
+							\item No garbage collection, memory management has to be implemented by the programmer
+							\item Complex language
+						\end{itemize}
+				\end{itemize}
+				
+			\subsubsection{HTML} %strictly speaking it is a markup language, but I think it fits with this section.
+				HTML (HyperText Markup Language) is the standard markup language to create web pages. It dictates the content of a web page. Alongside JavaScript and CSS, it is one of the three essential technologies that allow content production for the World Wide Web.
+				\begin{itemize}
+					\item Advantages:
+						\begin{itemize}
+							\item Standardized, it is the standard markup language to create web pages
+							\item Easy to learn
+						\end{itemize}
+					\item Disadvantages:
+						\begin{itemize}
+							\item Different web browsers may render the page differently
+							\item Bland, it has limited styling capability.
+						\end{itemize}
+				\end{itemize}
+
 		
 	\subsection{Frameworks}
-		\begin{itemize}
-			\item Ajax 
-			\item AngularJS 
-			\item Bootstrap 
-			\item Django
-		\end{itemize}
-
+		\subsection{Ajax}
+			AJAX (Asynchronous Javascript and XML) is a group of technologies used to create asynchronous web applications. It is used to change the content of a web page dynamically without having to reload the entire web page
+			
+		\subsection{AngularJS}
+			Described in section \ref{subsubsec: AngularJS}
+			
+		\subsection{Bootstrap}
+			Described in section \ref{subsubsec: Bootstrap}
+			
+		\subsection{Django}
+			Described in detail in section \ref{subsec: Django}
+			
 	\subsection{Libraries}
-		\begin{itemize}	
-			\item jQuery
-		\end{itemize}
+			\subsubsection{jQuery}
+			jQuery is a cross-platform JavaScript library designed to simplify client-side scripting. It is the most popular JavaScript library in use today
 	
 	\subsection{Protocols}
-		\begin{itemize}	
-			\item LDAP (Lightweight Directory Access Protocol)
-			\item HTTPS
-			\item HTTP
-			\item SMTP
-			\item REST (Representational State Transfer)
-		\end{itemize}
-	
+		All protocols listed below were discussed in section \ref{sec: Integration channels}
+			\begin{itemize}
+				\item LDAP (Lightweight Directory Access Protocol)
+				\item HTTPS
+				\item HTTP
+				\item SMTP	
+			\end{itemize}
 	
 	\subsection{Database Systems}
 		The System will utilize a relational database and will use PostgreSQL to handle queries.
 		
 	\subsection{Operating Systems}
 		The System will be created to primarily work on Linux as the entire Computer Department is running on Linux. The System will however be compatible with other operating systems such as Windows, Apple OS.
+		
+	\
 
 \end{document}
