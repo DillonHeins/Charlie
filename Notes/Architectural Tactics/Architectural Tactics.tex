@@ -1,0 +1,161 @@
+\documentclass[a4paper,12pt]{article}
+\begin{document}
+
+\title{Architectural tactics or strategies - Notes}
+\author{Keorapetse Shiko}
+\date{09 March 2016}
+\maketitle
+
+\cleardoublepage
+
+\section{Architectural Tactics}
+
+	\subsection{Introduction}
+	Quality requirements have a significant influence on the software architecture of a system. Architectural tactics are techniques that an 
+	architect may use to comprehensively achieve the quality requirements. For each quality requirement listed, potential tactics will be mentioned.
+
+	\subsection{Quality requirements}\label{subsec:quality}
+	\begin{itemize}
+		\item Performance
+		\begin{itemize}
+			\item Workload is a maximum of 100 users concurrently.
+			\item No implementation of concurrent editing of document entries - last saved edit is written to the database.
+			\item The system should be able to support 100 users updating information at the same time as updating is more intensive than reading.
+			\item The response time of the system should be fast enough that a user is able to complete their work without frustration. Due to the system being off-line it is reasonable to expect the system's response time to be only limited by the speed of the network.
+			
+			\item Tactics
+			\begin{itemize}
+					\item Spread load across resources - (client/controlled/server driven balancing?)
+					\item Spread load across time(scheduling, Concurrency, Pre-processing)
+					\item Efficient storage usage?
+					\item Resource re-use?(thread pooling? caching?)
+			\end{itemize}		
+		\end{itemize}
+		\item Reliability
+		\begin{itemize}
+			\item The system should not fail whilst providing critical or important use cases.
+			\item The system should handle all requests and respond with appropriate result objects for each.
+			
+			\item Tactics
+			\begin{itemize}
+				\item Resource locking
+				\item Contracts based?
+				\item Exception communication
+				\item Maintain backup?
+				\item Checkpoint roll-back?
+				\item Clustering and queueing?
+			\end{itemize}
+						
+		\end{itemize}
+		\item Scalability
+		\begin{itemize}
+			\item Ability for multiple external systems to connect to the system's API.
+			\item The system should be able to support a large amount of historical document entries being added to the database.
+			
+			\item Tactics
+			\begin{itemize}
+				\item Increase processing power?(No, not applicable)
+				\item Increase storage?(maybe) 
+				\item Increase capacity of communication channels
+				\item Thread pooling
+				\item Clustering
+				\item Queueing?
+			\end{itemize}
+						
+		\end{itemize}
+		\item Security
+		\begin{itemize}
+			\item A hierarchical system will be used to determine the security privileges of users of the system.
+			\item Passwords are to be hashed using at least sha256 and should be stored as such within the database along with a salt.
+			\item An inactive user session should be terminated after a period of 10 minutes with no activity.
+			\item A user who has forgotten their passwords can use a password reset option which will send a one time password to their registered email address so that they may login once using it and reset their password.
+			
+			\item Tactics
+			\begin{itemize}
+				\item Limit access(Authentication, authorisation, Minimise access channels?)
+				\item Minimize complexity
+				\item Event logging and analyses
+				\item Drop connection
+				\item Restore state
+				\item Encryption(hashing passwords)
+				
+			\end{itemize}			
+			
+		\end{itemize}
+		\item Flexibility
+		\begin{itemize}
+			\item The client has stated that the system is not needed to be able to extend to accommodate a greater number of departments.
+			
+			\item Tactics
+			\begin{itemize}
+				\item Contract based
+				\item Dependency injection
+			\end{itemize}			
+			
+		\end{itemize}
+		\item Maintainability
+		\begin{itemize}
+			\item The system should have as few bugs as possible so as to prevent having to constantly maintain it in the future.
+			\item The system should be built in a modular way so that all services are decoupled in such a manner that allows for the extension of the system at a later stage.
+			
+			\item Tactics
+			\begin{itemize}
+				\item Localise changes(Anticipate expected changes)
+				\item Prevention of ripple effect(Use intermediary, maintain existing interface)
+				\item Defer binding time(Runtime registration/lookups )
+				\item Polymorphism, adherence to defined protocols
+			\end{itemize}			
+			
+		\end{itemize}
+		\item Auditability/monitorability
+		\begin{itemize}
+			\item Every action performed by a user should be logged and all details about said action should be stored.
+			\item These actions should be visible to admin users.
+			
+			\item Tactics
+			\begin{itemize}
+				\item Logging
+			\end{itemize}			
+			
+		\end{itemize}
+		\item Integrability
+		\begin{itemize}
+			\item User's document entries should not be able to be deleted, if it is a case where the document will not be completed it should remain in the system and be terminated.
+			\item A user with no admin rights should not have access to admin privileges so that the system's data may remain integrable and safe.
+			\item The system should not ever be in a state where it is under pressure and the data is at risk of becoming corrupted. The system should be designed to handle the pressure for which it has been specified to handle.
+			
+			\item Tactics
+			\begin{itemize}
+				\item Publish contracts
+				\item Support pluggable adapters
+			\end{itemize}			
+		
+			
+		\end{itemize}
+		\item Cost
+		\begin{itemize}
+			\item All software used should not be proprietary but rather open source so as to minimise cost as much as possible.
+			
+			\item Tactics
+			\begin{itemize}
+				\item List of open source software to follow..
+			\end{itemize}			
+			
+		\end{itemize}
+		\item Usability
+		\begin{itemize}
+			\item The interface should be lightweight.
+			\item The interface should be intuitive to use as well as obey Human Computer Interaction guidelines so that it is efficient and easy to use.
+			
+			\item Tactics
+			\begin{itemize}
+				\item Separate user interface
+				\item User initiative(Cancel, undo)
+				\item System initiative(Maintain user,system and task models)
+			\end{itemize}			
+			
+		\end{itemize}
+	\end{itemize}
+
+
+\end{document}
