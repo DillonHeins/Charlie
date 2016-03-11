@@ -1,5 +1,6 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{graphicx}
+\usepackage{caption}
 
 \begin{document}
 
@@ -28,11 +29,19 @@ Often times source code needs to be organised so that clear roles, responsibilit
 
 \subsection{Architectural Patterns Proposed for PAPERS}
 
+
 \subsubsection{Model View Controller}
+
 \begin{itemize}
 \item{Overview}
-\newline
+
 In the Model-View-Controller Pattern, an interactive application is divided into three parts: the Model is an object representing and storing the data and activities, the View displays information to the user and the Controller offers a way to change the state of the Model. To implement this patten for the system, the Python Django Framework will be used.
+
+\begin{minipage}{\linewidth} 
+\centering
+\includegraphics[width=4in]{C:/Users/Priscilla/Documents/GitHub/Charlie/Diagrams/ArchitecturalPatterns/ModelViewController.jpg}
+\captionof{figure}{Model View Controller Pattern}
+\end{minipage}
 
 \item{Motivation}
 \newline
@@ -61,7 +70,12 @@ The Django Framework itself will be the Controller as it will provide appropriat
 \item{Overview}
 \newline
 The Layered Pattern assists in structuring applications that can be decomposed into subtasks. Each subtask provides services to the layer above it and services in that layer are implemented using those from the layer below it.
-
+\newline
+\begin{minipage}{\linewidth} 
+\centering
+\includegraphics[width=4in]{C:/Users/Priscilla/Documents/GitHub/Charlie/Diagrams/ArchitecturalPatterns/LayeredPattern.jpg}
+\captionof{figure}{Layered Pattern}
+\end{minipage}
 \item{Motivation}
 \newline
 A system typically consists of subsystems that have a certain functionality. These functions need to be placed in layers so that their services can be used by other layers and a change in behaviour of one layer does not affect the layers below it. This assists in developing different layers independently. 
@@ -79,7 +93,12 @@ This pattern will be used to separate the internal functions within each subsyst
 \item{Overview}
 \newline
 The Master-slave Pattern can be described as  a model where one process (Master) has unidirectional control over one or more processes that are known as Slaves. 
-
+\newline
+\begin{minipage}{\linewidth} 
+\centering
+\includegraphics[width=4in]{C:/Users/Priscilla/Documents/GitHub/Charlie/Diagrams/ArchitecturalPatterns/MasterSlave.jpg}
+\captionof{figure}{Master Slave}
+\end{minipage}
 \item{Motivation}
 \newline
 An interactive application typically consist of multiple users that use it at different rates. These users make requests that usually expect a response to either use the data or edit it in some way and thus is imperative for the application have an ability to collect user information simultaneously.
@@ -97,7 +116,7 @@ The Slaves will be the clients connecting to the server and will  send requests 
 \end{itemize}
 \end{itemize}
 
-\subsection{Patterns Not Considered}
+\subsection{Other Patterns}
 \subsubsection{Client Server Pattern}
 
 \begin{itemize}
