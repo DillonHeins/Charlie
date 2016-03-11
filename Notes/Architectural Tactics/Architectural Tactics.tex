@@ -45,7 +45,7 @@
 				\item Resource locking
 				
 					\begin{itemize}
-						\item A resource or a part/section of the resource will be locked, only one user will be able to edit that resource. The other users will be notified about the lock by getting conflicts when they try to pull the resource.
+						\item A resource or a part/section of the resource will be locked, the correct resource will be returned by making sure that the correct resource is requested to the database and only valid requests will be approved. After the resource is returned, only one user will be able to edit that resource. The other users will be notified about the lock by getting conflicts when they try to pull the resource.
 					\end{itemize}
 										
 				\item Maintain backup
@@ -142,12 +142,13 @@
 		\end{itemize}
 		\item Auditability/monitorability
 		\begin{itemize}
-			\item Every action performed by a user should be logged and all details about said action should be stored.
-			\item These actions should be visible to admin users.
 			
 			\item Tactics
 			\begin{itemize}
 				\item Logging
+					\begin{itemize}
+						\item An audit trail will be maintained. This will be done by having a copy of each transaction applied to the data in the system along with the identifying information of the user.
+					\end{itemize}					
 			\end{itemize}			
 			
 		\end{itemize}
