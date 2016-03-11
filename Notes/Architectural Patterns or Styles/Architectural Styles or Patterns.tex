@@ -1,5 +1,5 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
 
 \begin{document}
 
@@ -16,17 +16,14 @@ Often times source code needs to be organised so that clear roles, responsibilit
 \subsection{Types of Architectural Patterns}
 
 \begin{itemize}
-\item Layers Pattern
+\item Layered Pattern
 \item Client-server
 \item Representational State Transfer (REST)
 \item Master-slave
 \item Pipe-filter
 \item Broker Pattern
-\item Peer-to-peer
-\item Event-bus Pattern
 \item Model View Controller
 \item Blackboard Pattern
-\item Interpreter
 \end{itemize}
 
 \subsection{Architectural Patterns Proposed for PAPERS}
@@ -38,11 +35,36 @@ Often times source code needs to be organised so that clear roles, responsibilit
 \newline
 In the Model-View-Controller Pattern, an interactive application is divided into three parts: the Model is an object representing the data and activities, the View displays information to the user and the Controller offers a way to change the state of the Model.
 
-\begin{figure}[H]				
-	\includegraphics[width=4in]{../Diagrams/Architectural Patterns/Model View Controller.jpg}
-	\caption{ Model View Controller }
-\end{figure}
+\item{Motivation}
+\newline
+\newline
+Any form of application that uses a request-and-response logic needs to be decoupled. Separation of responsibilities is useful because functions can work normally when certain subsystems are changed. The Model View Controller makes this a possibility and hence it is chosen for use in this context. 
 
+\item{Componemnts of the Model View Controller Pattern}
+\begin{enumerate}
+\item{Model}
+\newline
+The Model consists of the Databse that will be used to store all the relevant information used by the system. For this particular system, Django will be used to handle the Databse. For the Android Application, an appropriate API that will implement REST or Representational State Transfer will be used to communicate with the main Model (Database).
+\newline
+
+\item{View}
+\begin{enumerate}
+\item{Web Application}
+\newline
+For the Web Application, the browser will be the View because it will display the HTML (with or without CSS and JQuery) that the user will be able to use to interact with the application logic. The Controller will send data to the viewer so that the user can see it. In addition, Django provides a way for data to be sent to the View.
+\newline
+\item{Android Application}
+\newline
+For the Android Application, the Android Graphic User Interface, or GUI will be the View and appropriate APIs, such as REST, will be used that will enable this applicaton to manipulate the Model via the Controller.
+\end{enumerate}
+
+\item{Controller}
+\newline
+The Django Framework itself will be the Controller as it will provide appropriate functionality for data manipulation.
+
+\subsubsection{}
+
+\end{enumerate}
 \end{itemize}
 
 
