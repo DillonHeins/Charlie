@@ -21,7 +21,7 @@ Often times source code needs to be organised so that clear roles, responsibilit
 \item Microkernel
 \item Master-slave
 \item Pipe-filter
-\item Broker Pattern
+\item Hierarchical
 \item Model View Controller
 \item Blackboard Pattern
 \end{itemize}
@@ -112,10 +112,35 @@ An interactive application typically consist of multiple users that use it at di
 
 \subsubsection{Microkernel}
 \begin{itemize}
-\item Used for applications that must be adapted to changing system requirements.
+\item Used for applications that must adapt to changing system requirements.
 \item This pattern provides minimal functionality (Internal Servers) as a building block and customizable components that can be adapted accordingly (External Servers).
 \item It provides an Adapter that provides a single access point (Fritz, 2012)
 \item It has a more complex process management if not provided by architecture (Fritz, 2012)
+\end{itemize}
+
+\subsubsection{Pipes and Filters}
+\begin{itemize}
+\item Consists of Pipes and Filters:
+\begin{itemize}
+\item Pipe - Input and Output
+\item Filters - Stateless sevices or pure functions.
+\end{itemize}
+\item Assemble higher-level stateless services from lower level ones (Fritz, 2012)
+\item It is not used because it is difficult to use for interactive processes such as Web Applications.
+
+\end{itemize}
+
+\subsubsection{Hierarchical}
+\begin{itemize}
+\item It is a recursive containment hierarchy (Fritz, 2012)
+\item It is not used due to its lack of flexibility.
+\end{itemize}
+
+\subsubsection{Blackboard Pattern}
+\begin{itemize}
+\item Blackboard repository hosts problem specification and current state of solution (Fritz, 2012)
+\item It is typically used were deterministic solutions are unavailable.
+\item It is not used because it requires synchronization and access control among users which is not required for running applications that are interactive.
 \end{itemize}
 
 \end{document}
