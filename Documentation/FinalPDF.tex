@@ -132,8 +132,148 @@
 		\end{itemize}
 		
 	\cleardoublepage
-	\section{Architecture Requirements}\label{sec:architecture}
-		Architecture requirements have been omitted for the first phase and moved to a new file called ArchitecturalRequirements.tex. This section will be further expanded during the current Architectural design phase 2.
+	\section{Software Requirements}\label{sec:software}
+	\subsection{Architecture Requirements}\label{subsec:architecture}
+		\subsubsection{Architectural scope}\label{subsubsec:scope}
+		
+		\begin{figure}[H]
+			\includegraphics[width=\linewidth]{../Diagrams/Architectural scope/Architectural scope.jpg}
+			\caption{Architectural Scope - Use case for Architectural Scope (Further refined in use cases)}
+		\end{figure}
+		
+		\par The system will be used to keep track of publications made for various research groups in the department, as well as keep track of the authors and the users in charge of things. From this we may later then generate reports on how various groups are doing as well as the department as a whole, and notify authors and users about upcoming deadlines and events.\\
+		
+		\par In the event of dealing with queries on database items such as users and publications, for example insertion and deletion, as well as viewing, the system must first validate that those items do or do not exist in said database. Once that is verified, the queries should be run and the result returned. On success the user should be notified, on failure an appropriate exception should be thrown. Persistence must be maintained throughout the database with very little fault tolerance.\\
+		
+		\par In dealing with reports, data being queried should be validated and the system should ensure that all queried data is recent and correct, halting any new additions during reporting. Reports should be properly archived for later retrieval and properly backed up regularly.\\
+		
+		\par In dealing with notifications, the system should ensure that all emails being used for every author does in fact exist and is a valid email. When sending this email, likely from the mail server at UP, the SMTP connection used must be ensured to be secured and the email should be sent through valid channels as to not appear as spam mail to other users. The system should also validate that it is using the latest deadline updates at all times.
+		
+		
+		\cleardoublepage
+		
+		\subsubsection{Quality requirements}\label{subsubsec:quality}
+		
+		The core quality requirements for this system include in order:
+		
+		\begin{itemize}
+			\item Cost
+			\item Integrability,
+			\item Security,
+			\item Auditability,
+			\item Reliability,
+			\item Usability,
+			\item Maintainability,
+			\item Flexibility
+			\item Performance, and
+			\item Scalability. \newline
+		\end{itemize}
+		
+		An in depth description of the various quality requirements: \newline
+		
+		\begin{itemize}
+			\item Performance
+			\begin{itemize}
+				\item Performance in the system is of little worry as the system is not expected to grow to a large point in which it may slow down. The system should preferably be able to handle up to a hundred concurrent users at a time without major slow down effect and queries should be able to run within a matter of seconds.
+			\end{itemize}
+			\item Reliability
+			\begin{itemize}
+				\item The meta-data stored for each paper is required to be entirely correct at all times. To ensure this, we need to validate all possible input that can occur on the system in order to prevent any possible data inconsistencies. On the same note all data has to be persistent and remain in the database for the duration of the systems use, which means in all but the most extreme circumstances such as a database clean up for example, all entries must remain even if in a terminated state.
+			\end{itemize}
+			\item Scalability
+			\begin{itemize}
+				\item Scalability of this particular system is not of very particular importance. At the rate which the system will be used, chances of heavy fragmentation, data becoming too big or concurrency issues will be vary minimal.
+			\end{itemize}
+			\item Security
+			\begin{itemize}
+				\item Security is critical in the system as meta-data for unpublished papers can be sensitive information. Thus it is empirical that only authorised people have any access to the system at all. It is also vital to separate the concerns of each group from one another, allowing each group to only access the information from the groups they have access to. The Administrator should also be the only one allowed to make major changes to the system in anyway, and should be the only one authorised to make major persistence changes. 
+			\end{itemize}
+			\item Flexibility
+			\begin{itemize}
+				\item The system should be developed as to not be platform dependant or browser dependant in it's operation, allowing it to essentially be used from theoretically any device capable of an internet connection and HTML5, this includes iPhones which may still connect through safari as opposed to an iPhone application
+				\item Flexibility may further be required in the event of change in units and venues for various existing conferences and journals, change in details for various users and authors registered on the system as well as flexibility for the addition or reduction of research groups.
+			\end{itemize}
+			\item Maintainability
+			\begin{itemize}
+				\item The system consists of a database which is required to stay consistent. To this end the system should contain well formatted documentation in order to properly maintain the system and ensure all data is in it's most consistent and reliable state.
+			\end{itemize}
+			\item Auditability
+			\begin{itemize}
+				\item All actions performed on the system should be audit-able via use of logging. A log entry should be created for each action such as adding or changing a publication for example. All actions performed in the system should be traceable to the user that performed them and possibly if so, where they performed it from in terms of IP as to have a form of accountability in the persistence of the meta-data.
+			\end{itemize}
+			\item Integrability
+			\begin{itemize}
+				\item The system should be easily integrable with the database system being used, allowing for simple queries in short amounts of time.
+				\item The system should be integrable with a web front end that should allow users to easily and securely use all the features of the system that their authorisation level permits.
+				\item The system should further be integrable with an Android front-end, which should allow for the exact same functionality of the web based front-end only designed ot be more mobile friendly.
+			\end{itemize}
+			\item Cost
+			\begin{itemize}
+				\item No proprietary software should be used in this system, and all licences for any software should be licensed under the open use policy.
+			\end{itemize}
+			\item Usability
+			\begin{itemize}
+				\item Users should easily be able to access the system securely from their most convenient location, either over their favourite web browser, the android application or via a mobile web page on their phone. All versions should allow full usage of all the features.
+				\item Reports generated should be easily readable and allow for a logical and quick method of discerning various statistics from one another.
+				\item Publications should be simple to view and easily distinguishable in type. One glance should allow a view of the most important details.
+				\item Users should be easy to manage for the Administrator, allowing termination and reinstatement of users as well as addition of new ones to be a simple and streamlined process.
+			\end{itemize}
+		\end{itemize}
+		
+		\cleardoublepage
+		
+		\subsubsection{Integration and access channel requirements}\label{subsubsec:integration}
+		
+		\begin{itemize}
+			\item The system must host a server to which API calls may be performed, to achieve this we use:
+			\begin{itemize}
+				\item Django (A Python based web framework allowing easy implementation of the MVC principal.)
+				\item AngularJS (For easy unit testing functionality and dependency injection)
+			\end{itemize}
+			\item The system should make API calls via browser, the browser functionality and calling is done via:
+			\begin{itemize}
+				\item HTML5 (To ensure access to the latest and most stable versions of features)
+				\item Javascript with a JQuery framework (For the functionality)
+			\end{itemize}
+			\item The system will require and android interface to interact with the API. To achieve this we make use of:
+			\begin{itemize}
+				\item JAVA (The standard language of every android application.)
+				\item JQuery for mobile (A convenient method to manipulate data via JQuery on your android app.)
+				\item Sencha touch (An HTML5 framework for Android.)
+			\end{itemize}
+			\item The system should be able to interact with the systems database, which will be hosted using:
+			\begin{itemize}
+				\item PostgreSQL (An open source relational database that integrates perfectly with the Django framework.)
+			\end{itemize}
+			\item The system should be able to send emails on a scheduled basis by sending mail from the CS mail server, for this we use:
+			\begin{itemize}
+				\item Django-sitemessage (A framework developed to allow easy scheduling of emails as well as the ability to retry an email on a failure.)\newline
+			\end{itemize}
+			
+		\end{itemize}
+		
+		
+		\begin{itemize}
+			\item Protocols to be used include:
+			\begin{itemize}
+				\item HTTP
+				\item SMTP
+				\item TCP
+			\end{itemize}
+		\end{itemize}
+		
+		\cleardoublepage
+		
+		\subsubsection{Architectural constraints}\label{subsubsec:constraints}
+		\begin{itemize}
+			\item The system should be developed using only non-proprietary technologies.
+			\item The system is to be developed for Linux based systems (Mostly Arch Linux) used by the Computer Science department, however preferably the system should run on any general use operating system.
+			\item The system should be browser independent, thus the system should be accessed via any browser without issue, including but not limited to (Firefox, Chrome, Safari, Edge etc.)
+			\item The system should be handled locally and should not rely on outside internet sources in order to function.
+			\item The API created must be queried by both a web browser, as well as an Android application.
+			\item The system created should allow for users to use the application via mobile, employing technologies such as bootstrap in order to keep it mobile friendly. This will always allow users of iOS and Windows mobile to access the system via channels such as Safari and Edge.
+			\item The system is required to be concurrent and make use of concurrent methods specifically in it's functionality, allowing up to a minimum of a hundred concurrent users to be active at the same time
+		\end{itemize}
 		
 	\cleardoublepage
 	\section{Functional Requirements and Application Design}\label{sec:functional}
