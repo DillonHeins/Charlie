@@ -18,32 +18,43 @@
 	\begin{itemize}
 		\item Performance
 		\begin{itemize}
-			\item Workload is a maximum of 100 users concurrently.
-			\item No implementation of concurrent editing of document entries - last saved edit is written to the database.
-			\item The system should be able to support 100 users updating information at the same time as updating is more intensive than reading.
-			\item The response time of the system should be fast enough that a user is able to complete their work without frustration. Due to the system being off-line it is reasonable to expect the system's response time to be only limited by the speed of the network.
+			\item The system is fairly small and simple. Any form or action of enhancing performance may be relatively negligible but a couple of tactics can be implemented. 
 			
 			\item Tactics
 			\begin{itemize}
-					\item Spread load across resources - (client/controlled/server driven balancing?)
-					\item Spread load across time(scheduling, Concurrency, Pre-processing)
-					\item Efficient storage usage?
-					\item Resource re-use?(thread pooling? caching?)
+					\item Spread load across resources
+						
+						\begin{itemize}
+							\item Concurrency can be introduced. Processing different streams of events on different threads and creating additional threads to process different sets of activities can be done by processing requests in parallel. Appropriately allocating threads to resources can maximally exploit concurrency. 
+							
+						\end{itemize}
+					
+					\item Resource re-use, caching.
+					
+						\begin{itemize}
+							\item Considering the Readers/Writers problem, multiple readers will have access to view the resource while only one writer can have access to edit the resource. Multiple copies of data can be maintained. Caching is a tactic that replicates data which would be on the same repository to reduce contention.
+						\end{itemize}
+						
 			\end{itemize}		
 		\end{itemize}
 		\item Reliability
 		\begin{itemize}
-			\item The system should not fail whilst providing critical or important use cases.
-			\item The system should handle all requests and respond with appropriate result objects for each.
 			
 			\item Tactics
 			\begin{itemize}
 				\item Resource locking
-				\item Contracts based?
-				\item Exception communication
-				\item Maintain backup?
-				\item Checkpoint roll-back?
-				\item Clustering and queueing?
+				
+					\begin{itemize}
+						\item A resource or a part/section of the resource will be locked, only one user will be able to edit that resource. The other users will be notified about the lock by getting conflicts when they try to pull the resource.
+					\end{itemize}
+										
+				\item Maintain backup
+				
+					\begin{itemize}
+						\item The database will have a back up of all of the information that it stores.
+					\end{itemize}
+								
+
 			\end{itemize}
 						
 		\end{itemize}
@@ -54,12 +65,10 @@
 			
 			\item Tactics
 			\begin{itemize}
-				\item Increase processing power?(No, not applicable)
-				\item Increase storage?(maybe) 
+
 				\item Increase capacity of communication channels
 				\item Thread pooling
-				\item Clustering
-				\item Queueing?
+
 			\end{itemize}
 						
 		\end{itemize}
