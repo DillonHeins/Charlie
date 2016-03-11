@@ -147,9 +147,6 @@
 		
 		\par In dealing with notifications, the system should ensure that all emails being used for every author does in fact exist and is a valid email. When sending this email, likely from the mail server at UP, the SMTP connection used must be ensured to be secured and the email should be sent through valid channels as to not appear as spam mail to other users. The system should also validate that it is using the latest deadline updates at all times.
 		
-		
-		\cleardoublepage
-		
 		\subsubsection{Quality requirements}\label{subsubsec:quality}
 		
 		The core quality requirements for this system include in order:
@@ -218,8 +215,6 @@
 			\end{itemize}
 		\end{itemize}
 		
-		\cleardoublepage
-		
 		\subsubsection{Integration and access channel requirements}\label{subsubsec:integration}
 		
 		\begin{itemize}
@@ -250,7 +245,6 @@
 			
 		\end{itemize}
 		
-		
 		\begin{itemize}
 			\item Protocols to be used include:
 			\begin{itemize}
@@ -259,8 +253,6 @@
 				\item TCP
 			\end{itemize}
 		\end{itemize}
-		
-		\cleardoublepage
 		
 		\subsubsection{Architectural constraints}\label{subsubsec:constraints}
 		\begin{itemize}
@@ -272,6 +264,9 @@
 			\item The system created should allow for users to use the application via mobile, employing technologies such as bootstrap in order to keep it mobile friendly. This will always allow users of iOS and Windows mobile to access the system via channels such as Safari and Edge.
 			\item The system is required to be concurrent and make use of concurrent methods specifically in it's functionality, allowing up to a minimum of a hundred concurrent users to be active at the same time
 		\end{itemize}
+		
+		\subsection{Architectural Patterns or Styles}
+		\subsection{Architectural tactics or strategies}
 		
 		\subsection{Reference Architecture and frameworks}\label{sec: ReferencArchitecture}
 In this section we will discuss the reference architecture and frameworks that will be used in the P.A.P.E.R system.
@@ -298,9 +293,6 @@ In this section we will discuss the reference architecture and frameworks that w
 	\item
 	 Inefficient when used with small databases as objects will still be created which might be less efficient than a quick lookup of those particular fields. 
 	\end{itemize}
-	
-	
-	\clearpage
 	
 	\subsubsection{Application Server}\label{subsec: ApplicationServer}
 	Software framework for web applications and a server to run the environment, is the principle that Application Server approach follows. An example of Application Server architecture framework is the Java EE framework. This architecture is based on the Layer model and Client-Server model and contains a service layer which is accessed by the developer.
@@ -331,16 +323,6 @@ In this section we will discuss the reference architecture and frameworks that w
 	\item Central point access can choke overall network's access to the server
 	
 	\end{itemize}
-	%	\subsection{Service-Orientated Architecture }
-
-	
-	%	\subsubsection{Advantages}
-	%	\subsubsection{Disadvantages}
-
-
-\clearpage
-\subsection{Reference Frameworks}\label{sec: RefFrameworks}
-
 
 	\subsubsection{Django}\label{subsec: Django}
 	Django is a web framework, written in Python which uses the Model-View-Controller architectural pattern, or MVC for short.
@@ -393,6 +375,8 @@ In this section we will discuss the reference architecture and frameworks that w
 	 Bootstrap is a front-end framework for creating websites and applications. It is mainly used for interface development and design. Bootstrap can be used in HTML, CSS and JavaScript. 
 	 We decided on a Server-side approach rather than a front-end approach such as Bootstrap.
 	\end{itemize}
+	
+	\subsection{Access and Integration Channels}
 	
 	\subsection{Technologies}
 
