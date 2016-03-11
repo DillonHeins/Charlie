@@ -109,12 +109,15 @@
 		\end{itemize}
 		\item Flexibility
 		\begin{itemize}
-			\item The client has stated that the system is not needed to be able to extend to accommodate a greater number of departments.
 			
 			\item Tactics
 			\begin{itemize}
+				
 				\item Contract based
-				\item Dependency injection
+					\begin{itemize}
+						\item The use of the MVC architecture allows the system to be fairly flexible. Service contracts will allow semantic coherence, the model component contains and encapsulates the functional core of the application, intermediaries in the form of the controller and the view and runtime binding so that the view can be opened and closed dynamically.
+					\end{itemize}
+
 			\end{itemize}			
 			
 		\end{itemize}
@@ -126,6 +129,9 @@
 			\item Tactics
 			\begin{itemize}
 				\item Localise changes(Anticipate expected changes)
+					\begin{itemize}
+						\item Logging
+					\end{itemize}
 				\item Prevention of ripple effect(Use intermediary, maintain existing interface)
 				\item Defer binding time(Runtime registration/lookups )
 				\item Polymorphism, adherence to defined protocols
@@ -153,6 +159,9 @@
 			\begin{itemize}
 				\item Publish contracts
 				\item Support pluggable adapters
+					\begin{itemize}
+						\item Logging
+					\end{itemize}
 			\end{itemize}			
 		
 			
@@ -164,6 +173,9 @@
 			\item Tactics
 			\begin{itemize}
 				\item List of open source software to follow..
+					\begin{itemize}
+						\item Logging
+					\end{itemize}
 			\end{itemize}			
 			
 		\end{itemize}
@@ -177,6 +189,9 @@
 				\item Separate user interface
 				\item User initiative(Cancel, undo)
 				\item System initiative(Maintain user,system and task models)
+					\begin{itemize}
+						\item Logging
+					\end{itemize}
 			\end{itemize}			
 			
 		\end{itemize}
