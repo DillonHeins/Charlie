@@ -8,6 +8,15 @@
 \usepackage[export]{adjustbox}
 \usepackage{multicol}
 
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 % Header and footer
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -267,6 +276,198 @@
 		
 		\subsection{Architectural Patterns or Styles}
 		\subsection{Architectural tactics or strategies}
+			\subsubsection{Introduction}
+				Quality requirements have a significant influence on the software architecture of a system. Architectural tactics are techniques that an architect may use to comprehensively achieve the quality requirements. For each quality requirement listed, potential tactics will be mentioned.
+			
+			\subsubsection{Quality Requirements}
+				\begin{itemize}
+		\item Performance
+		\begin{itemize}
+			\item The system is fairly small and simple. Any form or action of enhancing performance may be relatively negligible but a couple of tactics can be implemented. 
+			
+			\item Tactics
+			\begin{itemize}
+					\item Spread load across resources
+						
+						\begin{itemize}
+							\item Concurrency can be introduced. Processing different streams of events on different threads and creating additional threads to process different sets of activities can be done by processing requests in parallel. Appropriately allocating threads to resources can maximally exploit concurrency. 
+							
+						\end{itemize}
+					
+					\item Resource re-use, caching.
+					
+						\begin{itemize}
+							\item Considering the Readers/Writers problem, multiple readers will have access to view the resource while only one writer can have access to edit the resource. Multiple copies of data can be maintained. Caching is a tactic that replicates data which would be on the same repository to reduce contention.
+						\end{itemize}
+						
+			\end{itemize}		
+		\end{itemize}
+		
+		\item Reliability
+		\begin{itemize}
+			
+			\item Tactics
+			\begin{itemize}
+				\item Resource locking
+				
+					\begin{itemize}
+						\item A resource or a part/section of the resource will be locked, the correct resource will be returned by making sure that the correct resource is requested to the database and only valid requests will be approved. After the resource is returned, only one user will be able to edit that resource. The other users will be notified about the lock by getting conflicts when they try to pull the resource.
+					\end{itemize}
+										
+				\item Maintain backup
+				
+					\begin{itemize}
+						\item The database will have a back up of all of the information that it stores.
+					\end{itemize}
+								
+
+			\end{itemize}
+						
+		\end{itemize}
+		\item Scalability
+		\begin{itemize}
+			
+			\item Tactics
+			\begin{itemize}
+
+				\item Increasing capacity of communication channels
+					
+					\begin{itemize}
+						\item Users will access the system through a website front-end on a web server maintained by the department. The site will be browser independent in order to increase communication channels. The Android system will also be used as a replacement for the website ans vice versa which allow use of mobile phones or tablets.
+					\end{itemize}
+
+			\end{itemize}
+				
+				
+		\cleardoublepage
+		
+						
+		\end{itemize}
+		\item Security
+		\begin{itemize}
+			
+			\item Tactics
+			\begin{itemize}
+				
+				\item Authentication
+					
+					\begin{itemize}
+						\item Users will be authenticated via their usernames and passwords by making use of server side validation.
+					\end{itemize}
+					
+				\item Encryption
+				
+					\begin{itemize}
+						 \item Passwords are to be hashed using at least sha256 and should be stored as such within the database along with a salt.
+					\end{itemize}				 		
+						 
+				\item Authorisation
+						\begin{itemize}
+							\item Users will be grouped by user classes to ensure access control. Users rights to access and modification of data will be determined by the class the user is in.
+						\end{itemize}		
+					
+					
+				\item Drop connection
+					\begin{itemize}
+						\item Sessions will be checked periodically(every 10 minutes). Should a user be inactive for more than the stipulated period, the session will be terminated after the state of the system gets stored for possible retrieval.
+					\end{itemize}
+			\end{itemize}			
+			
+		\end{itemize}
+		\item Flexibility
+		\begin{itemize}
+			
+			\item Tactics
+			\begin{itemize}
+				
+				\item Contract based
+					\begin{itemize}
+						\item The use of the MVC architecture allows the system to be fairly flexible. The model will be the data(database) itself or actions on the database, the view will be the interface as experienced by the user and the controller will be the facilitator of the program flow logic. This modular format will allow changes to one aspect without greatly affecting the other aspects.
+					\end{itemize}
+
+			\end{itemize}			
+			
+		\end{itemize}
+		
+		\item Maintainability
+		\begin{itemize}
+			
+			\item Tactics
+			\begin{itemize}
+				\item Localise changes
+					\begin{itemize}
+						\item Using MVC architecture, changes are localised. Service contracts will allow semantic coherence, the model component contains and encapsulates the functional core of the application, intermediaries in the form of the controller and the view, and runtime binding so that the view can be opened and closed dynamically.
+					\end{itemize}
+					
+				\item Prevention of ripple effect 
+				
+					\begin{itemize}
+						\item Intermediaries will be used to prevent ripple effects. The controller will realize the interface if the view and respond to accordingly, it will be the intermediary between the view and the model. The view will thus realize the model's interface and produce the output, making it an intermediary between the model and the controller.
+					\end{itemize}
+
+			\end{itemize}			
+			
+		\end{itemize}
+		\item Auditability/monitorability
+		\begin{itemize}
+			
+			\item Tactics
+			\begin{itemize}
+				\item Logging
+					\begin{itemize}
+						\item An audit trail will be maintained. This will be done by having a copy of each transaction applied to the data in the system along with the identifying information of the user.
+					\end{itemize}					
+			\end{itemize}			
+			
+		\end{itemize}
+		\item Integrability
+		\begin{itemize}
+
+			
+			\item Tactics
+			\begin{itemize}
+				
+				\item Support communication channels
+					\begin{itemize}
+						\item The system will be made web browser independent to support the usual communication channels. Java will be used to integrate Android and the API.
+					\end{itemize}
+			\end{itemize}			
+		
+			
+		\end{itemize}
+		\item Cost
+		\begin{itemize}
+			
+			\item Tactics
+			\begin{itemize}
+				\item Open source software
+					\begin{itemize}
+						\item The software used will be open software. Programming languages may include Java and python, frameworks like bootstrap and django and so on. 
+					\end{itemize}
+			\end{itemize}			
+			
+		\end{itemize}
+		\item Usability
+		\begin{itemize}
+			
+			\item Tactics
+			\begin{itemize}
+
+				\item User initiative
+				
+					\begin{itemize}
+						\item The system will give the user feedback as to what the system is doing when the model updates the view/interface. The user will have the freedom to cancel or undo the operations that they are permitted to undertake.
+					\end{itemize}				
+				
+				\item System initiative
+					\begin{itemize}
+						\item This is a design time tactic that is enforced by the MVC pattern. The view will be determined by the model which is designed by the architect to create a user friendly interface using HCI guidelines.
+					\end{itemize}
+			\end{itemize}			
+			
+		\end{itemize}
+	\end{itemize}
+			
 		
 		\subsection{Reference Architecture and frameworks}\label{sec: ReferencArchitecture}
 In this section we will discuss the reference architecture and frameworks that will be used in the P.A.P.E.R system.
@@ -377,7 +578,38 @@ In this section we will discuss the reference architecture and frameworks that w
 	\end{itemize}
 	
 	\subsection{Access and Integration Channels}
-	
+		\subsubsection{Human Access Channels}
+			Users will access the P.A.P.E.R.S system through a website front-end on a web server maintained by the Computer Science department. The website can be access off campus through any browser, i.e. Chrome, Mozilla Firefox, Internet Explorer, Safari and Edge. When on the website, the user will have to log in and depending on what user privilege the user has (lecturer, research leader, HOD) the user will access a different user interface, modelled to what the particular user is allowed to access. The website will be under strict standards-compliance that is having the website comply with the World Wide Web Consortium (W3C) (W3C, 2016) so that the website will run on every browser exactly the same. Users can also access the P.A.P.E.R.S system through an android application that uses the same web server as a back-end. The Android system can be used as a replacement for the website and vice versa. It should be able to work on mobile phones or tablets that supports the Android operating system.
+		\subsubsection{Integration Channels}
+			\paragraph{LDAP}
+				LDAP (Lightweight Directory Access Protocol), is an Internet protocol that email and other programs use to look up information on a server (Gracion Software, 2016). In the case of the P.A.P.E.R.S system LDAP can be used in particular to storing and retrieving user information stored in the database, such as the user’s username and password. The LDAP protocol runs a layer above the TCP/IP layer and provides the mechanisms to connect to, search, and modify Internet directories, such is found in the P.A.P.E.R.S system (Microsoft, 2016). LDAP supports C and C++ programming languages. The aforementioned database will be the main backbone of the system and thus will include quality requirements:
+			\begin{itemize}  
+        		\item Performance: Accessing data from the database needs to happen as fast as possible. This means an equally fast protocol needs to be used to be used. Since the website and Android application can be run and used offsite from the University of Pretoria, SCP will be used to quickly move around data. FTP could have been used, but it is not as secure as SCP which uses the SSH protocol for authentication (LiquidWeb, 2016). SFTP (a more secure version of FTP) could also be used but because speed as an issue, SCP will be used instead as it is faster (LiquidWeb, 2016).
+        		\item Reliability: The system should not have downtime and thus should have a secure and reliable connection to the LDAP system.
+       			\item Scalability: The database must be able to store and manage a large amount of entries that include relationships to all entities such as users, publications, authors, etc. 
+        		\item Auditability: Any change to the system through LDAP and SCP should be logged in a log file. This includes what queries were made, who made them, what time and a trace of the actions performed.
+        		\item Flexibility: This should be shown in the database as it being in a state where any change done to the database should not in any way affect the system as a whole. This requires a high level of normalisation in the database to prevent any data anomalies that could occur from using the system.
+        		\item Affordability: Any request made by the LDAP system, made by the user, should not affect the performance of the system as a whole and should be affordable in a sense to not prevent any other user concurrently using the system from not being able to perform their actions optimally.
+    		\end{itemize}
+    		
+    		\paragraph{HTTPS}
+    			HTTP will be used for the web services and in particular HTTPS will be used to make the system more secure. The reason being is that traffic sent over HTTP is highly confidential (user’s usernames and passwords) and thus need to be protected. As the whole web based approach will require the HTTPS protocol, it would need quality requirements:
+     \begin{itemize}
+        \item Performance: the actual difference in speed compared to a normal HTTP is in insignificant, in fact even a little bit   faster (see annex A) but can take longer in regards to the SSL handshake request that has to be made. This is still something that can be overlooked as security has a higher priority than speed.
+        \item Reliability: Since HTTPS is not reliable enough in itself as a connection is never maintained. Thus TCP in conjunction with HTTPS can be used. This will allow you to wait for responses that could inform you if the server has received all the information. 
+        \item Scalability: HTTPS must be able to handle many requests sent and received and not slow down the system as a whole when doing so.
+        \item Auditability: Every HTTPS request needs to  logged in an appropriate log file to see what has been requested
+        \end{itemize}
+        	
+        	\paragraph{SMTP}
+				SMTP (Simple Mail Transfer Protocol) will be used to send email notifications to users of the system. This falls under the notification domain of the system and will be linked to the deadlines set by users in the database. SMPT uses Port 25 to send emails but Port 465 can be used instead if encryption needs to be used to send emails securely (SiteGround, 2016). 
+				
+			\paragraph{Other Integration Channels}
+				\begin{itemize}
+           			\item Javascript/Jquery could be used on the front end to provide a more user friendly and interactive system and to prevent any unauthorised changes to the system. Bootstrap can work on the front end to help maintain a common and consistent user interface.
+			         \item JPA (Java Persistence API) is Java specification for accessing, persisting, and managing data in a Java based database that  is what is chosen to work on the back-end. 
+			          \item SQL (Structured Query language) can be used if a relational database is used in the place of a java based database. noSQL can thus be used if the database is non relational
+				\end{itemize}
 	\subsection{Technologies}
 
 	For each of the following sections, all technologies we considered are listed.
