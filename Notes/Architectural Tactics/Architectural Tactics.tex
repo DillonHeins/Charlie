@@ -115,7 +115,7 @@
 				
 				\item Contract based
 					\begin{itemize}
-						\item The use of the MVC architecture allows the system to be fairly flexible. Service contracts will allow semantic coherence, the model component contains and encapsulates the functional core of the application, intermediaries in the form of the controller and the view and runtime binding so that the view can be opened and closed dynamically.
+						\item The use of the MVC architecture allows the system to be fairly flexible. The model will be the data(database) itself or actions on the database, the view will be the interface as experienced by the user and the controller will be the facilitator of the program flow logic. This modular format will allow changes to one aspect without greatly affecting the other aspects.
 					\end{itemize}
 
 			\end{itemize}			
@@ -123,18 +123,20 @@
 		\end{itemize}
 		\item Maintainability
 		\begin{itemize}
-			\item The system should have as few bugs as possible so as to prevent having to constantly maintain it in the future.
-			\item The system should be built in a modular way so that all services are decoupled in such a manner that allows for the extension of the system at a later stage.
 			
 			\item Tactics
 			\begin{itemize}
-				\item Localise changes(Anticipate expected changes)
+				\item Localise changes
 					\begin{itemize}
-						\item Logging
+						\item Using MVC architecture, changes are localised. Service contracts will allow semantic coherence, the model component contains and encapsulates the functional core of the application, intermediaries in the form of the controller and the view, and runtime binding so that the view can be opened and closed dynamically.
 					\end{itemize}
-				\item Prevention of ripple effect(Use intermediary, maintain existing interface)
-				\item Defer binding time(Runtime registration/lookups )
-				\item Polymorphism, adherence to defined protocols
+					
+				\item Prevention of ripple effect 
+				
+					\begin{itemize}
+						\item Intermediaries will be used to prevent ripple effects. The controller will realize the interface if the view and respond to accordingly, it will be the intermediary between the view and the model. The view will thus realize the model's interface and produce the output, making it an intermediary between the model and the controller.
+					\end{itemize}
+
 			\end{itemize}			
 			
 		\end{itemize}
