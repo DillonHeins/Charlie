@@ -102,59 +102,52 @@
 		\begin{itemize}
 			\item Performance
 			\begin{itemize}
-				\item Workload is a maximum of 100 users concurrently.
-				\item No implementation of concurrent editing of document entries - last saved edit is written to the database.
-				\item The system should be able to support 100 users updating information at the same time as updating is more intensive than reading.
-				\item The response time of the system should be fast enough that a user is able to complete their work without frustration. Due to the system being off-line it is reasonable to expect the system's response time to be only limited by the speed of the network.
+				\item Performance in the system is of little worry as the system is not expected to grow to a large point in which it may slow down. The system should preferably be able to handle up to a hundred concurrent users at a time without major slow down effect and queries should be able to run within a matter of seconds.
 			\end{itemize}
 			\item Reliability
 			\begin{itemize}
-				\item The system should not fail whilst providing critical or important use cases.
-				\item The system should handle all requests and respond with appropriate result objects for each.
+				\item The meta-data stored for each paper is required to be entirely correct at all times. To ensure this, we need to validate all possible input that can occur on the system in order to prevent any possible data inconsistencies. On the same note all data has to be persistent and remain in the database for the duration of the systems use, which means in all but the most extreme circumstances such as a database clean up for example, all entries must remain even if in a terminated state.
 			\end{itemize}
 			\item Scalability
 			\begin{itemize}
-				\item Ability for multiple external systems to connect to the system's API.
-				\item The system should be able to support a large amount of historical document entries being added to the database.
+				\item Scalability of this particular system is not of very particular importance. At the rate which the system will be used, chances of heavy fragmentation, data becoming too big or concurrency issues will be vary minimal.
 			\end{itemize}
 			\item Security
 			\begin{itemize}
-				\item A hierarchical system will be used to determine the security privileges of users of the system.
-				\item Passwords are to be hashed using at least sha256 and should be stored as such within the database along with a salt.
-				\item An inactive user session should be terminated after a period of 10 minutes with no activity.
-				\item A user who has forgotten their passwords can use a password reset option which will send a one time password to their registered email address so that they may login once using it and reset their password.
+				\item Security is critical in the system as meta-data for unpublished papers can be sensitive information. Thus it is empirical that only authorised people have any access to the system at all. It is also vital to separate the concerns of each group from one another, allowing each group to only access the information from the groups they have access to. The Administrator should also be the only one allowed to make major changes to the system in anyway, and should be the only one authorised to make major persistence changes. 
 			\end{itemize}
 			\item Flexibility
 			\begin{itemize}
-				\item The client has stated that the system is not needed to be able to extend to accommodate a greater number of departments.
+				\item The system should be developed as to not be platform dependant or browser dependant in it's operation, allowing it to essentially be used from theoretically any device capable of an internet connection and HTML5, this includes iPhones which may still connect through safari as opposed to an iPhone application
+				\item Flexibility may further be required in the event of change in units and venues for various existing conferences and journals, change in details for various users and authors registered on the system as well as flexibility for the addition or reduction of research groups.
 			\end{itemize}
 			\item Maintainability
 			\begin{itemize}
-				\item The system should have as few bugs as possible so as to prevent having to constantly maintain it in the future.
-				\item The system should be built in a modular way so that all services are decoupled in such a manner that allows for the extension of the system at a later stage.
+				\item The system consists of a database which is required to stay consistent. To this end the system should contain well formatted documentation in order to properly maintain the system and ensure all data is in it's most consistent and reliable state.
 			\end{itemize}
-			\item Auditability/monitorability
+			\item Auditability
 			\begin{itemize}
-				\item Every action performed by a user should be logged and all details about said action should be stored.
-				\item These actions should be visible to admin users.
+				\item All actions performed on the system should be audit-able via use of logging. A log entry should be created for each action such as adding or changing a publication for example. All actions performed in the system should be traceable to the user that performed them and possibly if so, where they performed it from in terms of IP as to have a form of accountability in the persistence of the meta-data.
 			\end{itemize}
 			\item Integrability
 			\begin{itemize}
-				\item User's document entries should not be able to be deleted, if it is a case where the document will not be completed it should remain in the system and be terminated.
-				\item A user with no admin rights should not have access to admin privileges so that the system's data may remain integrable and safe.
-				\item The system should not ever be in a state where it is under pressure and the data is at risk of becoming corrupted. The system should be designed to handle the pressure for which it has been specified to handle.
+				\item The system should be easily integrable with the database system being used, allowing for simple queries in short amounts of time.
+				\item The system should be integrable with a web front end that should allow users to easily and securely use all the features of the system that their authorisation level permits.
+				\item The system should further be integrable with an Android front-end, which should allow for the exact same functionality of the web based front-end only designed ot be more mobile friendly.
 			\end{itemize}
 			\item Cost
 			\begin{itemize}
-				\item All software used should not be proprietary but rather open source so as to minimise cost as much as possible.
+				\item No proprietary software should be used in this system, and all licences for any software should be licensed under the open use policy.
 			\end{itemize}
 			\item Usability
 			\begin{itemize}
-				\item The interface should be lightweight.
-				\item The interface should be intuitive to use as well as obey Human Computer Interaction guidelines so that it is efficient and easy to use.
+				\item Users should easily be able to access the system securely from their most convenient location, either over their favourite web browser, the android application or via a mobile web page on their phone. All versions should allow full usage of all the features.
+				\item Reports generated should be easily readable and allow for a logical and quick method of discerning various statistics from one another.
+				\item Publications should be simple to view and easily distinguishable in type. One glance should allow a view of the most important details.
+				\item Users should be easy to manage for the Administrator, allowing termination and reinstatement of users as well as addition of new ones to be a simple and streamlined process.
 			\end{itemize}
 		\end{itemize}
-
+		
 		\cleardoublepage
 		
 	\subsection{Integration and access channel requirements}\label{subsec:integration}
