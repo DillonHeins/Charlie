@@ -140,29 +140,44 @@
 		\cleardoublepage
 		
 	\subsection{Integration and access channel requirements}\label{subsec:integration}
-		The system will make use of:
+		
 			\begin{itemize}
-				\item Django (Model View Controller based framework)
-				\item HTML5 compliant front-end to ensure compatibility with Android
-				\item Lungo (Android framework based on HTML5 an CSS3)
-				\item Sencha Touch (HTML5 Framework for Android)
-				\item Android SDK (Final changes to Android app to ensure compatibility)
+				\item The system must host a server to which API calls may be performed, to achieve this we use:
+					\begin{itemize}
+						\item Django (A Python based web framework allowing easy implementation of the MVC principal.)
+						\item AngularJS (For easy unit testing functionality and dependency injection)
+					\end{itemize}
+				\item The system should make API calls via browser, the browser functionality and calling is done via:
+					\begin{itemize}
+						\item HTML5 (To ensure access to the latest and most stable versions of features)
+						\item Javascript with a JQuery framework (For the functionality)
+					\end{itemize}
+				\item The system will require and android interface to interact with the API. To achieve this we make use of:
+					\begin{itemize}
+						\item JAVA (The standard language of every android application.)
+						\item JQuery for mobile (A convenient method to manipulate data via JQuery on your android app.)
+						\item Sencha touch (An HTML5 framework for Android.)
+					\end{itemize}
+				\item The system should be able to interact with the systems database, which will be hosted using:
+					\begin{itemize}
+						\item PostgreSQL (An open source relational database that integrates perfectly with the Django framework.)
+					\end{itemize}
+				\item The system should be able to send emails on a scheduled basis by sending mail from the CS mail server, for this we use:
+					\begin{itemize}
+						\item Django-sitemessage (A framework developed to allow easy scheduling of emails as well as the ability to retry an email on a failure.)\newline
+					\end{itemize}
+
 			\end{itemize}
 			
-			The different access channels through which the system's services will be made available to users as well as other systems are as follows:
+			
 			\begin{itemize}
-				\item An Application Program Interface residing on a server which will be interfaced with by clients in order to supply services to them. Clients referring to:
-				\begin{itemize}
-					\item Human users via an interface
-					\item External systems using the services provided by the API
-				\end{itemize}
-				\item Human users can interface with the system via the use of:
-				\begin{itemize}
-					\item a web-based application service
-					\item an android based mobile application
-				\end{itemize}
+				\item Protocols to be used include:
+					\begin{itemize}
+						\item HTTP
+						\item SMTP
+						\item TCP
+					\end{itemize}
 			\end{itemize}
-			The interface is required to be lightweight.
 
 			\cleardoublepage
 			
