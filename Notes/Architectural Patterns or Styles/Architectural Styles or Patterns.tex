@@ -18,7 +18,7 @@ Often times source code needs to be organised so that clear roles, responsibilit
 \begin{itemize}
 \item Layered Pattern
 \item Client-server
-\item Representational State Transfer (REST)
+\item Microkernel
 \item Master-slave
 \item Pipe-filter
 \item Broker Pattern
@@ -40,7 +40,7 @@ In the Model-View-Controller Pattern, an interactive application is divided into
 \newline
 Any form of application that uses a request-and-response logic needs to be decoupled. Separation of responsibilities is useful because functions can work normally when certain subsystems are changed. The Model View Controller makes this a possibility and hence it is chosen for use in this context. 
 
-\item{Componemnts of the Model View Controller Pattern}
+\item{Components of the Model View Controller Pattern}
 \begin{enumerate}
 \item{Model}
 \newline
@@ -62,10 +62,61 @@ For the Android Application, the Android Graphic User Interface, or GUI will be 
 \newline
 The Django Framework itself will be the Controller as it will provide appropriate functionality for data manipulation.
 
-\subsubsection{}
-
 \end{enumerate}
 \end{itemize}
 
+\subsubsection{Layered Pattern}
+\begin{itemize}
+\item{Background}
+\newline
+\newline
+The Layered Pattern assists in structuring applications that can be decomposed into subtasks. Each subtask provides services to the layer above it and services in that layer are implemented using those from the layer below it.
+\newline
+\item{Motivation}
+\newline
+\newline
+A system typically consists of subsystems that have a certain functionality. These functions need to be placed in layers so that their services can be used by other layers and a change in behaviour of one layer does not affect the layers below it. This assists in developing different layers independently. 
+
+\item{Components of the Layered System }
+\newline
+This pattern will be used to separate the internal functions within each subsystem.
+\newline
+
+\end{itemize}
+
+
+\subsubsection{Concurrency - Master Slave}
+\begin{itemize}
+\item{Background}
+\newline
+\newline
+The Master-slave Pattern can be described as  a model where one process (Master) has unidirectional control over one or more processes that are known as Slaves. 
+
+\item{Motivation}
+\newline
+\newline
+An interactive application typically consist of multiple users that use it at different rates. These users make requests that usually expect a response to either use the data or edit it in some way and thus is imperative for the application have an ability to collect user information simultaneously.
+
+\end{itemize}
+
+\subsection{Patterns Not Considered}
+\subsubsection{Client Server Pattern}
+
+\begin{itemize}
+
+\item Client Application provides access to humans, or systems (Fritz, 2012)
+\item Requests are typically handled in separate threads on the server.
+\item Inter-process communication causes overhead.
+\item Requests and data have to be transformed because they have different representation in Server and Client, and there is network traffic.
+\end{itemize}
+
+\subsubsection{Microkernel}
+\begin{itemize}
+
+\item Client Application provides access to humans, or systems (Fritz, 2012)
+\item Requests are typically handled in separate threads on the server.
+\item Inter-process communication causes overhead.
+\item Requests and data have to be transformed because they have different representation in Server and Client, and there is network traffic.
+\end{itemize}
 
 \end{document}
