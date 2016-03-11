@@ -75,19 +75,34 @@
 		\end{itemize}
 		\item Security
 		\begin{itemize}
-			\item A hierarchical system will be used to determine the security privileges of users of the system.
-			\item Passwords are to be hashed using at least sha256 and should be stored as such within the database along with a salt.
-			\item An inactive user session should be terminated after a period of 10 minutes with no activity.
-			\item A user who has forgotten their passwords can use a password reset option which will send a one time password to their registered email address so that they may login once using it and reset their password.
 			
 			\item Tactics
 			\begin{itemize}
-				\item Limit access(Authentication, authorisation, Minimise access channels?)
-				\item Minimize complexity
-				\item Event logging and analyses
-				\item Drop connection
-				\item Restore state
+				
+				\item Authentication
+					
+					\begin{itemize}
+						\item Users will be authenticated via their usernames and passwords by making use of server side validation.
+					\end{itemize}
+					
 				\item Encryption(hashing passwords)
+				
+					\begin{itemize}
+						 \item Passwords are to be hashed using at least sha256 and should be stored as such within the database along with a salt.
+					\end{itemize}				 		
+						 
+				\item Authorisation
+						\begin{itemize}
+							\item Users will be grouped by user classes to ensure access control. Users rights to access and modification of data will be determined by the class the user is in.
+						\end{itemize}		
+					
+					
+				\item Drop connection
+					\begin{itemize}
+						\item Sessions will be checked periodically(every 10 minutes). Should a user be inactive for more than the stipulated period, the session will be terminated after the state of the system gets stored for possible retrieval.
+					\end{itemize}		
+							
+				
 				
 			\end{itemize}			
 			
