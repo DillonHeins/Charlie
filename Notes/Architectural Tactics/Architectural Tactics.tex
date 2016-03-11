@@ -37,6 +37,9 @@
 						
 			\end{itemize}		
 		\end{itemize}
+		
+		\cleardoublepage
+		
 		\item Reliability
 		\begin{itemize}
 			
@@ -45,7 +48,7 @@
 				\item Resource locking
 				
 					\begin{itemize}
-						\item A resource or a part/section of the resource will be locked, only one user will be able to edit that resource. The other users will be notified about the lock by getting conflicts when they try to pull the resource.
+						\item A resource or a part/section of the resource will be locked, the correct resource will be returned by making sure that the correct resource is requested to the database and only valid requests will be approved. After the resource is returned, only one user will be able to edit that resource. The other users will be notified about the lock by getting conflicts when they try to pull the resource.
 					\end{itemize}
 										
 				\item Maintain backup
@@ -60,107 +63,148 @@
 		\end{itemize}
 		\item Scalability
 		\begin{itemize}
-			\item Ability for multiple external systems to connect to the system's API.
-			\item The system should be able to support a large amount of historical document entries being added to the database.
 			
 			\item Tactics
 			\begin{itemize}
 
-				\item Increase capacity of communication channels
-				\item Thread pooling
+				\item Increasing capacity of communication channels
+					
+					\begin{itemize}
+						\item Users will access the system through a website front-end on a web server maintained by the department. The site will be browser independent in order to increase communication channels. The Android system will also be used as a replacement for the website ans vice versa which allow use of mobile phones or tablets.
+					\end{itemize}
 
 			\end{itemize}
+				
+				
+		\cleardoublepage
+		
 						
 		\end{itemize}
 		\item Security
 		\begin{itemize}
-			\item A hierarchical system will be used to determine the security privileges of users of the system.
-			\item Passwords are to be hashed using at least sha256 and should be stored as such within the database along with a salt.
-			\item An inactive user session should be terminated after a period of 10 minutes with no activity.
-			\item A user who has forgotten their passwords can use a password reset option which will send a one time password to their registered email address so that they may login once using it and reset their password.
 			
 			\item Tactics
 			\begin{itemize}
-				\item Limit access(Authentication, authorisation, Minimise access channels?)
-				\item Minimize complexity
-				\item Event logging and analyses
+				
+				\item Authentication
+					
+					\begin{itemize}
+						\item Users will be authenticated via their usernames and passwords by making use of server side validation.
+					\end{itemize}
+					
+				\item Encryption
+				
+					\begin{itemize}
+						 \item Passwords are to be hashed using at least sha256 and should be stored as such within the database along with a salt.
+					\end{itemize}				 		
+						 
+				\item Authorisation
+						\begin{itemize}
+							\item Users will be grouped by user classes to ensure access control. Users rights to access and modification of data will be determined by the class the user is in.
+						\end{itemize}		
+					
+					
 				\item Drop connection
-				\item Restore state
-				\item Encryption(hashing passwords)
+					\begin{itemize}
+						\item Sessions will be checked periodically(every 10 minutes). Should a user be inactive for more than the stipulated period, the session will be terminated after the state of the system gets stored for possible retrieval.
+					\end{itemize}		
+							
+				
 				
 			\end{itemize}			
 			
 		\end{itemize}
 		\item Flexibility
 		\begin{itemize}
-			\item The client has stated that the system is not needed to be able to extend to accommodate a greater number of departments.
 			
 			\item Tactics
 			\begin{itemize}
+				
 				\item Contract based
-				\item Dependency injection
+					\begin{itemize}
+						\item The use of the MVC architecture allows the system to be fairly flexible. The model will be the data(database) itself or actions on the database, the view will be the interface as experienced by the user and the controller will be the facilitator of the program flow logic. This modular format will allow changes to one aspect without greatly affecting the other aspects.
+					\end{itemize}
+
 			\end{itemize}			
 			
 		\end{itemize}
+		
+		\cleardoublepage
+		
 		\item Maintainability
 		\begin{itemize}
-			\item The system should have as few bugs as possible so as to prevent having to constantly maintain it in the future.
-			\item The system should be built in a modular way so that all services are decoupled in such a manner that allows for the extension of the system at a later stage.
 			
 			\item Tactics
 			\begin{itemize}
-				\item Localise changes(Anticipate expected changes)
-				\item Prevention of ripple effect(Use intermediary, maintain existing interface)
-				\item Defer binding time(Runtime registration/lookups )
-				\item Polymorphism, adherence to defined protocols
+				\item Localise changes
+					\begin{itemize}
+						\item Using MVC architecture, changes are localised. Service contracts will allow semantic coherence, the model component contains and encapsulates the functional core of the application, intermediaries in the form of the controller and the view, and runtime binding so that the view can be opened and closed dynamically.
+					\end{itemize}
+					
+				\item Prevention of ripple effect 
+				
+					\begin{itemize}
+						\item Intermediaries will be used to prevent ripple effects. The controller will realize the interface if the view and respond to accordingly, it will be the intermediary between the view and the model. The view will thus realize the model's interface and produce the output, making it an intermediary between the model and the controller.
+					\end{itemize}
+
 			\end{itemize}			
 			
 		\end{itemize}
 		\item Auditability/monitorability
 		\begin{itemize}
-			\item Every action performed by a user should be logged and all details about said action should be stored.
-			\item These actions should be visible to admin users.
 			
 			\item Tactics
 			\begin{itemize}
 				\item Logging
+					\begin{itemize}
+						\item An audit trail will be maintained. This will be done by having a copy of each transaction applied to the data in the system along with the identifying information of the user.
+					\end{itemize}					
 			\end{itemize}			
 			
 		\end{itemize}
 		\item Integrability
 		\begin{itemize}
-			\item User's document entries should not be able to be deleted, if it is a case where the document will not be completed it should remain in the system and be terminated.
-			\item A user with no admin rights should not have access to admin privileges so that the system's data may remain integrable and safe.
-			\item The system should not ever be in a state where it is under pressure and the data is at risk of becoming corrupted. The system should be designed to handle the pressure for which it has been specified to handle.
+
 			
 			\item Tactics
 			\begin{itemize}
-				\item Publish contracts
-				\item Support pluggable adapters
+				
+				\item Support communication channels
+					\begin{itemize}
+						\item The system will be made web browser independent to support the usual communication channels. Java will be used to integrate Android and the API.
+					\end{itemize}
 			\end{itemize}			
 		
 			
 		\end{itemize}
 		\item Cost
 		\begin{itemize}
-			\item All software used should not be proprietary but rather open source so as to minimise cost as much as possible.
 			
 			\item Tactics
 			\begin{itemize}
-				\item List of open source software to follow..
+				\item Open source software
+					\begin{itemize}
+						\item The software used will be open software. Programming languages may include Java and python, frameworks like bootstrap and django and so on. 
+					\end{itemize}
 			\end{itemize}			
 			
 		\end{itemize}
 		\item Usability
 		\begin{itemize}
-			\item The interface should be lightweight.
-			\item The interface should be intuitive to use as well as obey Human Computer Interaction guidelines so that it is efficient and easy to use.
 			
 			\item Tactics
 			\begin{itemize}
-				\item Separate user interface
-				\item User initiative(Cancel, undo)
-				\item System initiative(Maintain user,system and task models)
+
+				\item User initiative
+				
+					\begin{itemize}
+						\item The system will give the user feedback as to what the system is doing when the model updates the view/interface. The user will have the freedom to cancel or undo the operations that they are permitted to undertake.
+					\end{itemize}				
+				
+				\item System initiative
+					\begin{itemize}
+						\item This is a design time tactic that is enforced by the MVC pattern. The view will be determined by the model which is designed by the architect to create a user friendly interface using HCI guidelines.
+					\end{itemize}
 			\end{itemize}			
 			
 		\end{itemize}
