@@ -150,13 +150,13 @@
 
 	\subsection{Architectural constraints}\label{subsec:constraints}
 		\begin{itemize}
-			\item The system will be a server based API accessible via a web browser as well as an Android application.
-			\item The system may not be browser or operating system specific, and should be able to run on any system chosen.
+			\item The system should be developed using only non-proprietary technologies.
+			\item The system is to be developed for Linux based systems (Mostly Arch Linux) used by the Computer Science department, however preferably the system should run on any general use operating system.
+			\item The system should be browser independent, thus the system should be accessed via any browser without issue, including but not limited to (Firefox, Chrome, Safari, Edge etc.)
 			\item The system should be handled locally and should not rely on outside internet sources in order to function.
-			\item The database used must be a relational database as the information being stored requires both a standard structure as well as relations on fields.
-			\item Modules must be decoupled as far as possible, allowing as much pluggability and further editing as need be when the system grows larger.
-			\item A proper framework such as Django will probably be used in favour of a standard PHP approach during the program's design.
-			\item The technology used may not be proprietary and should be free and available to use for all.
+			\item The API created must be queried by both a web browser, as well as an Android application.
+			\item The system created should allow for users to use the application via mobile, employing technologies such as bootstrap in order to keep it mobile friendly. This will always allow users of iOS and Windows mobile to access the system via channels such as Safari and Edge.
+			\item The system is required to be concurrent and make use of concurrent methods specifically in it's functionality, allowing up to a minimum of a hundred concurrent users to be active at the same time
 		\end{itemize}
 
 	
