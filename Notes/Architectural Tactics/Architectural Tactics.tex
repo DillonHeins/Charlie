@@ -37,6 +37,9 @@
 						
 			\end{itemize}		
 		\end{itemize}
+		
+		\cleardoublepage
+		
 		\item Reliability
 		\begin{itemize}
 			
@@ -71,6 +74,10 @@
 					\end{itemize}
 
 			\end{itemize}
+				
+				
+		\cleardoublepage
+		
 						
 		\end{itemize}
 		\item Security
@@ -85,7 +92,7 @@
 						\item Users will be authenticated via their usernames and passwords by making use of server side validation.
 					\end{itemize}
 					
-				\item Encryption(hashing passwords)
+				\item Encryption
 				
 					\begin{itemize}
 						 \item Passwords are to be hashed using at least sha256 and should be stored as such within the database along with a salt.
@@ -121,6 +128,9 @@
 			\end{itemize}			
 			
 		\end{itemize}
+		
+		\cleardoublepage
+		
 		\item Maintainability
 		\begin{itemize}
 			
@@ -181,16 +191,19 @@
 		\end{itemize}
 		\item Usability
 		\begin{itemize}
-			\item The interface should be lightweight.
-			\item The interface should be intuitive to use as well as obey Human Computer Interaction guidelines so that it is efficient and easy to use.
 			
 			\item Tactics
 			\begin{itemize}
-				\item Separate user interface
-				\item User initiative(Cancel, undo)
-				\item System initiative(Maintain user,system and task models)
+
+				\item User initiative
+				
 					\begin{itemize}
-						\item Logging
+						\item The system will give the user feedback as to what the system is doing when the model updates the view/interface. The user will have the freedom to cancel or undo the operations that they are permitted to undertake.
+					\end{itemize}				
+				
+				\item System initiative
+					\begin{itemize}
+						\item This is a design time tactic that is enforced by the MVC pattern. The view will be determined by the model which is designed by the architect to create a user friendly interface using HCI guidelines.
 					\end{itemize}
 			\end{itemize}			
 			
