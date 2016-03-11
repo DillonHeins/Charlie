@@ -112,11 +112,10 @@ An interactive application typically consist of multiple users that use it at di
 
 \subsubsection{Microkernel}
 \begin{itemize}
-
-\item Client Application provides access to humans, or systems (Fritz, 2012)
-\item Requests are typically handled in separate threads on the server.
-\item Inter-process communication causes overhead.
-\item Requests and data have to be transformed because they have different representation in Server and Client, and there is network traffic.
+\item Used for applications that must be adapted to changing system requirements.
+\item This pattern provides minimal functionality (Internal Servers) as a building block and customizable components that can be adapted accordingly (External Servers).
+\item It provides an Adapter that provides a single access point (Fritz, 2012)
+\item It has a more complex process management if not provided by architecture (Fritz, 2012)
 \end{itemize}
 
 \end{document}
